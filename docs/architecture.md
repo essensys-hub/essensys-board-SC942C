@@ -6,9 +6,9 @@ Le module SC942C est une carte d'entrées/sorties pilotée par un bus **I2C**. I
 
 ```mermaid
 graph LR
-    Master[Maître (Atrium)] -- I2C (SDA/SCL) --> Slave[SC942C (Esclave)]
-    Slave -- Pilotage --> Relais[Relais / Variateurs]
-    Slave -- Lecture --> Entrees[Boutons Poussoirs]
+    Master["Maître (Atrium)"] -- I2C (SDA/SCL) --> Slave["SC942C (Esclave)"]
+    Slave -- Pilotage --> Relais["Relais / Variateurs"]
+    Slave -- Lecture --> Entrees["Boutons Poussoirs"]
 ```
 
 ## Protocole de Communication (I2C)
