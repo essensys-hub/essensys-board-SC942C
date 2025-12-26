@@ -1,0 +1,707 @@
+
+
+#include "constantes.h"
+#include "struct.h"
+#include "global.h"
+
+#define extern
+#include "traitement.h"
+#undef extern
+
+#include "gestionentrees.h"
+#include "gestionsorties.h"
+#include "variateur.h"
+
+
+void vd_InitVariables(void)
+{
+	unsigned char l_uc_Compteur;
+
+	/*uc_FlagITTimer = 0; enleve car plus de place en flash !!!
+	uc_CompteurCycle = 0;
+	uc_CompteurAcq = 0;
+	uc_CompteurLED = 0;
+	us_SortiesRelais = 0;
+	us_EntreesTOR = 0;*/
+
+	/*for(l_uc_Compteur=0;l_uc_Compteur<NB_ES;l_uc_Compteur++)
+	{
+		st_Entrees[l_uc_Compteur].ub1_EtatActuel = 0;
+		st_Entrees[l_uc_Compteur].ub4_AntiRebond_TempoChgtEtat = 0;
+		st_Entrees[l_uc_Compteur].ub1_EtatFiltrePourApp = 0;
+		st_Entrees[l_uc_Compteur].ub1_EtatFiltrePourAppPrecedent = 0;
+	}*/
+	for(l_uc_Compteur=0;l_uc_Compteur<ENTREE_VARIATEUR_NB;l_uc_Compteur++)
+	{
+		st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode = uc_MODE_VARIATEUR;
+		st_EntreesVariateur[l_uc_Compteur].uc_CompteurMaintenu = 0;
+		st_EntreesVariateur[l_uc_Compteur].uc_CompteurDoubleClic = 0;
+		st_EntreesVariateur[l_uc_Compteur].ub1_Etat1VueApresEtatStop = 0;
+		st_EntreesVariateur[l_uc_Compteur].ub1_SecondAppuiDetecte = 0;
+		st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande = 0;
+                st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande = 0;
+	}
+	for(l_uc_Compteur=0;l_uc_Compteur<ENTREE_VOLET_NB;l_uc_Compteur++)
+	{
+		st_EntreesVoletRoulant[l_uc_Compteur].ub4_CompteurMaintenu = 0;
+		st_EntreesVoletRoulant[l_uc_Compteur].ub1_Etat1VueApresEtatStop = 0;
+		st_EntreesVoletRoulant[l_uc_Compteur].ub3_EtatCommande = 0;
+	}
+
+	for(l_uc_Compteur=0;l_uc_Compteur<RB_NB;l_uc_Compteur++)
+	{
+		st_SortiesRelaisBistables[l_uc_Compteur].ub1_EtatRelaisBistable = 1;	// Permet de forcer l'état repos au démarrage !!!
+		st_SortiesRelaisBistables[l_uc_Compteur].ub1_EtatRelaisBistableSouhaite = 0;
+
+		uc_CdeRelaisBistables[l_uc_Compteur] = 0;
+	}
+	for(l_uc_Compteur=0;l_uc_Compteur<VARIATEUR_NB;l_uc_Compteur++)
+	{
+		st_Variateurs[l_uc_Compteur].c_Eclairage = 0;
+		st_Variateurs[l_uc_Compteur].c_Consigne = 0;
+		//st_Variateurs[l_uc_Compteur].c_Pas = 0;
+
+                // IR 14/03/2013 init scindée pour prise en compte des valeurs lues en eeprom
+		// us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (st_Variateurs[l_uc_Compteur].c_Consigne);	//mot de commande de la sortie
+	}
+
+        st_Commandes.o = 0;
+
+	//image des ports du micro
+	s_uc_PortA = 0;
+	s_uc_PortB = 0;
+	s_uc_PortC = 0;
+	s_uc_PortD = 0;
+	s_uc_PortE = 0;
+	s_uc_PortF = 0;
+
+	// détection chute de tension
+	//ub1_Tension_OK = 0;
+	//ub1_Tension_Chute = 0;
+	//ub1_Tension_ChuteIT = 0;
+
+	// initialise les nombres d'entrées/sorties selon le type de bornier
+	// sera écrasé immédiatement par la fonction vd_ConfigBornier()
+	/*uc_NB_ES = 2;
+	uc_ENTREE_TOR_NB = 1;
+	uc_RM_NB = 1;
+	uc_ENTREE_VARIATEUR_NB = 1;
+	uc_VARIATEUR_NB = 1;
+	uc_ENTREE_VOLET_NB = 2;
+	uc_RB_NB = 2;
+	uc_VOLET_NB = 1;*/
+
+}
+// IR 14/03/2013 init scindée pour prise en compte des valeurs lues en eeprom
+void vd_InitVariables2(void)
+{
+	unsigned char l_uc_Compteur;
+
+        // Mettre tous les gradateurs à 0 - Pilotage signal dans boucle principale
+	for(l_uc_Compteur=0;l_uc_Compteur<VARIATEUR_NB;l_uc_Compteur++)
+	{
+            // Faux -> envoyer les ordres attendus par le gradateur... us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (st_Variateurs[l_uc_Compteur].c_Consigne);	//mot de commande de la sortie
+
+            switch (st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode) {
+                case uc_MODE_TOR :
+                    us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (107); // pour 0%
+                break;
+
+                case uc_MODE_SOFT_START :
+                case uc_MODE_VARIATEUR :
+                    // gradation par le gradateur lui même : rampe rapide
+                    us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (110);
+                break;
+            }
+	}
+}
+// -----------------------------------------------------------------------------------------------------
+//
+// gestion de l'extinction automatique des lampes
+// fonction appellée toute les secondes
+// traite 1 seule lampe
+//
+// paramètres d'entrée 
+// 		numéro de lampe à traiter
+//		état actuel de la lampe
+// paramètres de sortie
+//		à 1 pour extinction à faire
+// valeurs externes modifiées
+// 		/
+//
+// -----------------------------------------------------------------------------------------------------
+
+unsigned char uc_EteintLampe(unsigned char uc_Num_Lampe, unsigned short us_Etat_Lampe)
+{
+	static unsigned short s_us_CompteurLampe[RM_NB];
+        unsigned long l_ul_Valeur;
+
+	unsigned char l_stop;
+
+	l_stop = 0;
+	
+	if ((uc_Num_Lampe >= uc_RM_NB) || (uc_Num_Lampe >= RM_NB))
+		return (l_stop);		// sécurité
+
+	if (us_Etat_Lampe == 0)
+	{	// lampe éteinte
+		// raz du compteur
+		s_us_CompteurLampe[uc_Num_Lampe] = 0;
+	}
+	else
+	{	// lampe allumée
+	
+		if (s_us_CompteurLampe[uc_Num_Lampe] >0)
+		{	// compteur en cours
+			s_us_CompteurLampe[uc_Num_Lampe] --;
+			if (s_us_CompteurLampe[uc_Num_Lampe] ==0)
+			{
+				// demande l'arrêt de la commande
+				l_stop = 1;
+			}
+		}
+		else
+		{	// compteur arrêté
+			// => init valeur du compteur pour stopper automatiquement la commande de la lampe
+                        l_ul_Valeur = (unsigned long)(uc_TempsCdeLampe[uc_Num_Lampe] * 60);		//unité de commande: minute
+
+                        // Email NG 12/08/2014 13h44 -> correction pour avoir des temps justes
+                        // 15 min -> 900 s  -> mettre 895
+                        // 30 min -> 1800 s -> mettre 1790
+                        // 60 min -> 3600 s -> mettre 3580
+                        // -> (nb secondes) * 994 / 1000
+                        l_ul_Valeur = l_ul_Valeur * 994;
+                        l_ul_Valeur = l_ul_Valeur / 1000;
+
+			s_us_CompteurLampe[uc_Num_Lampe] = (unsigned short)l_ul_Valeur;
+		}
+	}
+	return (l_stop);
+}
+
+// -----------------------------------------------------------------------------------------------------
+//
+// gestion de l'arrêt automatique des relais bistable
+// traite 1 relais
+//
+// paramètres d'entrée 
+// 		numéro du volet à traiter
+//		type d'action
+// paramètres de sortie
+//		à 1 pour stop à faire
+// valeurs externes modifiées
+// 		tempo de montée/descente inialisée si nulle
+//
+// -----------------------------------------------------------------------------------------------------
+
+unsigned char uc_StopVolet(unsigned char uc_NumVolet, enum enum_TEMPO_RELAIS mode)
+{
+	static unsigned char s_uc_CompteurVolet[VOLET_NB];
+
+	unsigned char l_stop;
+
+	l_stop = 0;
+	
+	if ((uc_NumVolet >= uc_VOLET_NB) || (uc_NumVolet >= VOLET_NB))
+		return (1);		// sécurité
+
+	switch (mode)
+	{
+		case INIT :
+			// init valeur du compteur pour stopper automatiquement la commande des volets au terme de la tempo
+
+			if (uc_TempsCdeVolet[uc_NumVolet]==0)
+				uc_TempsCdeVolet[uc_NumVolet]= uc_TEMPS_CDE_VOLET_DEFAUT;		// initialisation par défaut
+
+			s_uc_CompteurVolet[uc_NumVolet] = uc_TempsCdeVolet[uc_NumVolet];
+		break;
+		case RAZ:
+			// raz du compteur pour provoquer l'arrêt de la commande
+			s_uc_CompteurVolet[uc_NumVolet] = 0;
+		break;
+		case MAINTIEN:
+			if (s_uc_CompteurVolet[uc_NumVolet] >0)
+			{	// commande en cours
+				if (b1_BT_1S == 1)			// flag seconde : à 1 chaque seconde pendant 1 cycle
+				{
+					s_uc_CompteurVolet[uc_NumVolet] --;
+				}
+			}
+			else
+			{	// demande l'arrêt des commandes
+				l_stop = 1;
+			}
+		break;
+	}	
+	return (l_stop);
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+// Traitement PRINCIPAL
+
+// -----------------------------------------------------------------------------------------------------
+
+// Effectue le traitement applicatif : pilotage des sorties en fonction des entrées
+void vd_TraitementApplicatif(void)
+{
+	unsigned char l_uc_Compteur;
+	unsigned short l_us_Masque;			// passe sur 16 bits à cause du bornier "pièces de vie"
+	unsigned char l_uc_RelaisSens1;
+	unsigned char l_uc_RelaisSens2;
+
+	// sorties relais
+	for(l_uc_Compteur=0;l_uc_Compteur<uc_RM_NB;l_uc_Compteur++)		// uc_ENTREE_TOR_NB et uc_RM_NB sont supposés à la même valeur
+	{
+		l_us_Masque = 0x01 << l_uc_Compteur;
+
+// xxx		l_uc_Entree = uc_EntreeTOREntreeCarte(l_uc_Compteur);
+
+// xxx		if (st_Entrees[l_uc_Entree].ub1_EtatFiltrePourApp ==1)
+// xxx		{
+// xxx			uc_SortiesRelais |= l_uc_Masque;
+// xxx		}
+// xxx		else
+// xxx		{
+// xxx			uc_SortiesRelais &= ~l_uc_Masque;
+// xxx		}
+
+		if ((us_EntreesTOR & l_us_Masque) !=0)
+		{	// entrée active
+			// => inverse la sortie
+			us_SortiesRelais ^= l_us_Masque;
+		}
+		else
+		{	// entrée inactive
+			// => pas d'action sur la sortie
+			;
+		}
+
+		if (b1_BT_1S == 1)			// flag seconde : à 1 chaque seconde pendant 1 cycle
+		{
+			if (uc_EteintLampe(l_uc_Compteur, us_SortiesRelais & l_us_Masque) == 1)
+			{		// extinction automatique au terme de la durée configurée
+				us_SortiesRelais &= ~l_us_Masque;
+			}
+		}
+
+	}
+
+	// sorties relais bistable : volets ou stores
+
+	// xxx pour test de la carte : si entree : relais change d'état au rythme de la led
+	// xxx mettre en assemblage conditionnel
+/* xxx
+	for(l_uc_Compteur=0;l_uc_Compteur<uc_RB_NB;l_uc_Compteur++)		// uc_ENTREE_VOLET_NB et uc_RB_NB sont supposés à la même valeur
+	{
+
+		switch (st_EntreesVoletRoulant[l_uc_Compteur].ub2_EtatCommande)
+		{
+			case uc_VOLET_APPUI_COURT:
+				;	// pas d'action
+			break;
+
+			case uc_VOLET_APPUI_LONG:
+				// pour test de la carte : si entree : relais change d'état au rythme de la led
+				if (uc_CompteurLED ==0)	
+				{
+					if(st_SortiesRelaisBistables[l_uc_Compteur].ub1_EtatRelaisBistableSouhaite == 0)	
+					{
+						st_SortiesRelaisBistables[l_uc_Compteur].ub1_EtatRelaisBistableSouhaite = 1;
+					}
+					else
+					{
+						st_SortiesRelaisBistables[l_uc_Compteur].ub1_EtatRelaisBistableSouhaite = 0;
+					}	
+				}	
+			break;
+
+			case uc_VOLET_OFF:
+				;	// pas d'action
+			break;
+		}
+	}
+xxx */ 
+
+	// mode applicatif
+	// xxx mettre en assemblage conditionnel
+	for(l_uc_Compteur=0;l_uc_Compteur<uc_VOLET_NB;l_uc_Compteur++)
+	{
+		l_uc_RelaisSens1 = l_uc_Compteur *2;		// 2 relais par volet
+		l_uc_RelaisSens2 = l_uc_RelaisSens1 +1;		// 2 relais par volet
+
+		// en cas d'appuis simultanés sur les 2 boutons : arrêt 
+		switch (st_EntreesVoletRoulant[l_uc_RelaisSens1].ub3_EtatCommande)
+		{
+			case uc_VOLET_APPUI_COURT:
+			case uc_VOLET_APPUI_LONG:
+			case uc_VOLET_ON:
+		// en cas d'appuis simultanés sur les 2 boutons : arrêt 
+				switch (st_EntreesVoletRoulant[l_uc_RelaisSens2].ub3_EtatCommande)
+				{
+					case uc_VOLET_APPUI_COURT:
+					case uc_VOLET_APPUI_LONG:
+                			case uc_VOLET_ON:
+						st_EntreesVoletRoulant[l_uc_RelaisSens1].ub3_EtatCommande = uc_VOLET_OFF;
+						st_EntreesVoletRoulant[l_uc_RelaisSens2].ub3_EtatCommande = uc_VOLET_OFF;
+					break;
+				}
+			break;
+			default :
+				;	// pas d'action
+			break;
+		}
+
+		// action dans un sens 
+		switch (st_EntreesVoletRoulant[l_uc_RelaisSens1].ub3_EtatCommande)
+		{
+			case uc_VOLET_APPUI_COURT:
+				// action pendant tempo 
+				if (st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite == 0)
+				{		// relais non piloté
+
+					// stop l'autre moteur s'il est commandé
+					if (st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite != 0)
+					{
+						st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 0;
+					}
+					// relais non piloté => démarre
+					if (uc_StopVolet(l_uc_Compteur,INIT)==1)
+						;
+					st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 1;
+
+					// raz type d'appui
+					st_EntreesVoletRoulant[l_uc_RelaisSens1].ub3_EtatCommande = uc_VOLET_RIEN;
+				}
+				else
+				{		// relais déja piloté => arrête
+					if (uc_StopVolet(l_uc_Compteur,RAZ)==1)
+						;
+					st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 0;
+
+					// raz type d'appui
+					st_EntreesVoletRoulant[l_uc_RelaisSens1].ub3_EtatCommande = uc_VOLET_RIEN;
+				}
+			break;
+			case uc_VOLET_APPUI_LONG:
+				// action jusqu'au relachement du bouton
+				if (uc_StopVolet(l_uc_Compteur,RAZ)==1)
+					;
+				st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 1;
+				// stop l'autre moteur s'il est commandé
+				st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 0;
+			break;
+			case uc_VOLET_OFF:
+				// arrêt
+				if (uc_StopVolet(l_uc_Compteur,RAZ)==1)
+					;
+				st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 0;
+				// raz type d'appui
+				st_EntreesVoletRoulant[l_uc_RelaisSens1].ub3_EtatCommande = uc_VOLET_RIEN;
+			break;
+			case uc_VOLET_ON:
+				// action pendant tempo
+
+				// stop l'autre moteur s'il est commandé
+				if (st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite != 0)
+				{
+					st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 0;
+
+                                        // pas de raz du type d'appui pour permettre de le prendre en compte lorsque l'autre relais sera arrêté
+				}
+				// relais non piloté => démarre
+				if (uc_StopVolet(l_uc_Compteur,INIT)==1)
+					;
+				st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 1;
+
+				// raz type d'appui
+				st_EntreesVoletRoulant[l_uc_RelaisSens1].ub3_EtatCommande = uc_VOLET_RIEN;
+			break;
+			default :
+				// raz action à l'issu de la tempo : suite à un appui court
+                            if(st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite != 0)
+				if (uc_StopVolet(l_uc_Compteur,MAINTIEN)==1)
+					st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 0;
+			break;
+		}
+
+		// action dans l'autre sens 
+		switch (st_EntreesVoletRoulant[l_uc_RelaisSens2].ub3_EtatCommande)
+		{
+			case uc_VOLET_APPUI_COURT:
+				// action pendant tempo 
+
+				if (st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite == 0)
+				{		// relais non piloté
+
+					// stop l'autre moteur s'il est commandé
+					if (st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite != 0)
+					{
+						st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 0;
+
+						// pas de raz du type d'appui pour permettre de le prendre en compte lorsque l'autre relais sera arrêté
+					}
+					// relais non piloté => démarre
+					if (uc_StopVolet(l_uc_Compteur,INIT)==1)
+						;
+					st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 1;
+
+					// raz type d'appui
+					st_EntreesVoletRoulant[l_uc_RelaisSens2].ub3_EtatCommande = uc_VOLET_RIEN;
+				}
+				else
+				{		// relais déja piloté => arrête
+					if (uc_StopVolet(l_uc_Compteur,RAZ)==1)
+						;
+					st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 0;
+
+					// raz type d'appui
+					st_EntreesVoletRoulant[l_uc_RelaisSens2].ub3_EtatCommande = uc_VOLET_RIEN;
+				}
+			break;
+			case uc_VOLET_APPUI_LONG:
+				// action jusqu'au relachement du bouton
+				if (uc_StopVolet(l_uc_Compteur,RAZ)==1)
+					;
+				st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 1;
+				// stop l'autre moteur s'il est commandé
+				st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 0;
+			break;
+			case uc_VOLET_OFF:
+				// arrêt
+				if (uc_StopVolet(l_uc_Compteur,RAZ)==1)
+					;
+				st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 0;
+				// raz type d'appui
+				st_EntreesVoletRoulant[l_uc_RelaisSens2].ub3_EtatCommande = uc_VOLET_RIEN;
+			break;
+			case uc_VOLET_ON:
+				// action pendant tempo
+
+				// stop l'autre moteur s'il est commandé
+				if (st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite != 0)
+				{
+					st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 0;
+
+                                        // pas de raz du type d'appui pour permettre de le prendre en compte lorsque l'autre relais sera arrêté
+				}
+				// relais non piloté => démarre
+				if (uc_StopVolet(l_uc_Compteur,INIT)==1)
+					;
+				st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 1;
+
+				// raz type d'appui
+				st_EntreesVoletRoulant[l_uc_RelaisSens2].ub3_EtatCommande = uc_VOLET_RIEN;
+			break;
+			default :
+				// raz action à l'issu de la tempo : suite à un appui court
+                            if(st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite != 0)
+				if (uc_StopVolet(l_uc_Compteur,MAINTIEN)==1)
+					st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 0;
+			break;
+		}
+	}
+	// xxx fin assemblage conditionnel
+
+
+	// sorties variateurs
+	for(l_uc_Compteur=0;l_uc_Compteur<uc_VARIATEUR_NB;l_uc_Compteur++)		// uc_ENTREE_VARIATEUR_NB et uc_VARIATEUR_NB sont supposés à la même valeur
+	{
+// xxx		l_uc_Entree = uc_EntreeVariateurEntreeCarte(l_uc_Compteur);
+// xxx
+// xxx		if (st_Entrees[l_uc_Entree].ub1_EtatFiltrePourApp ==1)
+// xxx		{
+// xxx			if (st_Variateurs[l_uc_Compteur].c_Eclairage != 85)
+// xxx			{
+// xxx				st_Variateurs[l_uc_Compteur].c_Eclairage = 85;	//xxx
+// xxx
+// xxx				vd_CalculRampeVariateur(&st_Variateurs[l_uc_Compteur],st_EntreesVariateur[l_uc_Compteur].ub1_EntreeMode);
+// xxx			}
+// xxx		}
+// xxx		else
+// xxx		{
+// xxx			if (st_Variateurs[l_uc_Compteur].c_Eclairage != 21)
+// xxx			{
+// xxx				st_Variateurs[l_uc_Compteur].c_Eclairage = 21;	//xxx
+// xxx
+// xxx				vd_CalculRampeVariateur(&st_Variateurs[l_uc_Compteur],st_EntreesVariateur[l_uc_Compteur].ub1_EntreeMode);
+// xxx			}
+// xxx		}
+
+            switch (st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande)
+            {
+                    case uc_VARIATEUR_RIEN:						// aucune action
+                            ;
+                    break;
+
+                    case uc_VARIATEUR_OFF:						// éteint
+                            // => éteint
+                            st_Variateurs[l_uc_Compteur].c_Eclairage = 0;		// 0%
+                            st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande = 0;
+
+                            // raz type d'appui
+                            st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande = uc_VARIATEUR_RIEN;
+                    break;
+
+                    case uc_VARIATEUR_ON:						// allume à la même intensité que le coup précédent
+
+                            if (    (st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode == uc_MODE_TOR)
+                                ||  (st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode == uc_MODE_SOFT_START))
+                            {	// mode TOR = pas de variation => valeur d'allumage dot être au max
+                                    st_Variateurs[l_uc_Compteur].c_EclairageOld = 100;
+                            }
+
+                            // => pilote à la même intensité que le coup précédent
+                            if (st_Variateurs[l_uc_Compteur].c_EclairageOld <=0) 		// si la précédente intensité est nulle,
+                                                                                            // 1er accès à la flash : valeur FF
+                                    st_Variateurs[l_uc_Compteur].c_EclairageOld = 100;		// la mettre au max
+
+                            st_Variateurs[l_uc_Compteur].c_Eclairage = st_Variateurs[l_uc_Compteur].c_EclairageOld;
+                            st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande = 0;
+
+                            // raz type d'appui
+                            st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande = uc_VARIATEUR_RIEN;
+                    break;
+
+                    case uc_VARIATEUR_APPUI_COURT:						// allume à la même intensité que le coup précédent / éteint
+
+                            if (    (st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode == uc_MODE_TOR)
+                                ||  (st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode == uc_MODE_SOFT_START))
+                            {		// mode TOR = pas de variation => valeur d'allumage dot être au max
+                                            st_Variateurs[l_uc_Compteur].c_EclairageOld = 100;
+                            }
+
+                            if (st_Variateurs[l_uc_Compteur].c_Eclairage > 0)		// xxx tout éteint ou légèrement allumé ? (0% ou 10 %)
+                            {	// allumé => éteint
+                                    st_Variateurs[l_uc_Compteur].c_Eclairage = 0;		// 0%
+                                    st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande = 0;
+                            }
+                            else
+                            {	// éteint => pilote à la même intensité que le coup précédent
+                                    if (st_Variateurs[l_uc_Compteur].c_EclairageOld <=0) 		// si la précédente intensité est nulle,
+                                                                                                    // 1er accès à la flash : valeur FF
+                                            st_Variateurs[l_uc_Compteur].c_EclairageOld = 100;		// la mettre au max
+
+                                    st_Variateurs[l_uc_Compteur].c_Eclairage = st_Variateurs[l_uc_Compteur].c_EclairageOld;
+                                    st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande = 0;
+                            }
+
+                            // raz type d'appui
+                            st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande = uc_VARIATEUR_RIEN;
+                    break;
+
+                    case uc_VARIATEUR_APPUI_DOUBLE:						// allume à 100 %
+
+                            st_Variateurs[l_uc_Compteur].c_Eclairage = 100;		// 100%
+                            st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande = 1;
+
+                            // raz type d'appui
+                            st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande = uc_VARIATEUR_RIEN;
+                    break;
+
+                    case uc_VARIATEUR_APPUI_LONG:						// variation de la puissance de 0 à 100 % et de 100 % à 0 %
+
+                            //if (uc_COmpteurVar2++ > uc_VAR_TEMPO_UTILISATEUR)
+                            {
+                                    //uc_COmpteurVar2=0;
+
+                                    if (st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande ==0)
+                                    {		// augmentation
+                                            if (st_Variateurs[l_uc_Compteur].c_Eclairage < (100-uc_VAR_PAS_UTILISATEUR))
+                                                    st_Variateurs[l_uc_Compteur].c_Eclairage += uc_VAR_PAS_UTILISATEUR;		// 1 pas par seconde
+                                            else
+                                                    st_Variateurs[l_uc_Compteur].c_Eclairage = 100;
+
+                                            // IR 17/09/2012 : n'envoi pas une consigne d'allumage en dessous de uc_VAR_MINI_CDE
+                                            //if (st_Variateurs[l_uc_Compteur].c_Eclairage < uc_VAR_MINI_CDE)
+                                            //	st_Variateurs[l_uc_Compteur].c_Eclairage = uc_VAR_MINI_CDE;		// consigne mini pour allumer
+                                    }
+                                    else
+                                    {		// diminution
+                                            if (st_Variateurs[l_uc_Compteur].c_Eclairage > uc_VAR_PAS_UTILISATEUR)
+                                                    st_Variateurs[l_uc_Compteur].c_Eclairage -= uc_VAR_PAS_UTILISATEUR;		// 1 pas par seconde
+                                            else
+                                                    st_Variateurs[l_uc_Compteur].c_Eclairage = 0;
+                                            // IR 17/09/2012 : n'envoi pas une consigne d'allumage en dessous de uc_VAR_MINI_CDE
+                                            //if (st_Variateurs[l_uc_Compteur].c_Eclairage < uc_VAR_MINI_CDE)
+                                            //        st_Variateurs[l_uc_Compteur].c_Eclairage = 0;		// en dessous de la consigne mini : extinction
+                                    }
+
+                                    //if (st_Variateurs[l_uc_Compteur].c_Eclairage > 10)		// xxx mettre en constante
+                                    st_Variateurs[l_uc_Compteur].c_EclairageOld = st_Variateurs[l_uc_Compteur].c_Eclairage;		// mémorise intensité
+
+                            }
+                    break;
+            }
+
+            //vd_CalculRampeVariateur(&st_Variateurs[l_uc_Compteur],st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode);
+
+
+            if(st_Variateurs[l_uc_Compteur].c_Eclairage < 0)    st_Variateurs[l_uc_Compteur].c_Eclairage = 0;
+            if(st_Variateurs[l_uc_Compteur].c_Eclairage > 100)  st_Variateurs[l_uc_Compteur].c_Eclairage = 100;
+
+            // IR 12/03/2013 : gestion allumage forcé
+            if (st_Commandes.ub1.AllumeTout == 0)
+            {
+                // fonctionnement normal
+
+                // IR 13/09/2012 : rampe gérée par le gradateur
+                // IR 12/03/2013 : mode supplémentaire : TOR simple
+                //if (st_EntreesVariateur[l_uc_Compteur].ub1_EntreeMode == uc_MODE_VARIATEUR)
+                //{       // mode variateur : gradation par le gradateur lui même
+                //    us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (st_Variateurs[l_uc_Compteur].c_Consigne+ 110);
+                //}
+                //else
+                //{       // mode TOR : pas de gradation
+                //    us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (st_Variateurs[l_uc_Compteur].c_Consigne);
+                //}
+                if(st_Variateurs[l_uc_Compteur].c_Eclairage != st_Variateurs[l_uc_Compteur].c_Consigne)
+                {
+                    st_Variateurs[l_uc_Compteur].c_Consigne = st_Variateurs[l_uc_Compteur].c_Eclairage; // Envoyer ordre gradateur que si changement valeur
+                    switch (st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode) {
+                        case uc_MODE_TOR :
+                            // pas de gradation. 0 ou 100%
+                            if (st_Variateurs[l_uc_Compteur].c_Eclairage < 20)
+                            {
+                                us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (107); // pour 0%
+                            }
+                            else
+                            {
+                                us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (106); // pour 100%
+                            }
+                        break;
+
+                        case uc_MODE_SOFT_START :
+                        case uc_MODE_VARIATEUR :
+                            // gradation par le gradateur lui même : rampe rapide
+                            us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (st_Variateurs[l_uc_Compteur].c_Eclairage + 110);
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                // allumage forcé -> envoyer une fois la consigne et ensuite renvoyer la consigne a la fin pour retrablir etat en cours
+                if(st_Variateurs[l_uc_Compteur].c_Consigne != -1)
+                {
+                    st_Variateurs[l_uc_Compteur].c_Consigne = -1;
+                    switch (st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode) {
+                        case uc_MODE_TOR :
+                            // pas de gradation.
+                            us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (106); // pour 100%
+                        break;
+
+                        case uc_MODE_SOFT_START :
+                        case uc_MODE_VARIATEUR :
+                            // gradation par le gradateur lui même
+                            us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (210); // pour 100%
+                        break;
+                    }
+                }
+            }
+        }
+	// sorties variateurs : consigne régulièrement confirmée
+        // IR 12/10/2012 : suppression répétition sur demande de Nicolas Gille
+	// vd_ConfirmeVariateurs();
+}
+

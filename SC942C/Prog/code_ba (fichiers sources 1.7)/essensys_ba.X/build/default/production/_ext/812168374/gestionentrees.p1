@@ -1,0 +1,1340 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"60 ../source/global.h
+[c E104 0 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
+[n E104 enum_RELAIS_BISTABLES uc_RB0 uc_RB1 uc_RB2 uc_RB3 uc_RB4 uc_RB5 uc_RB6 uc_RB7 uc_RB8 uc_RB9 uc_RB10 uc_RB11 RB_NB  ]
+"61
+[c E80 0 1 2 3 4 5 6 7 8 9 10 11 12 13 .. ]
+[n E80 enum_RELAIS uc_RM0 uc_RM1 uc_RM2 uc_RM3 uc_RM4 uc_RM5 uc_RM6 uc_RM7 uc_RM8 uc_RM9 uc_RM10 uc_RM11 uc_RM12 RM_NB  ]
+"4 ../source/hard.h
+[v _uc_EtatEntree `(uc ~T0 @X0 0 ef1`uc ]
+"23 ../source/gestionentrees.c
+[c E1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 .. ]
+[n E1 enum_ENTREES uc_ENTREE0 uc_ENTREE1 uc_ENTREE2 uc_ENTREE3 uc_ENTREE4 uc_ENTREE5 uc_ENTREE6 uc_ENTREE7 uc_ENTREE8 uc_ENTREE9 uc_ENTREE10 uc_ENTREE11 uc_ENTREE12 uc_ENTREE13 uc_ENTREE14 uc_ENTREE15 uc_ENTREE16 uc_ENTREE17 uc_ENTREE18 uc_ENTREE19 uc_ENTREE20 uc_ENTREE21 NB_ES  ]
+"5 ../source/struct.h
+[s S1 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1 struct_Entree ub1_EtatActuel ub4_AntiRebond_TempoChgtEtat ub1_EtatFiltrePourApp ub1_EtatFiltrePourAppPrecedent ]
+"34 ../source/global.h
+[v _st_Entrees `S1 ~T0 @X0 -> 0 `x e ]
+"23
+[v _uc_NB_ES `uc ~T0 @X0 0 e ]
+"50 ../source/gestionentrees.c
+[c E45 0 1 2 3 4 5 6 7 8 9 10 11 12 13 .. ]
+[n E45 enum_ENTREES_TOR uc_ENTREE_TOR0 uc_ENTREE_TOR1 uc_ENTREE_TOR2 uc_ENTREE_TOR3 uc_ENTREE_TOR4 uc_ENTREE_TOR5 uc_ENTREE_TOR6 uc_ENTREE_TOR7 uc_ENTREE_TOR8 uc_ENTREE_TOR9 uc_ENTREE_TOR10 uc_ENTREE_TOR11 uc_ENTREE_TOR12 ENTREE_TOR_NB  ]
+"155
+[c E66 0 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
+[n E66 enum_ENTREE_VOLET uc_ENTREE_VOLET0 uc_ENTREE_VOLET1 uc_ENTREE_VOLET2 uc_ENTREE_VOLET3 uc_ENTREE_VOLET4 uc_ENTREE_VOLET5 uc_ENTREE_VOLET6 uc_ENTREE_VOLET7 uc_ENTREE_VOLET8 uc_ENTREE_VOLET9 uc_ENTREE_VOLET10 uc_ENTREE_VOLET11 ENTREE_VOLET_NB  ]
+"275
+[c E60 0 1 2 3 4 .. ]
+[n E60 enum_ENTREE_VARIATEUR uc_ENTREE_VARIATEUR0 uc_ENTREE_VARIATEUR1 uc_ENTREE_VARIATEUR2 uc_ENTREE_VARIATEUR3 ENTREE_VARIATEUR_NB  ]
+"35 ../source/global.h
+[v _us_EntreesTOR `us ~T0 @X0 0 e ]
+"24
+[v _uc_ENTREE_TOR_NB `uc ~T0 @X0 0 e ]
+"16 ../source/struct.h
+[s S2 `uc 1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S2 struct_EntreeVariateur uc_CompteurMaintenu uc_CompteurDoubleClic ub3_EntreeMode ub1_Etat1VueApresEtatStop ub1_SecondAppuiDetecte ub3_EtatCommande ub1_SensCommande ]
+"36 ../source/global.h
+[v _st_EntreesVariateur `S2 ~T0 @X0 -> 0 `x e ]
+"421 ../source/gestionentrees.c
+[c E38 0 1 2 3 4 5 .. ]
+[n E38 enum_ENTREES_CMDE_VARIATEUR uc_VARIATEUR_RIEN uc_VARIATEUR_OFF uc_VARIATEUR_ON uc_VARIATEUR_APPUI_COURT uc_VARIATEUR_APPUI_DOUBLE uc_VARIATEUR_APPUI_LONG  ]
+"407
+[c E25 0 1 2 .. ]
+[n E25 enum_ENTREE_VARIATEUR_MODE uc_MODE_SOFT_START uc_MODE_VARIATEUR uc_MODE_TOR  ]
+"26 ../source/global.h
+[v _uc_ENTREE_VARIATEUR_NB `uc ~T0 @X0 0 e ]
+"28 ../source/struct.h
+[s S3 :4 `uc 1 :1 `uc 1 :3 `uc 1 ]
+[n S3 struct_EntreeVoletOuStore ub4_CompteurMaintenu ub1_Etat1VueApresEtatStop ub3_EtatCommande ]
+"37 ../source/global.h
+[v _st_EntreesVoletRoulant `S3 ~T0 @X0 -> 0 `x e ]
+"532 ../source/gestionentrees.c
+[c E32 0 1 2 3 4 .. ]
+[n E32 enum_ENTREES_CMDE_VOLET_STORE uc_VOLET_RIEN uc_VOLET_OFF uc_VOLET_APPUI_COURT uc_VOLET_APPUI_LONG uc_VOLET_ON  ]
+"28 ../source/global.h
+[v _uc_ENTREE_VOLET_NB `uc ~T0 @X0 0 e ]
+[; ;constantes.h: 92: enum enum_ENTREES
+[; ;constantes.h: 93: {
+[; ;constantes.h: 94: uc_ENTREE0,
+[; ;constantes.h: 95: uc_ENTREE1,
+[; ;constantes.h: 96: uc_ENTREE2,
+[; ;constantes.h: 97: uc_ENTREE3,
+[; ;constantes.h: 98: uc_ENTREE4,
+[; ;constantes.h: 99: uc_ENTREE5,
+[; ;constantes.h: 100: uc_ENTREE6,
+[; ;constantes.h: 101: uc_ENTREE7,
+[; ;constantes.h: 102: uc_ENTREE8,
+[; ;constantes.h: 103: uc_ENTREE9,
+[; ;constantes.h: 104: uc_ENTREE10,
+[; ;constantes.h: 105: uc_ENTREE11,
+[; ;constantes.h: 106: uc_ENTREE12,
+[; ;constantes.h: 107: uc_ENTREE13,
+[; ;constantes.h: 108: uc_ENTREE14,
+[; ;constantes.h: 109: uc_ENTREE15,
+[; ;constantes.h: 110: uc_ENTREE16,
+[; ;constantes.h: 111: uc_ENTREE17,
+[; ;constantes.h: 112: uc_ENTREE18,
+[; ;constantes.h: 113: uc_ENTREE19,
+[; ;constantes.h: 114: uc_ENTREE20,
+[; ;constantes.h: 115: uc_ENTREE21,
+[; ;constantes.h: 116: NB_ES,
+[; ;constantes.h: 117: };
+[; ;constantes.h: 120: enum enum_ENTREE_VARIATEUR_MODE
+[; ;constantes.h: 121: {
+[; ;constantes.h: 122: uc_MODE_SOFT_START,
+[; ;constantes.h: 123: uc_MODE_VARIATEUR,
+[; ;constantes.h: 124: uc_MODE_TOR,
+[; ;constantes.h: 125: };
+[; ;constantes.h: 127: enum enum_ENTREES_CMDE_TOR
+[; ;constantes.h: 128: {
+[; ;constantes.h: 129: uc_TOR_OFF,
+[; ;constantes.h: 130: uc_TOR_ON,
+[; ;constantes.h: 131: };
+[; ;constantes.h: 133: enum enum_ENTREES_CMDE_VOLET_STORE
+[; ;constantes.h: 134: {
+[; ;constantes.h: 135: uc_VOLET_RIEN,
+[; ;constantes.h: 136: uc_VOLET_OFF,
+[; ;constantes.h: 137: uc_VOLET_APPUI_COURT,
+[; ;constantes.h: 138: uc_VOLET_APPUI_LONG,
+[; ;constantes.h: 139: uc_VOLET_ON,
+[; ;constantes.h: 140: };
+[; ;constantes.h: 142: enum enum_ENTREES_CMDE_VARIATEUR
+[; ;constantes.h: 143: {
+[; ;constantes.h: 144: uc_VARIATEUR_RIEN,
+[; ;constantes.h: 145: uc_VARIATEUR_OFF,
+[; ;constantes.h: 146: uc_VARIATEUR_ON,
+[; ;constantes.h: 147: uc_VARIATEUR_APPUI_COURT,
+[; ;constantes.h: 148: uc_VARIATEUR_APPUI_DOUBLE,
+[; ;constantes.h: 149: uc_VARIATEUR_APPUI_LONG,
+[; ;constantes.h: 150: };
+[; ;constantes.h: 152: enum enum_ENTREES_TOR
+[; ;constantes.h: 153: {
+[; ;constantes.h: 154: uc_ENTREE_TOR0,
+[; ;constantes.h: 155: uc_ENTREE_TOR1,
+[; ;constantes.h: 156: uc_ENTREE_TOR2,
+[; ;constantes.h: 157: uc_ENTREE_TOR3,
+[; ;constantes.h: 158: uc_ENTREE_TOR4,
+[; ;constantes.h: 159: uc_ENTREE_TOR5,
+[; ;constantes.h: 160: uc_ENTREE_TOR6,
+[; ;constantes.h: 161: uc_ENTREE_TOR7,
+[; ;constantes.h: 162: uc_ENTREE_TOR8,
+[; ;constantes.h: 163: uc_ENTREE_TOR9,
+[; ;constantes.h: 164: uc_ENTREE_TOR10,
+[; ;constantes.h: 165: uc_ENTREE_TOR11,
+[; ;constantes.h: 166: uc_ENTREE_TOR12,
+[; ;constantes.h: 167: ENTREE_TOR_NB,
+[; ;constantes.h: 168: };
+[; ;constantes.h: 170: enum enum_ENTREE_VARIATEUR
+[; ;constantes.h: 171: {
+[; ;constantes.h: 172: uc_ENTREE_VARIATEUR0,
+[; ;constantes.h: 173: uc_ENTREE_VARIATEUR1,
+[; ;constantes.h: 174: uc_ENTREE_VARIATEUR2,
+[; ;constantes.h: 175: uc_ENTREE_VARIATEUR3,
+[; ;constantes.h: 176: ENTREE_VARIATEUR_NB,
+[; ;constantes.h: 177: };
+[; ;constantes.h: 179: enum enum_ENTREE_VOLET
+[; ;constantes.h: 180: {
+[; ;constantes.h: 181: uc_ENTREE_VOLET0,
+[; ;constantes.h: 182: uc_ENTREE_VOLET1,
+[; ;constantes.h: 183: uc_ENTREE_VOLET2,
+[; ;constantes.h: 184: uc_ENTREE_VOLET3,
+[; ;constantes.h: 185: uc_ENTREE_VOLET4,
+[; ;constantes.h: 186: uc_ENTREE_VOLET5,
+[; ;constantes.h: 187: uc_ENTREE_VOLET6,
+[; ;constantes.h: 188: uc_ENTREE_VOLET7,
+[; ;constantes.h: 189: uc_ENTREE_VOLET8,
+[; ;constantes.h: 190: uc_ENTREE_VOLET9,
+[; ;constantes.h: 191: uc_ENTREE_VOLET10,
+[; ;constantes.h: 192: uc_ENTREE_VOLET11,
+[; ;constantes.h: 193: ENTREE_VOLET_NB,
+[; ;constantes.h: 194: };
+[; ;constantes.h: 196: enum enum_RELAIS
+[; ;constantes.h: 197: {
+[; ;constantes.h: 198: uc_RM0,
+[; ;constantes.h: 199: uc_RM1,
+[; ;constantes.h: 200: uc_RM2,
+[; ;constantes.h: 201: uc_RM3,
+[; ;constantes.h: 202: uc_RM4,
+[; ;constantes.h: 203: uc_RM5,
+[; ;constantes.h: 204: uc_RM6,
+[; ;constantes.h: 205: uc_RM7,
+[; ;constantes.h: 206: uc_RM8,
+[; ;constantes.h: 207: uc_RM9,
+[; ;constantes.h: 208: uc_RM10,
+[; ;constantes.h: 209: uc_RM11,
+[; ;constantes.h: 210: uc_RM12,
+[; ;constantes.h: 211: RM_NB,
+[; ;constantes.h: 212: };
+[; ;constantes.h: 214: enum enum_TYPES_SORTIES
+[; ;constantes.h: 215: {
+[; ;constantes.h: 216: uc_SORTIE_RELAIS,
+[; ;constantes.h: 217: uc_SORTIE_RELAIS_BISTABLE_SENS,
+[; ;constantes.h: 218: uc_SORTIE_RELAIS_BISTABLE,
+[; ;constantes.h: 219: uc_SORTIE_VARIATEUR,
+[; ;constantes.h: 220: uc_SORTIE_LED,
+[; ;constantes.h: 221: };
+[; ;constantes.h: 223: enum enum_RELAIS_BISTABLE_SENS
+[; ;constantes.h: 224: {
+[; ;constantes.h: 225: uc_RBSENS1,
+[; ;constantes.h: 226: uc_RBSENS2,
+[; ;constantes.h: 227: };
+[; ;constantes.h: 229: enum enum_RELAIS_BISTABLES
+[; ;constantes.h: 230: {
+[; ;constantes.h: 231: uc_RB0,
+[; ;constantes.h: 232: uc_RB1,
+[; ;constantes.h: 233: uc_RB2,
+[; ;constantes.h: 234: uc_RB3,
+[; ;constantes.h: 235: uc_RB4,
+[; ;constantes.h: 236: uc_RB5,
+[; ;constantes.h: 237: uc_RB6,
+[; ;constantes.h: 238: uc_RB7,
+[; ;constantes.h: 239: uc_RB8,
+[; ;constantes.h: 240: uc_RB9,
+[; ;constantes.h: 241: uc_RB10,
+[; ;constantes.h: 242: uc_RB11,
+[; ;constantes.h: 243: RB_NB,
+[; ;constantes.h: 244: };
+[; ;constantes.h: 247: enum enum_RELAIS_PILOTAGE
+[; ;constantes.h: 248: {
+[; ;constantes.h: 249: uc_OFF,
+[; ;constantes.h: 250: uc_ON,
+[; ;constantes.h: 251: };
+[; ;constantes.h: 253: enum enum_TEMPO_RELAIS
+[; ;constantes.h: 254: {
+[; ;constantes.h: 255: INIT,
+[; ;constantes.h: 256: RAZ,
+[; ;constantes.h: 257: MAINTIEN,
+[; ;constantes.h: 258: };
+[; ;constantes.h: 260: enum enum_VARIATEUR
+[; ;constantes.h: 261: {
+[; ;constantes.h: 262: uc_VARIATEUR0,
+[; ;constantes.h: 263: uc_VARIATEUR1,
+[; ;constantes.h: 264: uc_VARIATEUR2,
+[; ;constantes.h: 265: uc_VARIATEUR3,
+[; ;constantes.h: 266: VARIATEUR_NB,
+[; ;constantes.h: 267: };
+[; ;constantes.h: 269: enum enum_TYPES_BORNIER
+[; ;constantes.h: 270: {
+[; ;constantes.h: 271: BORNIER_PIECES_VIE,
+[; ;constantes.h: 272: BORNIER_CHAMBRES,
+[; ;constantes.h: 273: BORNIER_PIECES_EAU,
+[; ;constantes.h: 274: };
+[; ;struct.h: 5: struct struct_Entree
+[; ;struct.h: 6: {
+[; ;struct.h: 7: unsigned char ub1_EtatActuel:1;
+[; ;struct.h: 8: unsigned char ub4_AntiRebond_TempoChgtEtat:4;
+[; ;struct.h: 9: unsigned char ub1_EtatFiltrePourApp:1;
+[; ;struct.h: 10: unsigned char ub1_EtatFiltrePourAppPrecedent:1;
+[; ;struct.h: 11: };
+[; ;struct.h: 16: struct struct_EntreeVariateur
+[; ;struct.h: 17: {
+[; ;struct.h: 18: unsigned char uc_CompteurMaintenu;
+[; ;struct.h: 19: unsigned char uc_CompteurDoubleClic;
+[; ;struct.h: 20: unsigned char ub3_EntreeMode:3;
+[; ;struct.h: 21: unsigned char ub1_Etat1VueApresEtatStop:1;
+[; ;struct.h: 22: unsigned char ub1_SecondAppuiDetecte:1;
+[; ;struct.h: 24: unsigned char ub3_EtatCommande:3;
+[; ;struct.h: 25: unsigned char ub1_SensCommande:1;
+[; ;struct.h: 26: };
+[; ;struct.h: 28: struct struct_EntreeVoletOuStore
+[; ;struct.h: 29: {
+[; ;struct.h: 30: unsigned char ub4_CompteurMaintenu:4;
+[; ;struct.h: 31: unsigned char ub1_Etat1VueApresEtatStop:1;
+[; ;struct.h: 32: unsigned char ub3_EtatCommande:3;
+[; ;struct.h: 33: };
+[; ;struct.h: 36: struct struct_SortieRelaisBistable
+[; ;struct.h: 37: {
+[; ;struct.h: 38: unsigned char ub1_EtatRelaisBistable:1;
+[; ;struct.h: 39: unsigned char ub1_EtatRelaisBistableSouhaite:1;
+[; ;struct.h: 40: };
+[; ;struct.h: 43: struct struct_Variateur
+[; ;struct.h: 45: {
+[; ;struct.h: 46: signed char c_Eclairage;
+[; ;struct.h: 47: signed char c_EclairageOld;
+[; ;struct.h: 48: signed char c_Consigne;
+[; ;struct.h: 50: };
+[; ;struct.h: 59: union struct_Cde_BP
+[; ;struct.h: 60: {
+[; ;struct.h: 61: struct {
+[; ;struct.h: 62: unsigned char Sauvegarde :1;
+[; ;struct.h: 63: unsigned char bloqueVolets :1;
+[; ;struct.h: 64: unsigned char AllumeTout :1;
+[; ;struct.h: 65: } ub1;
+[; ;struct.h: 66: unsigned char o;
+[; ;struct.h: 68: };
+[; ;global.h: 4: extern unsigned char uc_CompteurCycle;
+[; ;global.h: 5: extern unsigned char uc_CompteurAcq;
+[; ;global.h: 7: extern unsigned char uc_CompteurBase1S;
+[; ;global.h: 10: extern unsigned char b1_BT_1S;
+[; ;global.h: 13: extern unsigned char uc_CompteurLED;
+[; ;global.h: 16: extern unsigned char uc_CompteurBiStable;
+[; ;global.h: 19: extern unsigned char uc_FlagITTimer;
+[; ;global.h: 23: extern unsigned char uc_NB_ES;
+[; ;global.h: 24: extern unsigned char uc_ENTREE_TOR_NB;
+[; ;global.h: 25: extern unsigned char uc_RM_NB;
+[; ;global.h: 26: extern unsigned char uc_ENTREE_VARIATEUR_NB;
+[; ;global.h: 27: extern unsigned char uc_VARIATEUR_NB;
+[; ;global.h: 28: extern unsigned char uc_ENTREE_VOLET_NB;
+[; ;global.h: 29: extern unsigned char uc_RB_NB;
+[; ;global.h: 30: extern unsigned char uc_VOLET_NB;
+[; ;global.h: 34: extern struct struct_Entree st_Entrees[NB_ES];
+[; ;global.h: 35: extern unsigned short us_EntreesTOR;
+[; ;global.h: 36: extern struct struct_EntreeVariateur st_EntreesVariateur[ENTREE_VARIATEUR_NB];
+[; ;global.h: 37: extern struct struct_EntreeVoletOuStore st_EntreesVoletRoulant[ENTREE_VOLET_NB];
+[; ;global.h: 41: extern unsigned short us_SortiesRelais;
+[; ;global.h: 42: extern struct struct_SortieRelaisBistable st_SortiesRelaisBistables[RB_NB];
+[; ;global.h: 44: extern struct struct_Variateur st_Variateurs[VARIATEUR_NB];
+[; ;global.h: 48: extern unsigned char uc_CdeRelaisBistables[RB_NB];
+[; ;global.h: 49: extern unsigned short us_CdeVariateurs[VARIATEUR_NB];
+[; ;global.h: 52: extern unsigned char s_uc_PortA;
+[; ;global.h: 53: extern unsigned char s_uc_PortB;
+[; ;global.h: 54: extern unsigned char s_uc_PortC;
+[; ;global.h: 55: extern unsigned char s_uc_PortD;
+[; ;global.h: 56: extern unsigned char s_uc_PortE;
+[; ;global.h: 57: extern unsigned char s_uc_PortF;
+"60 ../source/global.h
+[v _uc_TempsCdeVolet `uc ~T0 @X0 / -> . `E104 12 `i -> 2 `i e ]
+[; ;global.h: 60: unsigned char uc_TempsCdeVolet[RB_NB/2];
+"61
+[v _uc_TempsCdeLampe `uc ~T0 @X0 . `E80 13 e ]
+[; ;global.h: 61: unsigned char uc_TempsCdeLampe[RM_NB];
+[; ;global.h: 63: extern union struct_Cde_BP st_Commandes;
+[; ;global.h: 67: extern unsigned char uc_compteur_ecriture_eeprom;
+[; ;global.h: 68: extern unsigned char uc_compteur_lecture_eeprom;
+[; ;gestionentrees.h: 2: void vd_AcquisitionEntrees(void);
+[; ;gestionentrees.h: 3: void vd_AnalyserEntrees(void);
+[; ;hard.h: 2: extern void vd_InitMicro(void);
+[; ;hard.h: 3: extern void vd_ConfigBornier(void);
+[; ;hard.h: 4: extern unsigned char uc_EtatEntree(unsigned char uc_NumeroEntree);
+[; ;hard.h: 5: extern void vd_PiloterSortie(unsigned char uc_TypeSortie,unsigned char uc_NumeroSortie,unsigned char uc_Etat);
+[; ;hard.h: 7: extern void vd_PosSortieBistable_ON(unsigned char uc_NumeroSortie);
+[; ;hard.h: 8: extern void vd_PosSortieBistable_OFF(unsigned char uc_NumeroSortie);
+[; ;hard.h: 9: extern void vd_PiloteSortieVariateur(unsigned char uc_NumeroSortie,unsigned char uc_Etat);
+"14 ../source/gestionentrees.c
+[v _vd_AcquisitionEntrees `(v ~T0 @X0 1 ef ]
+"15
+{
+[; ;gestionentrees.c: 14: void vd_AcquisitionEntrees(void)
+[; ;gestionentrees.c: 15: {
+[e :U _vd_AcquisitionEntrees ]
+[f ]
+"16
+[v _l_uc_Compteur `uc ~T0 @X0 1 a ]
+"17
+[v _l_uc_EtatEntree `uc ~T0 @X0 1 a ]
+[; ;gestionentrees.c: 16: unsigned char l_uc_Compteur;
+[; ;gestionentrees.c: 17: unsigned char l_uc_EtatEntree;
+[; ;gestionentrees.c: 20: for(l_uc_Compteur=0;l_uc_Compteur<uc_NB_ES;l_uc_Compteur++)
+"20
+{
+[e = _l_uc_Compteur -> -> 0 `i `uc ]
+[e $U 12  ]
+"21
+[e :U 9 ]
+[; ;gestionentrees.c: 21: {
+{
+[; ;gestionentrees.c: 22: l_uc_EtatEntree = uc_EtatEntree(l_uc_Compteur);
+"22
+[e = _l_uc_EtatEntree ( _uc_EtatEntree (1 _l_uc_Compteur ]
+[; ;gestionentrees.c: 23: if(l_uc_EtatEntree != st_Entrees[l_uc_Compteur].ub1_EtatActuel)
+"23
+[e $ ! != -> _l_uc_EtatEntree `i -> . *U + &U _st_Entrees * -> _l_uc_Compteur `ux -> -> # *U &U _st_Entrees `ui `ux 0 `i 13  ]
+[; ;gestionentrees.c: 24: {
+"24
+{
+[; ;gestionentrees.c: 25: st_Entrees[l_uc_Compteur].ub1_EtatActuel = l_uc_EtatEntree;
+"25
+[e = . *U + &U _st_Entrees * -> _l_uc_Compteur `ux -> -> # *U &U _st_Entrees `ui `ux 0 _l_uc_EtatEntree ]
+[; ;gestionentrees.c: 26: st_Entrees[l_uc_Compteur].ub4_AntiRebond_TempoChgtEtat = 0;
+"26
+[e = . *U + &U _st_Entrees * -> _l_uc_Compteur `ux -> -> # *U &U _st_Entrees `ui `ux 1 -> -> 0 `i `uc ]
+"27
+}
+[; ;gestionentrees.c: 27: }
+[e $U 14  ]
+"28
+[e :U 13 ]
+[; ;gestionentrees.c: 28: else
+[; ;gestionentrees.c: 29: {
+"29
+{
+[; ;gestionentrees.c: 30: if(st_Entrees[l_uc_Compteur].ub4_AntiRebond_TempoChgtEtat < 4)
+"30
+[e $ ! < -> . *U + &U _st_Entrees * -> _l_uc_Compteur `ux -> -> # *U &U _st_Entrees `ui `ux 1 `i -> 4 `i 15  ]
+[; ;gestionentrees.c: 31: {
+"31
+{
+[; ;gestionentrees.c: 32: st_Entrees[l_uc_Compteur].ub4_AntiRebond_TempoChgtEtat++;
+"32
+[e ++ . *U + &U _st_Entrees * -> _l_uc_Compteur `ux -> -> # *U &U _st_Entrees `ui `ux 1 -> -> 1 `i `uc ]
+"33
+}
+[; ;gestionentrees.c: 33: }
+[e $U 16  ]
+"34
+[e :U 15 ]
+[; ;gestionentrees.c: 34: else
+[; ;gestionentrees.c: 35: {
+"35
+{
+[; ;gestionentrees.c: 36: st_Entrees[l_uc_Compteur].ub1_EtatFiltrePourApp = st_Entrees[l_uc_Compteur].ub1_EtatActuel;
+"36
+[e = . *U + &U _st_Entrees * -> _l_uc_Compteur `ux -> -> # *U &U _st_Entrees `ui `ux 2 . *U + &U _st_Entrees * -> _l_uc_Compteur `ux -> -> # *U &U _st_Entrees `ui `ux 0 ]
+"37
+}
+[e :U 16 ]
+"38
+}
+[e :U 14 ]
+"39
+}
+"20
+[e ++ _l_uc_Compteur -> -> 1 `i `uc ]
+[e :U 12 ]
+[e $ < -> _l_uc_Compteur `i -> _uc_NB_ES `i 9  ]
+[e :U 10 ]
+"39
+}
+[; ;gestionentrees.c: 37: }
+[; ;gestionentrees.c: 38: }
+[; ;gestionentrees.c: 39: }
+[; ;gestionentrees.c: 40: }
+"40
+[e :UE 8 ]
+}
+"42
+[v _uc_EntreeTOREntreeCarte `(uc ~T0 @X0 1 ef1`uc ]
+"43
+{
+[; ;gestionentrees.c: 42: unsigned char uc_EntreeTOREntreeCarte(unsigned char uc_NumeroEntreeTOR)
+[; ;gestionentrees.c: 43: {
+[e :U _uc_EntreeTOREntreeCarte ]
+"42
+[v _uc_NumeroEntreeTOR `uc ~T0 @X0 1 r1 ]
+"43
+[f ]
+"44
+[v _l_uc_Compteur `uc ~T0 @X0 1 a ]
+[; ;gestionentrees.c: 44: unsigned char l_uc_Compteur;
+[; ;gestionentrees.c: 46: l_uc_Compteur = 0;
+"46
+[e = _l_uc_Compteur -> -> 0 `i `uc ]
+[; ;gestionentrees.c: 50: switch(uc_NumeroEntreeTOR)
+"50
+[e $U 19  ]
+[; ;gestionentrees.c: 51: {
+"51
+{
+[; ;gestionentrees.c: 52: case uc_ENTREE_TOR0:
+"52
+[e :U 20 ]
+[; ;gestionentrees.c: 53: l_uc_Compteur = uc_ENTREE0;
+"53
+[e = _l_uc_Compteur -> . `E1 0 `uc ]
+[; ;gestionentrees.c: 54: break;
+"54
+[e $U 18  ]
+[; ;gestionentrees.c: 55: case uc_ENTREE_TOR1:
+"55
+[e :U 21 ]
+[; ;gestionentrees.c: 56: l_uc_Compteur = uc_ENTREE2;
+"56
+[e = _l_uc_Compteur -> . `E1 2 `uc ]
+[; ;gestionentrees.c: 57: break;
+"57
+[e $U 18  ]
+[; ;gestionentrees.c: 58: case uc_ENTREE_TOR2:
+"58
+[e :U 22 ]
+[; ;gestionentrees.c: 59: l_uc_Compteur = uc_ENTREE3;
+"59
+[e = _l_uc_Compteur -> . `E1 3 `uc ]
+[; ;gestionentrees.c: 60: break;
+"60
+[e $U 18  ]
+[; ;gestionentrees.c: 61: case uc_ENTREE_TOR3:
+"61
+[e :U 23 ]
+[; ;gestionentrees.c: 62: l_uc_Compteur = uc_ENTREE9;
+"62
+[e = _l_uc_Compteur -> . `E1 9 `uc ]
+[; ;gestionentrees.c: 63: break;
+"63
+[e $U 18  ]
+[; ;gestionentrees.c: 64: case uc_ENTREE_TOR4:
+"64
+[e :U 24 ]
+[; ;gestionentrees.c: 65: l_uc_Compteur = uc_ENTREE10;
+"65
+[e = _l_uc_Compteur -> . `E1 10 `uc ]
+[; ;gestionentrees.c: 66: break;
+"66
+[e $U 18  ]
+[; ;gestionentrees.c: 67: case uc_ENTREE_TOR5:
+"67
+[e :U 25 ]
+[; ;gestionentrees.c: 68: l_uc_Compteur = uc_ENTREE14;
+"68
+[e = _l_uc_Compteur -> . `E1 14 `uc ]
+[; ;gestionentrees.c: 69: break;
+"69
+[e $U 18  ]
+[; ;gestionentrees.c: 70: case uc_ENTREE_TOR6:
+"70
+[e :U 26 ]
+[; ;gestionentrees.c: 71: l_uc_Compteur = uc_ENTREE18;
+"71
+[e = _l_uc_Compteur -> . `E1 18 `uc ]
+[; ;gestionentrees.c: 72: break;
+"72
+[e $U 18  ]
+"73
+}
+[; ;gestionentrees.c: 73: }
+[e $U 18  ]
+"50
+[e :U 19 ]
+[e [\ _uc_NumeroEntreeTOR , $ -> . `E45 0 `uc 20
+ , $ -> . `E45 1 `uc 21
+ , $ -> . `E45 2 `uc 22
+ , $ -> . `E45 3 `uc 23
+ , $ -> . `E45 4 `uc 24
+ , $ -> . `E45 5 `uc 25
+ , $ -> . `E45 6 `uc 26
+ 18 ]
+"73
+[e :U 18 ]
+[; ;gestionentrees.c: 144: return l_uc_Compteur;
+"144
+[e ) _l_uc_Compteur ]
+[e $UE 17  ]
+[; ;gestionentrees.c: 145: }
+"145
+[e :UE 17 ]
+}
+"147
+[v _uc_EntreeVoletEntreeCarte `(uc ~T0 @X0 1 ef1`uc ]
+"148
+{
+[; ;gestionentrees.c: 147: unsigned char uc_EntreeVoletEntreeCarte(unsigned char uc_NumeroEntreeVolet)
+[; ;gestionentrees.c: 148: {
+[e :U _uc_EntreeVoletEntreeCarte ]
+"147
+[v _uc_NumeroEntreeVolet `uc ~T0 @X0 1 r1 ]
+"148
+[f ]
+"149
+[v _l_uc_Compteur `uc ~T0 @X0 1 a ]
+[; ;gestionentrees.c: 149: unsigned char l_uc_Compteur;
+[; ;gestionentrees.c: 151: l_uc_Compteur = 0;
+"151
+[e = _l_uc_Compteur -> -> 0 `i `uc ]
+[; ;gestionentrees.c: 155: switch(uc_NumeroEntreeVolet)
+"155
+[e $U 29  ]
+[; ;gestionentrees.c: 156: {
+"156
+{
+[; ;gestionentrees.c: 157: case uc_ENTREE_VOLET0:
+"157
+[e :U 30 ]
+[; ;gestionentrees.c: 158: l_uc_Compteur = uc_ENTREE4;
+"158
+[e = _l_uc_Compteur -> . `E1 4 `uc ]
+[; ;gestionentrees.c: 159: break;
+"159
+[e $U 28  ]
+[; ;gestionentrees.c: 160: case uc_ENTREE_VOLET1:
+"160
+[e :U 31 ]
+[; ;gestionentrees.c: 161: l_uc_Compteur = uc_ENTREE5;
+"161
+[e = _l_uc_Compteur -> . `E1 5 `uc ]
+[; ;gestionentrees.c: 162: break;
+"162
+[e $U 28  ]
+[; ;gestionentrees.c: 163: case uc_ENTREE_VOLET2:
+"163
+[e :U 32 ]
+[; ;gestionentrees.c: 164: l_uc_Compteur = uc_ENTREE6;
+"164
+[e = _l_uc_Compteur -> . `E1 6 `uc ]
+[; ;gestionentrees.c: 165: break;
+"165
+[e $U 28  ]
+[; ;gestionentrees.c: 166: case uc_ENTREE_VOLET3:
+"166
+[e :U 33 ]
+[; ;gestionentrees.c: 167: l_uc_Compteur = uc_ENTREE7;
+"167
+[e = _l_uc_Compteur -> . `E1 7 `uc ]
+[; ;gestionentrees.c: 168: break;
+"168
+[e $U 28  ]
+[; ;gestionentrees.c: 169: case uc_ENTREE_VOLET4:
+"169
+[e :U 34 ]
+[; ;gestionentrees.c: 170: l_uc_Compteur = uc_ENTREE11;
+"170
+[e = _l_uc_Compteur -> . `E1 11 `uc ]
+[; ;gestionentrees.c: 171: break;
+"171
+[e $U 28  ]
+[; ;gestionentrees.c: 172: case uc_ENTREE_VOLET5:
+"172
+[e :U 35 ]
+[; ;gestionentrees.c: 173: l_uc_Compteur = uc_ENTREE12;
+"173
+[e = _l_uc_Compteur -> . `E1 12 `uc ]
+[; ;gestionentrees.c: 174: break;
+"174
+[e $U 28  ]
+[; ;gestionentrees.c: 175: case uc_ENTREE_VOLET6:
+"175
+[e :U 36 ]
+[; ;gestionentrees.c: 176: l_uc_Compteur = uc_ENTREE15;
+"176
+[e = _l_uc_Compteur -> . `E1 15 `uc ]
+[; ;gestionentrees.c: 177: break;
+"177
+[e $U 28  ]
+[; ;gestionentrees.c: 178: case uc_ENTREE_VOLET7:
+"178
+[e :U 37 ]
+[; ;gestionentrees.c: 179: l_uc_Compteur = uc_ENTREE16;
+"179
+[e = _l_uc_Compteur -> . `E1 16 `uc ]
+[; ;gestionentrees.c: 180: break;
+"180
+[e $U 28  ]
+[; ;gestionentrees.c: 181: case uc_ENTREE_VOLET8:
+"181
+[e :U 38 ]
+[; ;gestionentrees.c: 182: l_uc_Compteur = uc_ENTREE19;
+"182
+[e = _l_uc_Compteur -> . `E1 19 `uc ]
+[; ;gestionentrees.c: 183: break;
+"183
+[e $U 28  ]
+[; ;gestionentrees.c: 184: case uc_ENTREE_VOLET9:
+"184
+[e :U 39 ]
+[; ;gestionentrees.c: 185: l_uc_Compteur = uc_ENTREE20;
+"185
+[e = _l_uc_Compteur -> . `E1 20 `uc ]
+[; ;gestionentrees.c: 186: break;
+"186
+[e $U 28  ]
+"187
+}
+[; ;gestionentrees.c: 187: }
+[e $U 28  ]
+"155
+[e :U 29 ]
+[e [\ _uc_NumeroEntreeVolet , $ -> . `E66 0 `uc 30
+ , $ -> . `E66 1 `uc 31
+ , $ -> . `E66 2 `uc 32
+ , $ -> . `E66 3 `uc 33
+ , $ -> . `E66 4 `uc 34
+ , $ -> . `E66 5 `uc 35
+ , $ -> . `E66 6 `uc 36
+ , $ -> . `E66 7 `uc 37
+ , $ -> . `E66 8 `uc 38
+ , $ -> . `E66 9 `uc 39
+ 28 ]
+"187
+[e :U 28 ]
+[; ;gestionentrees.c: 264: return l_uc_Compteur;
+"264
+[e ) _l_uc_Compteur ]
+[e $UE 27  ]
+[; ;gestionentrees.c: 265: }
+"265
+[e :UE 27 ]
+}
+"267
+[v _uc_EntreeVariateurEntreeCarte `(uc ~T0 @X0 1 ef1`uc ]
+"268
+{
+[; ;gestionentrees.c: 267: unsigned char uc_EntreeVariateurEntreeCarte(unsigned char uc_NumeroEntreeVariateur)
+[; ;gestionentrees.c: 268: {
+[e :U _uc_EntreeVariateurEntreeCarte ]
+"267
+[v _uc_NumeroEntreeVariateur `uc ~T0 @X0 1 r1 ]
+"268
+[f ]
+"269
+[v _l_uc_Compteur `uc ~T0 @X0 1 a ]
+[; ;gestionentrees.c: 269: unsigned char l_uc_Compteur;
+[; ;gestionentrees.c: 271: l_uc_Compteur = 0;
+"271
+[e = _l_uc_Compteur -> -> 0 `i `uc ]
+[; ;gestionentrees.c: 275: switch(uc_NumeroEntreeVariateur)
+"275
+[e $U 42  ]
+[; ;gestionentrees.c: 276: {
+"276
+{
+[; ;gestionentrees.c: 277: case uc_ENTREE_VARIATEUR0:
+"277
+[e :U 43 ]
+[; ;gestionentrees.c: 278: l_uc_Compteur = uc_ENTREE1;
+"278
+[e = _l_uc_Compteur -> . `E1 1 `uc ]
+[; ;gestionentrees.c: 279: break;
+"279
+[e $U 41  ]
+[; ;gestionentrees.c: 280: case uc_ENTREE_VARIATEUR1:
+"280
+[e :U 44 ]
+[; ;gestionentrees.c: 281: l_uc_Compteur = uc_ENTREE8;
+"281
+[e = _l_uc_Compteur -> . `E1 8 `uc ]
+[; ;gestionentrees.c: 282: break;
+"282
+[e $U 41  ]
+[; ;gestionentrees.c: 283: case uc_ENTREE_VARIATEUR2:
+"283
+[e :U 45 ]
+[; ;gestionentrees.c: 284: l_uc_Compteur = uc_ENTREE13;
+"284
+[e = _l_uc_Compteur -> . `E1 13 `uc ]
+[; ;gestionentrees.c: 285: break;
+"285
+[e $U 41  ]
+[; ;gestionentrees.c: 286: case uc_ENTREE_VARIATEUR3:
+"286
+[e :U 46 ]
+[; ;gestionentrees.c: 287: l_uc_Compteur = uc_ENTREE17;
+"287
+[e = _l_uc_Compteur -> . `E1 17 `uc ]
+[; ;gestionentrees.c: 288: break;
+"288
+[e $U 41  ]
+"289
+}
+[; ;gestionentrees.c: 289: }
+[e $U 41  ]
+"275
+[e :U 42 ]
+[e [\ _uc_NumeroEntreeVariateur , $ -> . `E60 0 `uc 43
+ , $ -> . `E60 1 `uc 44
+ , $ -> . `E60 2 `uc 45
+ , $ -> . `E60 3 `uc 46
+ 41 ]
+"289
+[e :U 41 ]
+[; ;gestionentrees.c: 318: return l_uc_Compteur;
+"318
+[e ) _l_uc_Compteur ]
+[e $UE 40  ]
+[; ;gestionentrees.c: 319: }
+"319
+[e :UE 40 ]
+}
+"326
+[v _vd_AnalyserEntreesTOR `(v ~T0 @X0 1 ef ]
+"327
+{
+[; ;gestionentrees.c: 326: void vd_AnalyserEntreesTOR(void)
+[; ;gestionentrees.c: 327: {
+[e :U _vd_AnalyserEntreesTOR ]
+[f ]
+"328
+[v _l_uc_Compteur `uc ~T0 @X0 1 a ]
+"329
+[v _l_us_Masque `us ~T0 @X0 1 a ]
+"330
+[v _l_uc_EntreeTOR `uc ~T0 @X0 1 a ]
+[; ;gestionentrees.c: 328: unsigned char l_uc_Compteur;
+[; ;gestionentrees.c: 329: unsigned short l_us_Masque;
+[; ;gestionentrees.c: 330: unsigned char l_uc_EntreeTOR;
+[; ;gestionentrees.c: 332: for(l_uc_Compteur=0;l_uc_Compteur<uc_ENTREE_TOR_NB;l_uc_Compteur++)
+"332
+{
+[e = _l_uc_Compteur -> -> 0 `i `uc ]
+[e $U 51  ]
+"333
+[e :U 48 ]
+[; ;gestionentrees.c: 333: {
+{
+[; ;gestionentrees.c: 334: l_us_Masque = 0x01 << l_uc_Compteur;
+"334
+[e = _l_us_Masque -> << -> 1 `i _l_uc_Compteur `us ]
+[; ;gestionentrees.c: 335: l_uc_EntreeTOR = uc_EntreeTOREntreeCarte(l_uc_Compteur);
+"335
+[e = _l_uc_EntreeTOR ( _uc_EntreeTOREntreeCarte (1 _l_uc_Compteur ]
+[; ;gestionentrees.c: 337: if(st_Entrees[l_uc_EntreeTOR].ub1_EtatFiltrePourApp !=
+[; ;gestionentrees.c: 338: st_Entrees[l_uc_EntreeTOR].ub1_EtatFiltrePourAppPrecedent)
+"338
+[e $ ! != -> . *U + &U _st_Entrees * -> _l_uc_EntreeTOR `ux -> -> # *U &U _st_Entrees `ui `ux 2 `i -> . *U + &U _st_Entrees * -> _l_uc_EntreeTOR `ux -> -> # *U &U _st_Entrees `ui `ux 3 `i 52  ]
+[; ;gestionentrees.c: 339: {
+"339
+{
+[; ;gestionentrees.c: 341: if(st_Entrees[l_uc_EntreeTOR].ub1_EtatFiltrePourApp == 0)
+"341
+[e $ ! == -> . *U + &U _st_Entrees * -> _l_uc_EntreeTOR `ux -> -> # *U &U _st_Entrees `ui `ux 2 `i -> 0 `i 53  ]
+[; ;gestionentrees.c: 342: {
+"342
+{
+[; ;gestionentrees.c: 343: st_Entrees[l_uc_EntreeTOR].ub1_EtatFiltrePourAppPrecedent = 0;
+"343
+[e = . *U + &U _st_Entrees * -> _l_uc_EntreeTOR `ux -> -> # *U &U _st_Entrees `ui `ux 3 -> -> 0 `i `uc ]
+[; ;gestionentrees.c: 346: us_EntreesTOR &= ~l_us_Masque;
+"346
+[e =& _us_EntreesTOR -> ~ -> _l_us_Masque `ui `us ]
+"347
+}
+[; ;gestionentrees.c: 347: }
+[e $U 54  ]
+"348
+[e :U 53 ]
+[; ;gestionentrees.c: 348: else
+[; ;gestionentrees.c: 349: {
+"349
+{
+[; ;gestionentrees.c: 350: st_Entrees[l_uc_EntreeTOR].ub1_EtatFiltrePourAppPrecedent = 1;
+"350
+[e = . *U + &U _st_Entrees * -> _l_uc_EntreeTOR `ux -> -> # *U &U _st_Entrees `ui `ux 3 -> -> 1 `i `uc ]
+[; ;gestionentrees.c: 352: us_EntreesTOR |= l_us_Masque;
+"352
+[e =| _us_EntreesTOR _l_us_Masque ]
+"353
+}
+[e :U 54 ]
+"354
+}
+[; ;gestionentrees.c: 353: }
+[; ;gestionentrees.c: 354: }
+[e $U 55  ]
+"355
+[e :U 52 ]
+[; ;gestionentrees.c: 355: else
+[; ;gestionentrees.c: 356: {
+"356
+{
+[; ;gestionentrees.c: 358: us_EntreesTOR &= ~l_us_Masque;
+"358
+[e =& _us_EntreesTOR -> ~ -> _l_us_Masque `ui `us ]
+"359
+}
+[e :U 55 ]
+"360
+}
+"332
+[e ++ _l_uc_Compteur -> -> 1 `i `uc ]
+[e :U 51 ]
+[e $ < -> _l_uc_Compteur `i -> _uc_ENTREE_TOR_NB `i 48  ]
+[e :U 49 ]
+"360
+}
+[; ;gestionentrees.c: 359: }
+[; ;gestionentrees.c: 360: }
+[; ;gestionentrees.c: 361: }
+"361
+[e :UE 47 ]
+}
+"399
+[v _vd_AnalyserEntreesVariateurs `(v ~T0 @X0 1 ef ]
+"400
+{
+[; ;gestionentrees.c: 399: void vd_AnalyserEntreesVariateurs(void)
+[; ;gestionentrees.c: 400: {
+[e :U _vd_AnalyserEntreesVariateurs ]
+[f ]
+"401
+[v _l_uc_Compteur `uc ~T0 @X0 1 a ]
+"402
+[v _l_uc_EntreeVariateur `uc ~T0 @X0 1 a ]
+[; ;gestionentrees.c: 401: unsigned char l_uc_Compteur;
+[; ;gestionentrees.c: 402: unsigned char l_uc_EntreeVariateur;
+[; ;gestionentrees.c: 404: for(l_uc_Compteur=0;l_uc_Compteur<uc_ENTREE_VARIATEUR_NB;l_uc_Compteur++)
+"404
+{
+[e = _l_uc_Compteur -> -> 0 `i `uc ]
+[e $U 60  ]
+"405
+[e :U 57 ]
+[; ;gestionentrees.c: 405: {
+{
+[; ;gestionentrees.c: 406: l_uc_EntreeVariateur = uc_EntreeVariateurEntreeCarte(l_uc_Compteur);
+"406
+[e = _l_uc_EntreeVariateur ( _uc_EntreeVariateurEntreeCarte (1 _l_uc_Compteur ]
+[; ;gestionentrees.c: 407: switch(st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode)
+"407
+[e $U 62  ]
+[; ;gestionentrees.c: 408: {
+"408
+{
+[; ;gestionentrees.c: 409: case uc_MODE_TOR:
+"409
+[e :U 63 ]
+"410
+[e :U 64 ]
+[; ;gestionentrees.c: 410: case uc_MODE_SOFT_START:
+[; ;gestionentrees.c: 411: if(st_Entrees[l_uc_EntreeVariateur].ub1_EtatFiltrePourApp !=
+[; ;gestionentrees.c: 412: st_Entrees[l_uc_EntreeVariateur].ub1_EtatFiltrePourAppPrecedent)
+"412
+[e $ ! != -> . *U + &U _st_Entrees * -> _l_uc_EntreeVariateur `ux -> -> # *U &U _st_Entrees `ui `ux 2 `i -> . *U + &U _st_Entrees * -> _l_uc_EntreeVariateur `ux -> -> # *U &U _st_Entrees `ui `ux 3 `i 65  ]
+[; ;gestionentrees.c: 413: {
+"413
+{
+[; ;gestionentrees.c: 414: if(st_Entrees[l_uc_EntreeVariateur].ub1_EtatFiltrePourApp == 0)
+"414
+[e $ ! == -> . *U + &U _st_Entrees * -> _l_uc_EntreeVariateur `ux -> -> # *U &U _st_Entrees `ui `ux 2 `i -> 0 `i 66  ]
+[; ;gestionentrees.c: 415: {
+"415
+{
+[; ;gestionentrees.c: 416: st_Entrees[l_uc_EntreeVariateur].ub1_EtatFiltrePourAppPrecedent = 0;
+"416
+[e = . *U + &U _st_Entrees * -> _l_uc_EntreeVariateur `ux -> -> # *U &U _st_Entrees `ui `ux 3 -> -> 0 `i `uc ]
+"417
+}
+[; ;gestionentrees.c: 417: }
+[e $U 67  ]
+"418
+[e :U 66 ]
+[; ;gestionentrees.c: 418: else
+[; ;gestionentrees.c: 419: {
+"419
+{
+[; ;gestionentrees.c: 420: st_Entrees[l_uc_EntreeVariateur].ub1_EtatFiltrePourAppPrecedent = 1;
+"420
+[e = . *U + &U _st_Entrees * -> _l_uc_EntreeVariateur `ux -> -> # *U &U _st_Entrees `ui `ux 3 -> -> 1 `i `uc ]
+[; ;gestionentrees.c: 421: st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande = uc_VARIATEUR_APPUI_COURT;
+"421
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 5 -> . `E38 3 `uc ]
+"422
+}
+[e :U 67 ]
+"423
+}
+[e :U 65 ]
+[; ;gestionentrees.c: 422: }
+[; ;gestionentrees.c: 423: }
+[; ;gestionentrees.c: 424: break;
+"424
+[e $U 61  ]
+[; ;gestionentrees.c: 425: case uc_MODE_VARIATEUR:
+"425
+[e :U 68 ]
+[; ;gestionentrees.c: 426: if(st_Entrees[l_uc_EntreeVariateur].ub1_EtatFiltrePourApp !=
+[; ;gestionentrees.c: 427: st_Entrees[l_uc_EntreeVariateur].ub1_EtatFiltrePourAppPrecedent)
+"427
+[e $ ! != -> . *U + &U _st_Entrees * -> _l_uc_EntreeVariateur `ux -> -> # *U &U _st_Entrees `ui `ux 2 `i -> . *U + &U _st_Entrees * -> _l_uc_EntreeVariateur `ux -> -> # *U &U _st_Entrees `ui `ux 3 `i 69  ]
+[; ;gestionentrees.c: 428: {
+"428
+{
+[; ;gestionentrees.c: 429: if(st_Entrees[l_uc_EntreeVariateur].ub1_EtatFiltrePourApp == 0)
+"429
+[e $ ! == -> . *U + &U _st_Entrees * -> _l_uc_EntreeVariateur `ux -> -> # *U &U _st_Entrees `ui `ux 2 `i -> 0 `i 70  ]
+[; ;gestionentrees.c: 430: {
+"430
+{
+[; ;gestionentrees.c: 431: st_Entrees[l_uc_EntreeVariateur].ub1_EtatFiltrePourAppPrecedent = 0;
+"431
+[e = . *U + &U _st_Entrees * -> _l_uc_EntreeVariateur `ux -> -> # *U &U _st_Entrees `ui `ux 3 -> -> 0 `i `uc ]
+"432
+}
+[; ;gestionentrees.c: 432: }
+[e $U 71  ]
+"433
+[e :U 70 ]
+[; ;gestionentrees.c: 433: else
+[; ;gestionentrees.c: 434: {
+"434
+{
+[; ;gestionentrees.c: 435: st_Entrees[l_uc_EntreeVariateur].ub1_EtatFiltrePourAppPrecedent = 1;
+"435
+[e = . *U + &U _st_Entrees * -> _l_uc_EntreeVariateur `ux -> -> # *U &U _st_Entrees `ui `ux 3 -> -> 1 `i `uc ]
+"436
+}
+[e :U 71 ]
+[; ;gestionentrees.c: 436: }
+[; ;gestionentrees.c: 437: st_EntreesVariateur[l_uc_Compteur].uc_CompteurMaintenu = 0;
+"437
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 0 -> -> 0 `i `uc ]
+"438
+}
+[e :U 69 ]
+[; ;gestionentrees.c: 438: }
+[; ;gestionentrees.c: 440: if(st_Entrees[l_uc_EntreeVariateur].ub1_EtatFiltrePourApp == 0)
+"440
+[e $ ! == -> . *U + &U _st_Entrees * -> _l_uc_EntreeVariateur `ux -> -> # *U &U _st_Entrees `ui `ux 2 `i -> 0 `i 72  ]
+[; ;gestionentrees.c: 441: {
+"441
+{
+[; ;gestionentrees.c: 442: if(st_EntreesVariateur[l_uc_Compteur].uc_CompteurDoubleClic < 13 &&
+[; ;gestionentrees.c: 443: (st_EntreesVariateur[l_uc_Compteur].ub1_Etat1VueApresEtatStop != 0 ||
+[; ;gestionentrees.c: 444: st_EntreesVariateur[l_uc_Compteur].ub1_SecondAppuiDetecte != 0))
+"444
+[e $ ! && < -> . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 1 `i -> 13 `i || != -> . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 3 `i -> 0 `i != -> . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 4 `i -> 0 `i 73  ]
+[; ;gestionentrees.c: 445: {
+"445
+{
+[; ;gestionentrees.c: 446: st_EntreesVariateur[l_uc_Compteur].uc_CompteurDoubleClic++;
+"446
+[e ++ . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 1 -> -> 1 `i `uc ]
+"447
+}
+[; ;gestionentrees.c: 447: }
+[e $U 74  ]
+"448
+[e :U 73 ]
+[; ;gestionentrees.c: 448: else
+[; ;gestionentrees.c: 449: {
+"449
+{
+[; ;gestionentrees.c: 450: st_EntreesVariateur[l_uc_Compteur].ub1_SecondAppuiDetecte = 0;
+"450
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 4 -> -> 0 `i `uc ]
+[; ;gestionentrees.c: 451: st_EntreesVariateur[l_uc_Compteur].uc_CompteurDoubleClic = 0;
+"451
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 1 -> -> 0 `i `uc ]
+"452
+}
+[e :U 74 ]
+[; ;gestionentrees.c: 452: }
+[; ;gestionentrees.c: 454: if(st_EntreesVariateur[l_uc_Compteur].ub1_Etat1VueApresEtatStop != 0)
+"454
+[e $ ! != -> . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 3 `i -> 0 `i 75  ]
+[; ;gestionentrees.c: 455: {
+"455
+{
+[; ;gestionentrees.c: 456: st_EntreesVariateur[l_uc_Compteur].ub1_Etat1VueApresEtatStop = 0;
+"456
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 3 -> -> 0 `i `uc ]
+[; ;gestionentrees.c: 457: if(st_EntreesVariateur[l_uc_Compteur].ub1_SecondAppuiDetecte != 0)
+"457
+[e $ ! != -> . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 4 `i -> 0 `i 76  ]
+[; ;gestionentrees.c: 458: {
+"458
+{
+[; ;gestionentrees.c: 459: st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande = uc_VARIATEUR_APPUI_DOUBLE;
+"459
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 5 -> . `E38 4 `uc ]
+[; ;gestionentrees.c: 460: st_EntreesVariateur[l_uc_Compteur].uc_CompteurDoubleClic = 0;
+"460
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 1 -> -> 0 `i `uc ]
+[; ;gestionentrees.c: 461: st_EntreesVariateur[l_uc_Compteur].ub1_SecondAppuiDetecte = 0;
+"461
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 4 -> -> 0 `i `uc ]
+[; ;gestionentrees.c: 462: st_EntreesVariateur[l_uc_Compteur].uc_CompteurDoubleClic = 0;
+"462
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 1 -> -> 0 `i `uc ]
+"463
+}
+[; ;gestionentrees.c: 463: }
+[e $U 77  ]
+"464
+[e :U 76 ]
+[; ;gestionentrees.c: 464: else
+[; ;gestionentrees.c: 465: {
+"465
+{
+[; ;gestionentrees.c: 466: st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande = uc_VARIATEUR_APPUI_COURT;
+"466
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 5 -> . `E38 3 `uc ]
+[; ;gestionentrees.c: 467: st_EntreesVariateur[l_uc_Compteur].ub1_SecondAppuiDetecte = 1;
+"467
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 4 -> -> 1 `i `uc ]
+"468
+}
+[e :U 77 ]
+"469
+}
+[e :U 75 ]
+[; ;gestionentrees.c: 468: }
+[; ;gestionentrees.c: 469: }
+[; ;gestionentrees.c: 471: if(st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande == uc_VARIATEUR_APPUI_LONG)
+"471
+[e $ ! == -> . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 5 `i -> . `E38 5 `i 78  ]
+[; ;gestionentrees.c: 472: {
+"472
+{
+[; ;gestionentrees.c: 473: st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande = uc_VARIATEUR_RIEN;
+"473
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 5 -> . `E38 0 `uc ]
+[; ;gestionentrees.c: 474: st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande = st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande ^ 1;
+"474
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 6 -> ^ -> . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 6 `i -> 1 `i `uc ]
+"475
+}
+[e :U 78 ]
+"478
+}
+[; ;gestionentrees.c: 475: }
+[; ;gestionentrees.c: 478: }
+[e $U 79  ]
+"479
+[e :U 72 ]
+[; ;gestionentrees.c: 479: else
+[; ;gestionentrees.c: 480: {
+"480
+{
+[; ;gestionentrees.c: 481: st_EntreesVariateur[l_uc_Compteur].ub1_Etat1VueApresEtatStop = 1;
+"481
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 3 -> -> 1 `i `uc ]
+[; ;gestionentrees.c: 483: if(st_EntreesVariateur[l_uc_Compteur].uc_CompteurDoubleClic < 13)
+"483
+[e $ ! < -> . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 1 `i -> 13 `i 80  ]
+[; ;gestionentrees.c: 484: {
+"484
+{
+[; ;gestionentrees.c: 485: st_EntreesVariateur[l_uc_Compteur].uc_CompteurDoubleClic++;
+"485
+[e ++ . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 1 -> -> 1 `i `uc ]
+"486
+}
+[e :U 80 ]
+[; ;gestionentrees.c: 486: }
+[; ;gestionentrees.c: 488: if(st_EntreesVariateur[l_uc_Compteur].uc_CompteurMaintenu < 15)
+"488
+[e $ ! < -> . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 0 `i -> 15 `i 81  ]
+[; ;gestionentrees.c: 489: {
+"489
+{
+[; ;gestionentrees.c: 490: st_EntreesVariateur[l_uc_Compteur].uc_CompteurMaintenu++;
+"490
+[e ++ . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 0 -> -> 1 `i `uc ]
+"491
+}
+[; ;gestionentrees.c: 491: }
+[e $U 82  ]
+"492
+[e :U 81 ]
+[; ;gestionentrees.c: 492: else
+[; ;gestionentrees.c: 493: {
+"493
+{
+[; ;gestionentrees.c: 494: st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande = uc_VARIATEUR_APPUI_LONG;
+"494
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 5 -> . `E38 5 `uc ]
+[; ;gestionentrees.c: 495: st_EntreesVariateur[l_uc_Compteur].ub1_Etat1VueApresEtatStop = 0;
+"495
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 3 -> -> 0 `i `uc ]
+[; ;gestionentrees.c: 496: st_EntreesVariateur[l_uc_Compteur].ub1_SecondAppuiDetecte = 0;
+"496
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 4 -> -> 0 `i `uc ]
+[; ;gestionentrees.c: 497: st_EntreesVariateur[l_uc_Compteur].uc_CompteurDoubleClic = 0;
+"497
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 1 -> -> 0 `i `uc ]
+"498
+}
+[e :U 82 ]
+"499
+}
+[e :U 79 ]
+[; ;gestionentrees.c: 498: }
+[; ;gestionentrees.c: 499: }
+[; ;gestionentrees.c: 500: break;
+"500
+[e $U 61  ]
+"501
+}
+[; ;gestionentrees.c: 501: }
+[e $U 61  ]
+"407
+[e :U 62 ]
+[e [\ . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 2 , $ -> . `E25 2 `uc 63
+ , $ -> . `E25 0 `uc 64
+ , $ -> . `E25 1 `uc 68
+ 61 ]
+"501
+[e :U 61 ]
+"502
+}
+"404
+[e ++ _l_uc_Compteur -> -> 1 `i `uc ]
+[e :U 60 ]
+[e $ < -> _l_uc_Compteur `i -> _uc_ENTREE_VARIATEUR_NB `i 57  ]
+[e :U 58 ]
+"502
+}
+[; ;gestionentrees.c: 502: }
+[; ;gestionentrees.c: 503: }
+"503
+[e :UE 56 ]
+}
+"505
+[v _vd_AnalyserEntreesVolets `(v ~T0 @X0 1 ef ]
+"506
+{
+[; ;gestionentrees.c: 505: void vd_AnalyserEntreesVolets(void)
+[; ;gestionentrees.c: 506: {
+[e :U _vd_AnalyserEntreesVolets ]
+[f ]
+"507
+[v _l_uc_Compteur `uc ~T0 @X0 1 a ]
+"508
+[v _l_uc_EntreeVoletRoulant `uc ~T0 @X0 1 a ]
+[; ;gestionentrees.c: 507: unsigned char l_uc_Compteur;
+[; ;gestionentrees.c: 508: unsigned char l_uc_EntreeVoletRoulant;
+[; ;gestionentrees.c: 510: for(l_uc_Compteur=0;l_uc_Compteur<uc_ENTREE_VOLET_NB;l_uc_Compteur++)
+"510
+{
+[e = _l_uc_Compteur -> -> 0 `i `uc ]
+[e $U 87  ]
+"511
+[e :U 84 ]
+[; ;gestionentrees.c: 511: {
+{
+[; ;gestionentrees.c: 512: l_uc_EntreeVoletRoulant = uc_EntreeVoletEntreeCarte(l_uc_Compteur);
+"512
+[e = _l_uc_EntreeVoletRoulant ( _uc_EntreeVoletEntreeCarte (1 _l_uc_Compteur ]
+[; ;gestionentrees.c: 514: if(st_Entrees[l_uc_EntreeVoletRoulant].ub1_EtatFiltrePourApp !=
+[; ;gestionentrees.c: 515: st_Entrees[l_uc_EntreeVoletRoulant].ub1_EtatFiltrePourAppPrecedent)
+"515
+[e $ ! != -> . *U + &U _st_Entrees * -> _l_uc_EntreeVoletRoulant `ux -> -> # *U &U _st_Entrees `ui `ux 2 `i -> . *U + &U _st_Entrees * -> _l_uc_EntreeVoletRoulant `ux -> -> # *U &U _st_Entrees `ui `ux 3 `i 88  ]
+[; ;gestionentrees.c: 516: {
+"516
+{
+[; ;gestionentrees.c: 517: if(st_Entrees[l_uc_EntreeVoletRoulant].ub1_EtatFiltrePourApp == 0)
+"517
+[e $ ! == -> . *U + &U _st_Entrees * -> _l_uc_EntreeVoletRoulant `ux -> -> # *U &U _st_Entrees `ui `ux 2 `i -> 0 `i 89  ]
+[; ;gestionentrees.c: 518: {
+"518
+{
+[; ;gestionentrees.c: 519: st_Entrees[l_uc_EntreeVoletRoulant].ub1_EtatFiltrePourAppPrecedent = 0;
+"519
+[e = . *U + &U _st_Entrees * -> _l_uc_EntreeVoletRoulant `ux -> -> # *U &U _st_Entrees `ui `ux 3 -> -> 0 `i `uc ]
+"520
+}
+[; ;gestionentrees.c: 520: }
+[e $U 90  ]
+"521
+[e :U 89 ]
+[; ;gestionentrees.c: 521: else
+[; ;gestionentrees.c: 522: {
+"522
+{
+[; ;gestionentrees.c: 523: st_Entrees[l_uc_EntreeVoletRoulant].ub1_EtatFiltrePourAppPrecedent = 1;
+"523
+[e = . *U + &U _st_Entrees * -> _l_uc_EntreeVoletRoulant `ux -> -> # *U &U _st_Entrees `ui `ux 3 -> -> 1 `i `uc ]
+"524
+}
+[e :U 90 ]
+[; ;gestionentrees.c: 524: }
+[; ;gestionentrees.c: 525: st_EntreesVoletRoulant[l_uc_Compteur].ub4_CompteurMaintenu = 0;
+"525
+[e = . *U + &U _st_EntreesVoletRoulant * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 0 -> -> 0 `i `uc ]
+"526
+}
+[e :U 88 ]
+[; ;gestionentrees.c: 526: }
+[; ;gestionentrees.c: 528: if(st_Entrees[l_uc_EntreeVoletRoulant].ub1_EtatFiltrePourApp == 0)
+"528
+[e $ ! == -> . *U + &U _st_Entrees * -> _l_uc_EntreeVoletRoulant `ux -> -> # *U &U _st_Entrees `ui `ux 2 `i -> 0 `i 91  ]
+[; ;gestionentrees.c: 529: {
+"529
+{
+[; ;gestionentrees.c: 530: if(st_EntreesVoletRoulant[l_uc_Compteur].ub1_Etat1VueApresEtatStop != 0)
+"530
+[e $ ! != -> . *U + &U _st_EntreesVoletRoulant * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 1 `i -> 0 `i 92  ]
+[; ;gestionentrees.c: 531: {
+"531
+{
+[; ;gestionentrees.c: 532: st_EntreesVoletRoulant[l_uc_Compteur].ub3_EtatCommande = uc_VOLET_APPUI_COURT;
+"532
+[e = . *U + &U _st_EntreesVoletRoulant * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 2 -> . `E32 2 `uc ]
+[; ;gestionentrees.c: 533: st_EntreesVoletRoulant[l_uc_Compteur].ub1_Etat1VueApresEtatStop = 0;
+"533
+[e = . *U + &U _st_EntreesVoletRoulant * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 1 -> -> 0 `i `uc ]
+"534
+}
+[e :U 92 ]
+[; ;gestionentrees.c: 534: }
+[; ;gestionentrees.c: 535: if(st_EntreesVoletRoulant[l_uc_Compteur].ub3_EtatCommande == uc_VOLET_APPUI_LONG)
+"535
+[e $ ! == -> . *U + &U _st_EntreesVoletRoulant * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 2 `i -> . `E32 3 `i 93  ]
+[; ;gestionentrees.c: 536: {
+"536
+{
+[; ;gestionentrees.c: 537: st_EntreesVoletRoulant[l_uc_Compteur].ub3_EtatCommande = uc_VOLET_OFF;
+"537
+[e = . *U + &U _st_EntreesVoletRoulant * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 2 -> . `E32 1 `uc ]
+"538
+}
+[e :U 93 ]
+"541
+}
+[; ;gestionentrees.c: 538: }
+[; ;gestionentrees.c: 541: }
+[e $U 94  ]
+"542
+[e :U 91 ]
+[; ;gestionentrees.c: 542: else
+[; ;gestionentrees.c: 543: {
+"543
+{
+[; ;gestionentrees.c: 544: if(st_EntreesVoletRoulant[l_uc_Compteur].ub4_CompteurMaintenu < 6)
+"544
+[e $ ! < -> . *U + &U _st_EntreesVoletRoulant * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 0 `i -> 6 `i 95  ]
+[; ;gestionentrees.c: 545: {
+"545
+{
+[; ;gestionentrees.c: 546: st_EntreesVoletRoulant[l_uc_Compteur].ub4_CompteurMaintenu++;
+"546
+[e ++ . *U + &U _st_EntreesVoletRoulant * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 0 -> -> 1 `i `uc ]
+[; ;gestionentrees.c: 547: st_EntreesVoletRoulant[l_uc_Compteur].ub1_Etat1VueApresEtatStop = 1;
+"547
+[e = . *U + &U _st_EntreesVoletRoulant * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 1 -> -> 1 `i `uc ]
+"548
+}
+[; ;gestionentrees.c: 548: }
+[e $U 96  ]
+"549
+[e :U 95 ]
+[; ;gestionentrees.c: 549: else
+[; ;gestionentrees.c: 550: {
+"550
+{
+[; ;gestionentrees.c: 551: st_EntreesVoletRoulant[l_uc_Compteur].ub3_EtatCommande = uc_VOLET_APPUI_LONG;
+"551
+[e = . *U + &U _st_EntreesVoletRoulant * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 2 -> . `E32 3 `uc ]
+[; ;gestionentrees.c: 552: st_EntreesVoletRoulant[l_uc_Compteur].ub1_Etat1VueApresEtatStop = 0;
+"552
+[e = . *U + &U _st_EntreesVoletRoulant * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 1 -> -> 0 `i `uc ]
+"553
+}
+[e :U 96 ]
+"554
+}
+[e :U 94 ]
+"555
+}
+"510
+[e ++ _l_uc_Compteur -> -> 1 `i `uc ]
+[e :U 87 ]
+[e $ < -> _l_uc_Compteur `i -> _uc_ENTREE_VOLET_NB `i 84  ]
+[e :U 85 ]
+"555
+}
+[; ;gestionentrees.c: 553: }
+[; ;gestionentrees.c: 554: }
+[; ;gestionentrees.c: 555: }
+[; ;gestionentrees.c: 556: }
+"556
+[e :UE 83 ]
+}
+"562
+[v _vd_AnalyserEntrees `(v ~T0 @X0 1 ef ]
+"563
+{
+[; ;gestionentrees.c: 562: void vd_AnalyserEntrees(void)
+[; ;gestionentrees.c: 563: {
+[e :U _vd_AnalyserEntrees ]
+[f ]
+[; ;gestionentrees.c: 564: vd_AnalyserEntreesTOR();
+"564
+[e ( _vd_AnalyserEntreesTOR ..  ]
+[; ;gestionentrees.c: 565: vd_AnalyserEntreesVariateurs();
+"565
+[e ( _vd_AnalyserEntreesVariateurs ..  ]
+[; ;gestionentrees.c: 566: vd_AnalyserEntreesVolets();
+"566
+[e ( _vd_AnalyserEntreesVolets ..  ]
+[; ;gestionentrees.c: 567: }
+"567
+[e :UE 97 ]
+}

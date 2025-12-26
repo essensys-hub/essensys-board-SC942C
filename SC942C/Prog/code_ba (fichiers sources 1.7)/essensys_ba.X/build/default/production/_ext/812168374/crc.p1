@@ -1,0 +1,130 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"3 ../source/crc.h
+[v _us_CalculerCRCSurUnOctet `(us ~T0 @X0 0 ef2`us`uc ]
+[; ;crc.h: 2: extern unsigned short us_CalculerCRCSurTrame(unsigned char uc_Buffer[], unsigned char uc_NbOctets);
+[; ;crc.h: 3: extern unsigned short us_CalculerCRCSurUnOctet(unsigned short l_us_CRC, unsigned char l_uc_Octet);
+"4 ../source/crc.c
+[v _l_us_CRC `us ~T0 @X0 1 e ]
+[; ;crc.c: 4: unsigned short l_us_CRC;
+"5
+[v _l_uc_Compteur `uc ~T0 @X0 1 e ]
+[; ;crc.c: 5: unsigned char l_uc_Compteur;
+"7
+[v _us_CalculerCRCSurTrame `(us ~T0 @X0 1 ef2`*uc`uc ]
+"8
+{
+[; ;crc.c: 7: unsigned short us_CalculerCRCSurTrame(unsigned char uc_Buffer[], unsigned char uc_NbOctets)
+[; ;crc.c: 8: {
+[e :U _us_CalculerCRCSurTrame ]
+"7
+[v _uc_Buffer `*uc ~T0 @X0 1 r1 ]
+[v _uc_NbOctets `uc ~T0 @X0 1 r2 ]
+"8
+[f ]
+[; ;crc.c: 9: l_us_CRC = 0xFFFF;
+"9
+[e = _l_us_CRC -> -> 65535 `ui `us ]
+[; ;crc.c: 11: for(l_uc_Compteur = 0;l_uc_Compteur < uc_NbOctets;l_uc_Compteur++)
+"11
+{
+[e = _l_uc_Compteur -> -> 0 `i `uc ]
+[e $U 5  ]
+"12
+[e :U 2 ]
+[; ;crc.c: 12: {
+{
+[; ;crc.c: 13: l_us_CRC = us_CalculerCRCSurUnOctet(l_us_CRC,(unsigned char)uc_Buffer[l_uc_Compteur]);
+"13
+[e = _l_us_CRC ( _us_CalculerCRCSurUnOctet (2 , _l_us_CRC *U + _uc_Buffer * -> _l_uc_Compteur `ux -> -> # *U _uc_Buffer `ui `ux ]
+"14
+}
+"11
+[e ++ _l_uc_Compteur -> -> 1 `i `uc ]
+[e :U 5 ]
+[e $ < -> _l_uc_Compteur `i -> _uc_NbOctets `i 2  ]
+[e :U 3 ]
+"14
+}
+[; ;crc.c: 14: }
+[; ;crc.c: 15: return l_us_CRC;
+"15
+[e ) _l_us_CRC ]
+[e $UE 1  ]
+[; ;crc.c: 16: }
+"16
+[e :UE 1 ]
+}
+"18
+[v _l_uc_Compteur2 `uc ~T0 @X0 1 e ]
+[; ;crc.c: 18: unsigned char l_uc_Compteur2;
+"20
+[v _us_CalculerCRCSurUnOctet `(us ~T0 @X0 1 ef2`us`uc ]
+"21
+{
+[; ;crc.c: 20: unsigned short us_CalculerCRCSurUnOctet(unsigned short l_us_CRC, unsigned char l_uc_Octet)
+[; ;crc.c: 21: {
+[e :U _us_CalculerCRCSurUnOctet ]
+[v _l_us_CRC `us ~T0 @X0 1 r1 ]
+"20
+[v _l_uc_Octet `uc ~T0 @X0 1 r2 ]
+"21
+[f ]
+[; ;crc.c: 22: l_us_CRC = (unsigned short)(l_us_CRC ^ (unsigned short)l_uc_Octet);
+"22
+[e = _l_us_CRC -> ^ -> _l_us_CRC `ui -> -> _l_uc_Octet `us `ui `us ]
+[; ;crc.c: 23: for(l_uc_Compteur2 = 0 ; l_uc_Compteur2 < 8 ; l_uc_Compteur2++)
+"23
+{
+[e = _l_uc_Compteur2 -> -> 0 `i `uc ]
+[e $ < -> _l_uc_Compteur2 `i -> 8 `i 7  ]
+[e $U 8  ]
+"24
+[e :U 7 ]
+[; ;crc.c: 24: {
+{
+[; ;crc.c: 25: if((l_us_CRC & 0x0001) != 0)
+"25
+[e $ ! != & -> _l_us_CRC `ui -> -> 1 `i `ui -> -> 0 `i `ui 10  ]
+[; ;crc.c: 26: {
+"26
+{
+[; ;crc.c: 27: l_us_CRC = (unsigned short)(l_us_CRC >> 1);
+"27
+[e = _l_us_CRC -> >> -> _l_us_CRC `ui -> 1 `i `us ]
+[; ;crc.c: 28: l_us_CRC = (unsigned short)(l_us_CRC ^ (unsigned short)0xA001);
+"28
+[e = _l_us_CRC -> ^ -> _l_us_CRC `ui -> -> -> 40961 `ui `us `ui `us ]
+"29
+}
+[; ;crc.c: 29: }
+[e $U 11  ]
+"30
+[e :U 10 ]
+[; ;crc.c: 30: else
+[; ;crc.c: 31: {
+"31
+{
+[; ;crc.c: 32: l_us_CRC = (unsigned short)(l_us_CRC >> 1);
+"32
+[e = _l_us_CRC -> >> -> _l_us_CRC `ui -> 1 `i `us ]
+"33
+}
+[e :U 11 ]
+"34
+}
+"23
+[e ++ _l_uc_Compteur2 -> -> 1 `i `uc ]
+[e $ < -> _l_uc_Compteur2 `i -> 8 `i 7  ]
+[e :U 8 ]
+"34
+}
+[; ;crc.c: 33: }
+[; ;crc.c: 34: }
+[; ;crc.c: 35: return l_us_CRC;
+"35
+[e ) _l_us_CRC ]
+[e $UE 6  ]
+[; ;crc.c: 36: }
+"36
+[e :UE 6 ]
+}

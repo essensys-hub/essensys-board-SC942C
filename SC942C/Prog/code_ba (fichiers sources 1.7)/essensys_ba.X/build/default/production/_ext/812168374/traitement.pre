@@ -1,0 +1,884 @@
+
+# 1 "../source/traitement.c"
+
+# 92 "../source/constantes.h"
+enum enum_ENTREES
+{
+uc_ENTREE0,
+uc_ENTREE1,
+uc_ENTREE2,
+uc_ENTREE3,
+uc_ENTREE4,
+uc_ENTREE5,
+uc_ENTREE6,
+uc_ENTREE7,
+uc_ENTREE8,
+uc_ENTREE9,
+uc_ENTREE10,
+uc_ENTREE11,
+uc_ENTREE12,
+uc_ENTREE13,
+uc_ENTREE14,
+uc_ENTREE15,
+uc_ENTREE16,
+uc_ENTREE17,
+uc_ENTREE18,
+uc_ENTREE19,
+uc_ENTREE20,
+uc_ENTREE21,
+NB_ES,
+};
+
+
+enum enum_ENTREE_VARIATEUR_MODE
+{
+uc_MODE_SOFT_START,
+uc_MODE_VARIATEUR,
+uc_MODE_TOR,
+};
+
+enum enum_ENTREES_CMDE_TOR
+{
+uc_TOR_OFF,
+uc_TOR_ON,
+};
+
+enum enum_ENTREES_CMDE_VOLET_STORE
+{
+uc_VOLET_RIEN,
+uc_VOLET_OFF,
+uc_VOLET_APPUI_COURT,
+uc_VOLET_APPUI_LONG,
+uc_VOLET_ON,
+};
+
+enum enum_ENTREES_CMDE_VARIATEUR
+{
+uc_VARIATEUR_RIEN,
+uc_VARIATEUR_OFF,
+uc_VARIATEUR_ON,
+uc_VARIATEUR_APPUI_COURT,
+uc_VARIATEUR_APPUI_DOUBLE,
+uc_VARIATEUR_APPUI_LONG,
+};
+
+enum enum_ENTREES_TOR
+{
+uc_ENTREE_TOR0,
+uc_ENTREE_TOR1,
+uc_ENTREE_TOR2,
+uc_ENTREE_TOR3,
+uc_ENTREE_TOR4,
+uc_ENTREE_TOR5,
+uc_ENTREE_TOR6,
+uc_ENTREE_TOR7,
+uc_ENTREE_TOR8,
+uc_ENTREE_TOR9,
+uc_ENTREE_TOR10,
+uc_ENTREE_TOR11,
+uc_ENTREE_TOR12,
+ENTREE_TOR_NB,
+};
+
+enum enum_ENTREE_VARIATEUR
+{
+uc_ENTREE_VARIATEUR0,
+uc_ENTREE_VARIATEUR1,
+uc_ENTREE_VARIATEUR2,
+uc_ENTREE_VARIATEUR3,
+ENTREE_VARIATEUR_NB,
+};
+
+enum enum_ENTREE_VOLET
+{
+uc_ENTREE_VOLET0,
+uc_ENTREE_VOLET1,
+uc_ENTREE_VOLET2,
+uc_ENTREE_VOLET3,
+uc_ENTREE_VOLET4,
+uc_ENTREE_VOLET5,
+uc_ENTREE_VOLET6,
+uc_ENTREE_VOLET7,
+uc_ENTREE_VOLET8,
+uc_ENTREE_VOLET9,
+uc_ENTREE_VOLET10,
+uc_ENTREE_VOLET11,
+ENTREE_VOLET_NB,
+};
+
+enum enum_RELAIS
+{
+uc_RM0,
+uc_RM1,
+uc_RM2,
+uc_RM3,
+uc_RM4,
+uc_RM5,
+uc_RM6,
+uc_RM7,
+uc_RM8,
+uc_RM9,
+uc_RM10,
+uc_RM11,
+uc_RM12,
+RM_NB,
+};
+
+enum enum_TYPES_SORTIES
+{
+uc_SORTIE_RELAIS,
+uc_SORTIE_RELAIS_BISTABLE_SENS,
+uc_SORTIE_RELAIS_BISTABLE,
+uc_SORTIE_VARIATEUR,
+uc_SORTIE_LED,
+};
+
+enum enum_RELAIS_BISTABLE_SENS
+{
+uc_RBSENS1,
+uc_RBSENS2,
+};
+
+enum enum_RELAIS_BISTABLES
+{
+uc_RB0,
+uc_RB1,
+uc_RB2,
+uc_RB3,
+uc_RB4,
+uc_RB5,
+uc_RB6,
+uc_RB7,
+uc_RB8,
+uc_RB9,
+uc_RB10,
+uc_RB11,
+RB_NB,
+};
+
+
+enum enum_RELAIS_PILOTAGE
+{
+uc_OFF,
+uc_ON,
+};
+
+enum enum_TEMPO_RELAIS
+{
+INIT,
+RAZ,
+MAINTIEN,
+};
+
+enum enum_VARIATEUR
+{
+uc_VARIATEUR0,
+uc_VARIATEUR1,
+uc_VARIATEUR2,
+uc_VARIATEUR3,
+VARIATEUR_NB,
+};
+
+enum enum_TYPES_BORNIER
+{
+BORNIER_PIECES_VIE,
+BORNIER_CHAMBRES,
+BORNIER_PIECES_EAU,
+};
+
+# 5 "../source/struct.h"
+struct struct_Entree
+{
+unsigned char ub1_EtatActuel:1;
+unsigned char ub4_AntiRebond_TempoChgtEtat:4;
+unsigned char ub1_EtatFiltrePourApp:1;
+unsigned char ub1_EtatFiltrePourAppPrecedent:1;
+};
+
+
+
+
+struct struct_EntreeVariateur
+{
+unsigned char uc_CompteurMaintenu;
+unsigned char uc_CompteurDoubleClic;
+unsigned char ub3_EntreeMode:3;
+unsigned char ub1_Etat1VueApresEtatStop:1;
+unsigned char ub1_SecondAppuiDetecte:1;
+
+unsigned char ub3_EtatCommande:3;
+unsigned char ub1_SensCommande:1;
+};
+
+struct struct_EntreeVoletOuStore
+{
+unsigned char ub4_CompteurMaintenu:4;
+unsigned char ub1_Etat1VueApresEtatStop:1;
+unsigned char ub3_EtatCommande:3;
+};
+
+
+struct struct_SortieRelaisBistable
+{
+unsigned char ub1_EtatRelaisBistable:1;
+unsigned char ub1_EtatRelaisBistableSouhaite:1;
+};
+
+
+struct struct_Variateur
+
+{
+signed char c_Eclairage;
+signed char c_EclairageOld;
+signed char c_Consigne;
+
+};
+
+# 59
+union struct_Cde_BP
+{
+struct {
+unsigned char Sauvegarde :1;
+unsigned char bloqueVolets :1;
+unsigned char AllumeTout :1;
+} ub1;
+unsigned char o;
+
+};
+
+# 4 "../source/global.h"
+extern unsigned char uc_CompteurCycle;
+extern unsigned char uc_CompteurAcq;
+
+extern unsigned char uc_CompteurBase1S;
+
+
+extern unsigned char b1_BT_1S;
+
+
+extern unsigned char uc_CompteurLED;
+
+
+extern unsigned char uc_CompteurBiStable;
+
+
+extern unsigned char uc_FlagITTimer;
+
+
+
+extern unsigned char uc_NB_ES;
+extern unsigned char uc_ENTREE_TOR_NB;
+extern unsigned char uc_RM_NB;
+extern unsigned char uc_ENTREE_VARIATEUR_NB;
+extern unsigned char uc_VARIATEUR_NB;
+extern unsigned char uc_ENTREE_VOLET_NB;
+extern unsigned char uc_RB_NB;
+extern unsigned char uc_VOLET_NB;
+
+
+
+extern struct struct_Entree st_Entrees[NB_ES];
+extern unsigned short us_EntreesTOR;
+extern struct struct_EntreeVariateur st_EntreesVariateur[ENTREE_VARIATEUR_NB];
+extern struct struct_EntreeVoletOuStore st_EntreesVoletRoulant[ENTREE_VOLET_NB];
+
+
+
+extern unsigned short us_SortiesRelais;
+extern struct struct_SortieRelaisBistable st_SortiesRelaisBistables[RB_NB];
+
+extern struct struct_Variateur st_Variateurs[VARIATEUR_NB];
+
+
+
+extern unsigned char uc_CdeRelaisBistables[RB_NB];
+extern unsigned short us_CdeVariateurs[VARIATEUR_NB];
+
+
+extern unsigned char s_uc_PortA;
+extern unsigned char s_uc_PortB;
+extern unsigned char s_uc_PortC;
+extern unsigned char s_uc_PortD;
+extern unsigned char s_uc_PortE;
+extern unsigned char s_uc_PortF;
+
+
+unsigned char uc_TempsCdeVolet[RB_NB/2];
+unsigned char uc_TempsCdeLampe[RM_NB];
+
+extern union struct_Cde_BP st_Commandes;
+
+
+
+extern unsigned char uc_compteur_ecriture_eeprom;
+extern unsigned char uc_compteur_lecture_eeprom;
+
+# 2 "../source/traitement.h"
+ void vd_InitVariables(void);
+ void vd_InitVariables2(void);
+ void vd_TraitementApplicatif(void);
+
+# 2 "../source/gestionentrees.h"
+extern void vd_AcquisitionEntrees(void);
+extern void vd_AnalyserEntrees(void);
+
+# 2 "../source/gestionsorties.h"
+extern void vd_PiloterSorties(void);
+extern void vd_ArretPilotageRelaisBist(void);
+extern void vd_PilotageRelaisBist(void);
+extern inline void vd_PilotageVariateurs(void);
+
+# 2 "../source/variateur.h"
+extern unsigned short us_CodeVariateur (char);
+
+# 16 "../source/traitement.c"
+void vd_InitVariables(void)
+{
+unsigned char l_uc_Compteur;
+
+# 34
+for(l_uc_Compteur=0;l_uc_Compteur<ENTREE_VARIATEUR_NB;l_uc_Compteur++)
+{
+st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode = uc_MODE_VARIATEUR;
+st_EntreesVariateur[l_uc_Compteur].uc_CompteurMaintenu = 0;
+st_EntreesVariateur[l_uc_Compteur].uc_CompteurDoubleClic = 0;
+st_EntreesVariateur[l_uc_Compteur].ub1_Etat1VueApresEtatStop = 0;
+st_EntreesVariateur[l_uc_Compteur].ub1_SecondAppuiDetecte = 0;
+st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande = 0;
+st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande = 0;
+}
+for(l_uc_Compteur=0;l_uc_Compteur<ENTREE_VOLET_NB;l_uc_Compteur++)
+{
+st_EntreesVoletRoulant[l_uc_Compteur].ub4_CompteurMaintenu = 0;
+st_EntreesVoletRoulant[l_uc_Compteur].ub1_Etat1VueApresEtatStop = 0;
+st_EntreesVoletRoulant[l_uc_Compteur].ub3_EtatCommande = 0;
+}
+
+for(l_uc_Compteur=0;l_uc_Compteur<RB_NB;l_uc_Compteur++)
+{
+st_SortiesRelaisBistables[l_uc_Compteur].ub1_EtatRelaisBistable = 1;
+st_SortiesRelaisBistables[l_uc_Compteur].ub1_EtatRelaisBistableSouhaite = 0;
+
+uc_CdeRelaisBistables[l_uc_Compteur] = 0;
+}
+for(l_uc_Compteur=0;l_uc_Compteur<VARIATEUR_NB;l_uc_Compteur++)
+{
+st_Variateurs[l_uc_Compteur].c_Eclairage = 0;
+st_Variateurs[l_uc_Compteur].c_Consigne = 0;
+
+
+
+
+}
+
+st_Commandes.o = 0;
+
+
+s_uc_PortA = 0;
+s_uc_PortB = 0;
+s_uc_PortC = 0;
+s_uc_PortD = 0;
+s_uc_PortE = 0;
+s_uc_PortF = 0;
+
+# 94
+}
+
+void vd_InitVariables2(void)
+{
+unsigned char l_uc_Compteur;
+
+
+for(l_uc_Compteur=0;l_uc_Compteur<VARIATEUR_NB;l_uc_Compteur++)
+{
+
+
+switch (st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode) {
+case uc_MODE_TOR :
+us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (107);
+break;
+
+case uc_MODE_SOFT_START :
+case uc_MODE_VARIATEUR :
+
+us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (110);
+break;
+}
+}
+}
+
+# 134
+unsigned char uc_EteintLampe(unsigned char uc_Num_Lampe, unsigned short us_Etat_Lampe)
+{
+static unsigned short s_us_CompteurLampe[RM_NB];
+unsigned long l_ul_Valeur;
+
+unsigned char l_stop;
+
+l_stop = 0;
+
+if ((uc_Num_Lampe >= uc_RM_NB) || (uc_Num_Lampe >= RM_NB))
+return (l_stop);
+
+if (us_Etat_Lampe == 0)
+{
+
+s_us_CompteurLampe[uc_Num_Lampe] = 0;
+}
+else
+{
+
+if (s_us_CompteurLampe[uc_Num_Lampe] >0)
+{
+s_us_CompteurLampe[uc_Num_Lampe] --;
+if (s_us_CompteurLampe[uc_Num_Lampe] ==0)
+{
+
+l_stop = 1;
+}
+}
+else
+{
+
+l_ul_Valeur = (unsigned long)(uc_TempsCdeLampe[uc_Num_Lampe] * 60);
+
+# 173
+l_ul_Valeur = l_ul_Valeur * 994;
+l_ul_Valeur = l_ul_Valeur / 1000;
+
+s_us_CompteurLampe[uc_Num_Lampe] = (unsigned short)l_ul_Valeur;
+}
+}
+return (l_stop);
+}
+
+# 197
+unsigned char uc_StopVolet(unsigned char uc_NumVolet, enum enum_TEMPO_RELAIS mode)
+{
+static unsigned char s_uc_CompteurVolet[RB_NB/2];
+
+unsigned char l_stop;
+
+l_stop = 0;
+
+if ((uc_NumVolet >= uc_VOLET_NB) || (uc_NumVolet >= RB_NB/2))
+return (1);
+
+switch (mode)
+{
+case INIT :
+
+
+if (uc_TempsCdeVolet[uc_NumVolet]==0)
+uc_TempsCdeVolet[uc_NumVolet]= 2*60;
+
+s_uc_CompteurVolet[uc_NumVolet] = uc_TempsCdeVolet[uc_NumVolet];
+break;
+case RAZ:
+
+s_uc_CompteurVolet[uc_NumVolet] = 0;
+break;
+case MAINTIEN:
+if (s_uc_CompteurVolet[uc_NumVolet] >0)
+{
+if (b1_BT_1S == 1)
+{
+s_uc_CompteurVolet[uc_NumVolet] --;
+}
+}
+else
+{
+l_stop = 1;
+}
+break;
+}
+return (l_stop);
+}
+
+# 246
+void vd_TraitementApplicatif(void)
+{
+unsigned char l_uc_Compteur;
+unsigned short l_us_Masque;
+unsigned char l_uc_RelaisSens1;
+unsigned char l_uc_RelaisSens2;
+
+
+for(l_uc_Compteur=0;l_uc_Compteur<uc_RM_NB;l_uc_Compteur++)
+{
+l_us_Masque = 0x01 << l_uc_Compteur;
+
+# 269
+if ((us_EntreesTOR & l_us_Masque) !=0)
+{
+
+us_SortiesRelais ^= l_us_Masque;
+}
+else
+{
+
+;
+}
+
+if (b1_BT_1S == 1)
+{
+if (uc_EteintLampe(l_uc_Compteur, us_SortiesRelais & l_us_Masque) == 1)
+{
+us_SortiesRelais &= ~l_us_Masque;
+}
+}
+
+}
+
+# 328
+for(l_uc_Compteur=0;l_uc_Compteur<uc_VOLET_NB;l_uc_Compteur++)
+{
+l_uc_RelaisSens1 = l_uc_Compteur *2;
+l_uc_RelaisSens2 = l_uc_RelaisSens1 +1;
+
+
+switch (st_EntreesVoletRoulant[l_uc_RelaisSens1].ub3_EtatCommande)
+{
+case uc_VOLET_APPUI_COURT:
+case uc_VOLET_APPUI_LONG:
+case uc_VOLET_ON:
+
+switch (st_EntreesVoletRoulant[l_uc_RelaisSens2].ub3_EtatCommande)
+{
+case uc_VOLET_APPUI_COURT:
+case uc_VOLET_APPUI_LONG:
+case uc_VOLET_ON:
+st_EntreesVoletRoulant[l_uc_RelaisSens1].ub3_EtatCommande = uc_VOLET_OFF;
+st_EntreesVoletRoulant[l_uc_RelaisSens2].ub3_EtatCommande = uc_VOLET_OFF;
+break;
+}
+break;
+default :
+;
+break;
+}
+
+
+switch (st_EntreesVoletRoulant[l_uc_RelaisSens1].ub3_EtatCommande)
+{
+case uc_VOLET_APPUI_COURT:
+
+if (st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite == 0)
+{
+
+
+if (st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite != 0)
+{
+st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 0;
+}
+
+if (uc_StopVolet(l_uc_Compteur,INIT)==1)
+;
+st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 1;
+
+
+st_EntreesVoletRoulant[l_uc_RelaisSens1].ub3_EtatCommande = uc_VOLET_RIEN;
+}
+else
+{
+if (uc_StopVolet(l_uc_Compteur,RAZ)==1)
+;
+st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 0;
+
+
+st_EntreesVoletRoulant[l_uc_RelaisSens1].ub3_EtatCommande = uc_VOLET_RIEN;
+}
+break;
+case uc_VOLET_APPUI_LONG:
+
+if (uc_StopVolet(l_uc_Compteur,RAZ)==1)
+;
+st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 1;
+
+st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 0;
+break;
+case uc_VOLET_OFF:
+
+if (uc_StopVolet(l_uc_Compteur,RAZ)==1)
+;
+st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 0;
+
+st_EntreesVoletRoulant[l_uc_RelaisSens1].ub3_EtatCommande = uc_VOLET_RIEN;
+break;
+case uc_VOLET_ON:
+
+
+
+if (st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite != 0)
+{
+st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 0;
+
+
+}
+
+if (uc_StopVolet(l_uc_Compteur,INIT)==1)
+;
+st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 1;
+
+
+st_EntreesVoletRoulant[l_uc_RelaisSens1].ub3_EtatCommande = uc_VOLET_RIEN;
+break;
+default :
+
+if(st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite != 0)
+if (uc_StopVolet(l_uc_Compteur,MAINTIEN)==1)
+st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 0;
+break;
+}
+
+
+switch (st_EntreesVoletRoulant[l_uc_RelaisSens2].ub3_EtatCommande)
+{
+case uc_VOLET_APPUI_COURT:
+
+
+if (st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite == 0)
+{
+
+
+if (st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite != 0)
+{
+st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 0;
+
+
+}
+
+if (uc_StopVolet(l_uc_Compteur,INIT)==1)
+;
+st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 1;
+
+
+st_EntreesVoletRoulant[l_uc_RelaisSens2].ub3_EtatCommande = uc_VOLET_RIEN;
+}
+else
+{
+if (uc_StopVolet(l_uc_Compteur,RAZ)==1)
+;
+st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 0;
+
+
+st_EntreesVoletRoulant[l_uc_RelaisSens2].ub3_EtatCommande = uc_VOLET_RIEN;
+}
+break;
+case uc_VOLET_APPUI_LONG:
+
+if (uc_StopVolet(l_uc_Compteur,RAZ)==1)
+;
+st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 1;
+
+st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 0;
+break;
+case uc_VOLET_OFF:
+
+if (uc_StopVolet(l_uc_Compteur,RAZ)==1)
+;
+st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 0;
+
+st_EntreesVoletRoulant[l_uc_RelaisSens2].ub3_EtatCommande = uc_VOLET_RIEN;
+break;
+case uc_VOLET_ON:
+
+
+
+if (st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite != 0)
+{
+st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 0;
+
+
+}
+
+if (uc_StopVolet(l_uc_Compteur,INIT)==1)
+;
+st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 1;
+
+
+st_EntreesVoletRoulant[l_uc_RelaisSens2].ub3_EtatCommande = uc_VOLET_RIEN;
+break;
+default :
+
+if(st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite != 0)
+if (uc_StopVolet(l_uc_Compteur,MAINTIEN)==1)
+st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 0;
+break;
+}
+}
+
+
+
+
+for(l_uc_Compteur=0;l_uc_Compteur<uc_VARIATEUR_NB;l_uc_Compteur++)
+{
+
+# 531
+switch (st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande)
+{
+case uc_VARIATEUR_RIEN:
+;
+break;
+
+case uc_VARIATEUR_OFF:
+
+st_Variateurs[l_uc_Compteur].c_Eclairage = 0;
+st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande = 0;
+
+
+st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande = uc_VARIATEUR_RIEN;
+break;
+
+case uc_VARIATEUR_ON:
+
+if ( (st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode == uc_MODE_TOR)
+|| (st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode == uc_MODE_SOFT_START))
+{
+st_Variateurs[l_uc_Compteur].c_EclairageOld = 100;
+}
+
+
+if (st_Variateurs[l_uc_Compteur].c_EclairageOld <=0)
+
+st_Variateurs[l_uc_Compteur].c_EclairageOld = 100;
+
+st_Variateurs[l_uc_Compteur].c_Eclairage = st_Variateurs[l_uc_Compteur].c_EclairageOld;
+st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande = 0;
+
+
+st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande = uc_VARIATEUR_RIEN;
+break;
+
+case uc_VARIATEUR_APPUI_COURT:
+
+if ( (st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode == uc_MODE_TOR)
+|| (st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode == uc_MODE_SOFT_START))
+{
+st_Variateurs[l_uc_Compteur].c_EclairageOld = 100;
+}
+
+if (st_Variateurs[l_uc_Compteur].c_Eclairage > 0)
+{
+st_Variateurs[l_uc_Compteur].c_Eclairage = 0;
+st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande = 0;
+}
+else
+{
+if (st_Variateurs[l_uc_Compteur].c_EclairageOld <=0)
+
+st_Variateurs[l_uc_Compteur].c_EclairageOld = 100;
+
+st_Variateurs[l_uc_Compteur].c_Eclairage = st_Variateurs[l_uc_Compteur].c_EclairageOld;
+st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande = 0;
+}
+
+
+st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande = uc_VARIATEUR_RIEN;
+break;
+
+case uc_VARIATEUR_APPUI_DOUBLE:
+
+st_Variateurs[l_uc_Compteur].c_Eclairage = 100;
+st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande = 1;
+
+
+st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande = uc_VARIATEUR_RIEN;
+break;
+
+case uc_VARIATEUR_APPUI_LONG:
+
+
+{
+
+
+if (st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande ==0)
+{
+if (st_Variateurs[l_uc_Compteur].c_Eclairage < (100-1))
+st_Variateurs[l_uc_Compteur].c_Eclairage += 1;
+else
+st_Variateurs[l_uc_Compteur].c_Eclairage = 100;
+
+
+
+
+}
+else
+{
+if (st_Variateurs[l_uc_Compteur].c_Eclairage > 1)
+st_Variateurs[l_uc_Compteur].c_Eclairage -= 1;
+else
+st_Variateurs[l_uc_Compteur].c_Eclairage = 0;
+
+
+
+}
+
+
+st_Variateurs[l_uc_Compteur].c_EclairageOld = st_Variateurs[l_uc_Compteur].c_Eclairage;
+
+}
+break;
+}
+
+
+
+
+if(st_Variateurs[l_uc_Compteur].c_Eclairage < 0) st_Variateurs[l_uc_Compteur].c_Eclairage = 0;
+if(st_Variateurs[l_uc_Compteur].c_Eclairage > 100) st_Variateurs[l_uc_Compteur].c_Eclairage = 100;
+
+
+if (st_Commandes.ub1.AllumeTout == 0)
+{
+
+# 658
+if(st_Variateurs[l_uc_Compteur].c_Eclairage != st_Variateurs[l_uc_Compteur].c_Consigne)
+{
+st_Variateurs[l_uc_Compteur].c_Consigne = st_Variateurs[l_uc_Compteur].c_Eclairage;
+switch (st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode) {
+case uc_MODE_TOR :
+
+if (st_Variateurs[l_uc_Compteur].c_Eclairage < 20)
+{
+us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (107);
+}
+else
+{
+us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (106);
+}
+break;
+
+case uc_MODE_SOFT_START :
+case uc_MODE_VARIATEUR :
+
+us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (st_Variateurs[l_uc_Compteur].c_Eclairage + 110);
+break;
+}
+}
+}
+else
+{
+
+if(st_Variateurs[l_uc_Compteur].c_Consigne != -1)
+{
+st_Variateurs[l_uc_Compteur].c_Consigne = -1;
+switch (st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode) {
+case uc_MODE_TOR :
+
+us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (106);
+break;
+
+case uc_MODE_SOFT_START :
+case uc_MODE_VARIATEUR :
+
+us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (210);
+break;
+}
+}
+}
+}
+
+
+
+}
+

@@ -1,0 +1,19 @@
+DRC Rules Export File for PCB: D:\__Project\Altium\____Valentinea\SC942\04nov16\SI942C.PcbDoc
+RuleKind=Clearance|RuleName=Clearance_Copper_Board|Scope=Board|Minimum=15.00
+RuleKind=Clearance|RuleName=Clearance_BT_MID|Scope=Board|Minimum=27.56
+RuleKind=Clearance|RuleName=Clearance_BT_EXT|Scope=Board|Minimum=216.54
+RuleKind=Clearance|RuleName=Clearance_Copper_Copper|Scope=Board|Minimum=13.78
+RuleKind=Clearance|RuleName=Clearance_CopperToPad_EXT|Scope=Board|Minimum=13.78
+RuleKind=Clearance|RuleName=Clearance_CopperToPad_MID|Scope=Board|Minimum=7.87
+RuleKind=Clearance|RuleName=Clearance_CopperToWire_x|Scope=Board|Minimum=7.87
+RuleKind=Clearance|RuleName=Clearance_PadToPad|Scope=Board|Minimum=5.91
+RuleKind=Clearance|RuleName=Clearance_PadToWire_x|Scope=Board|Minimum=5.91
+RuleKind=Clearance|RuleName=Clearance_WireToWire_x|Scope=Board|Minimum=5.91
+RuleKind=Clearance|RuleName=Clearance_ViaToPad_x|Scope=Board|Minimum=5.91
+RuleKind=Clearance|RuleName=Clearance_ViaToPad_x_1|Scope=Board|Minimum=4.00
+RuleKind=Clearance|RuleName=Clearance_ViaToWire_x|Scope=Board|Minimum=5.91
+RuleKind=Clearance|RuleName=Clearance_ViaToVia_x|Scope=Board|Minimum=5.91
+RuleKind=Clearance|RuleName=Clearance_Design_HoleToHole|Scope=Board|Minimum=5.91
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=6.00
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0

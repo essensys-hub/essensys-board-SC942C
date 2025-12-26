@@ -1,0 +1,42 @@
+﻿,Name,Description,Designator,Part Number,Price,Qty
+,C_0805_X7R_10%_100N-50V,"Condensateur céramique, X7R, 10%, CMS 0805","C1, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C20, C21, C22, C23, C24, C28, C30, C31, C32, C33, C34, C35, C36, C37, C38, C39, C40","KYOCERA AVX 08055C104KAT2A, ",1.27472,33
+,C_0805_X5R_10%_10U-16V,"Condensateur céramique, X5R, 10%, CMS 0805","C2, C4, C41",,,3
+,C_0603_X7R_10%_10N-50V,"Condensateur céramique, X7R, 10%, CMS 0603",C3,KEMET C0603C103K5RACTU,0.25791,1
+,C_0603_NPO_5%_18P-50V,"Condensateur céramique, NPO, 5%, CMS 0603, 18pF/50V","C25, C26","KEMET C0603C180J5GACTU, ",0.27087,2
+,C_0603_NPO_5%_220pF-50V,Multilayer Ceramic Capacitors MLCC - SMD/SMT 50volts 220pF C0G 5%,C42,,,1
+,SMF5V0A-GS08,"Diode Transil/TVS unidirectionnelle (A), 200W, 5V, CMS","D1, D2, D10, D11, D13, D14, D16, D17, D19, D20, D21, D22, D24, D25, D27, D31, D33, D35, D37, D38, D39, D42, D43",,,23
+,GF1B,"Diode de Redressement, Vrrm=100V, If=1A, Vf=1.1V, CMS",D3,onsemi GF1B,2.20226,1
+,BAT54C,"Diode Schottky double, BAT54 cathode com, Vrrm=30V, If=300mA, Vf=0.4Vmax, CMS","D4, D7, D8, D9, D12, D15, D18, D23, D26, D28, D29, D30, D32, D34, D36, D40, D41, D44","Nexperia BAT54C,215, ",4.6424,18
+,PMEG2020AEA,"Diode Schottky, Vrrm=20V, If=2A, Vf=450V, CMS",D6,"Nexperia PMEG2020AEA,115",3.79212,1
+,LED_0805_VERT_KP2012,"LED CMS 0805, Vert, Vf 2.5V@20mA (4-15mCd), 525nm, vue 120°",DL1,Kingbright KP-2012SGC,1.12468,1
+,DOCUMENT_FAB_CARTE_SDFC,Document de Fabrication pour la Carte SC{Num SC}-{Version SC},DOC1,,,1
+,EMIFIL_220P_25V/6A_NFE31PT221D1E9L,"Filtre EMI selfique-capacitif, -20/+50%, 25Vcc/6A, -40/+85°C, 220pF",FI1,,,1
+,MICRO-MATE-N-LOK_WURTH_2X02_D,"Embase type Micro Mate-n-Lok, e3mm, 4pts, droit, cont. étamés 20mR, 250V/5A, Iso 1500V, -40/+105°C","J1, J2",,,2
+,61202621621,"26 Positions Header, Shrouded Connector 0.100"" (2.54mm) Through Hole Gold",J3,Wurth Elektronik 61202621621,1.0128,1
+,BRESS_CI_D_7.62_01_FFKDSA1/V2,"Bornier à connexion par ressorts/déconnexion par levier, série FFKDSA1/V2, e7.62, 1x1pts, droit, juxtaposable, 500V/17.5A, AWG22~16, Vert/Orange","J4, J9, J14, J17, J22, J25, J28, J31, J36, J41, J44, J49, J52, J57, J62, J67, J70, J75, J80, J85, J88, J91",,,22
+,BRESS_CI_D_5.08_01_FFKDS/V2,"Bornier à connexion par ressorts/déconnexion par levier, série FFKDS/V2, e5.08, 1x1pts, droit, juxtaposable, 320V/15A, AWG22~16, Vert/Orange","J5, J7, J10, J12, J15, J20, J37, J39, J42, J47, J58, J60, J63, J65, J76, J78, J81, J83",,,18
+,BRESS_CI_D_7.62_01_FFKDSA/V2,"Bornier à connexion par ressorts/déconnexion par levier, série FFKDSA/V2, e7.62, 1x1pts, droit, juxtaposable, 500V/17.5A, AWG22~16, Vert/Orange","J23, J34, J50, J55, J68, J73, J86",,,7
+,RELAY_12VDC_1RT_34.51,"Relais 1RT, 12Vdc, série 34.51, Rc=1940R, Sw:250Vac/6A, Ron=? (AgSnO2)","K1, K2, K3, K8, K9, K12, K15",,,7
+,RELAY_12VDC_1RT_BI_40.61.6,"Relais 1RT, 12Vdc, série 40.61.6 (bistable), Rc=900R, Sw:250Vac/16A, Ron=? (AgSnO2)","K4, K5, K6, K7, K10, K11, K13, K14, K16, K17",,,10
+,SELF_10UH_1.19A_744043100,"Inductance bobinée CMS, 10uH +/- 10%, I=1.19A, Rdc=0.095R, SRF=40MHz, -40/+85°C",L1,,,1
+,IND_FERRITE_1206_74279218,"Inductance à ferrite multicouches CMS, imp=600R@100MHz, +/-25%, Rdc=100mR, I=2A",L2,,,1
+,744272102,Common Mode Filters / Chokes WE-SL5 Bifilar 2x1000uH 950mA,L3,Wurth Elektronik 744272102,3.40349,1
+,MIRE_PICK-N-PLACE,"Mire pour machine de placement CMS ""Pick'n Place""","MIR1, MIR2, MIR3",,,3
+,QUARTZ_HC49/4HSMX_20M,"Quartz CMS série HCM49 (équiv HC49/US), -10/+60°C, +/-30ppm, 18pF",Q1,Citizen Finedevice HCM49 20.000MABJ-UT,0.5488,1
+,RES_0805_1%_100PPM_0R,"Résistance CMS 0805, 0.125W, 1%, 100ppm, 150V","R1, R2, R83","Welwyn WCR0805-R005JI, ",0.58531,3
+,RES_0805_1%_100PPM_47K,"Résistance CMS 0805, 0.125W, 1%, 100ppm, 150V",R3,,,1
+,RES_0805_1%_100PPM_9.1K,"Résistance CMS 0805, 0.125W, 1%, 100ppm, 150V",R4,Yageo Group RC0805FR-079K1L,0.1,1
+,RES_0805_1%_100PPM_10K,"Résistance CMS 0805, 0.125W, 1%, 100ppm, 150V","R5, R6, R7, R8, R9, R10, R15, R16, R21, R22, R28, R31, R33, R34, R39, R43, R45, R46, R47, R51, R52, R55, R56, R57, R58, R61, R64, R67, R70, R73, R74, R77, R80, R81","Yageo Group RC0805FR-0710KL, ",0.53655,34
+,RES_0805_1%_100PPM_22K,"Résistance CMS 0805, 0.125W, 1%, 100ppm, 150V","R11, R13, R17, R19, R23, R25, R27, R30, R35, R37, R40, R42, R48, R53, R59, R62, R65, R68, R71, R75, R78","Yageo Group RC0805FR-0722KL, ",0.28194,21
+,RES_0805_1%_100PPM_6.8K,"Résistance CMS 0805, 0.125W, 1%, 100ppm, 150V","R12, R14, R18, R20, R24, R26, R29, R32, R36, R38, R41, R44, R49, R54, R60, R63, R66, R69, R72, R76, R79","Yageo Group RC0805FR-076K8L, ",0.19043,21
+,RES_0805_1%_100PPM_1K,"Résistance CMS 0805, 0.125W, 1%, 100ppm, 150V","R50, R82","Vishay CRCW08051K00FKEA, ",0.29324,2
+,SI942C,Circuit Imprimé,SI1,,,1
+,RELAY-SUPPORT_93.11,"Suppor série 93 pour relais Finder séries 34, 250V/6A, Bleu","SUP_K1, SUP_K2, SUP_K3, SUP_K8, SUP_K9, SUP_K12, SUP_K15",,,7
+,RELAY-SUPPORT_95.15.2,"Suppor série 95 pour relais Finder séries 40, 250V/10A, Bleu, sans Etrier","SUP_K4, SUP_K5, SUP_K6, SUP_K7, SUP_K10, SUP_K11, SUP_K13, SUP_K14, SUP_K16, SUP_K17",,,10
+,ZXMN3A01F,"Transistor MOSN logique, Vdss=30V, Id=2A, Rdson=0.12R, CMS","T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28","Diodes Inc. ZXMN3A01F, ",21.82943,28
+,LMR12010YMK,"Régulateur ajustable step down, 0.8~20V, 1A, Vin=3~20V, -40/+125°C, CMS",U1,Texas Instruments LMR12010YMKE/NOPB,3.58,1
+,SC943-0C,Carte gradateur,"U2, U3, U6, U8",,,4
+,NCP803SN308T1G,"Superviseur de Reset pour microcontrolleur 3.08V -Pin SOT-23, CMS",U4,,,1
+,PIC16F946-I/PT,Microcontrôleur 8bit,U5,,,1
+,MIC4426YM,"Dual High-Speed 1.5A MOSFET Driver, CMS",U7,,,1
+,VDR_820572711,"Varistance disque 275Vac, 350Vdc, 33J, Vbreak=430V@1mA, Vclamp=710V@10A, Ipeak=1200A","VR1, VR2, VR3, VR4",,,4

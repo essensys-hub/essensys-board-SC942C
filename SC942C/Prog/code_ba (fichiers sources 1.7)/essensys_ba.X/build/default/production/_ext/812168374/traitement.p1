@@ -1,0 +1,1718 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"60 ../source/global.h
+[c E104 0 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
+[n E104 enum_RELAIS_BISTABLES uc_RB0 uc_RB1 uc_RB2 uc_RB3 uc_RB4 uc_RB5 uc_RB6 uc_RB7 uc_RB8 uc_RB9 uc_RB10 uc_RB11 RB_NB  ]
+"61
+[c E80 0 1 2 3 4 5 6 7 8 9 10 11 12 13 .. ]
+[n E80 enum_RELAIS uc_RM0 uc_RM1 uc_RM2 uc_RM3 uc_RM4 uc_RM5 uc_RM6 uc_RM7 uc_RM8 uc_RM9 uc_RM10 uc_RM11 uc_RM12 RM_NB  ]
+"34 ../source/traitement.c
+[c E60 0 1 2 3 4 .. ]
+[n E60 enum_ENTREE_VARIATEUR uc_ENTREE_VARIATEUR0 uc_ENTREE_VARIATEUR1 uc_ENTREE_VARIATEUR2 uc_ENTREE_VARIATEUR3 ENTREE_VARIATEUR_NB  ]
+"16 ../source/struct.h
+[s S2 `uc 1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S2 struct_EntreeVariateur uc_CompteurMaintenu uc_CompteurDoubleClic ub3_EntreeMode ub1_Etat1VueApresEtatStop ub1_SecondAppuiDetecte ub3_EtatCommande ub1_SensCommande ]
+"36 ../source/global.h
+[v _st_EntreesVariateur `S2 ~T0 @X0 -> 0 `x e ]
+"36 ../source/traitement.c
+[c E25 0 1 2 .. ]
+[n E25 enum_ENTREE_VARIATEUR_MODE uc_MODE_SOFT_START uc_MODE_VARIATEUR uc_MODE_TOR  ]
+"44
+[c E66 0 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
+[n E66 enum_ENTREE_VOLET uc_ENTREE_VOLET0 uc_ENTREE_VOLET1 uc_ENTREE_VOLET2 uc_ENTREE_VOLET3 uc_ENTREE_VOLET4 uc_ENTREE_VOLET5 uc_ENTREE_VOLET6 uc_ENTREE_VOLET7 uc_ENTREE_VOLET8 uc_ENTREE_VOLET9 uc_ENTREE_VOLET10 uc_ENTREE_VOLET11 ENTREE_VOLET_NB  ]
+"28 ../source/struct.h
+[s S3 :4 `uc 1 :1 `uc 1 :3 `uc 1 ]
+[n S3 struct_EntreeVoletOuStore ub4_CompteurMaintenu ub1_Etat1VueApresEtatStop ub3_EtatCommande ]
+"37 ../source/global.h
+[v _st_EntreesVoletRoulant `S3 ~T0 @X0 -> 0 `x e ]
+"36 ../source/struct.h
+[s S4 :1 `uc 1 :1 `uc 1 ]
+[n S4 struct_SortieRelaisBistable ub1_EtatRelaisBistable ub1_EtatRelaisBistableSouhaite ]
+"42 ../source/global.h
+[v _st_SortiesRelaisBistables `S4 ~T0 @X0 -> 0 `x e ]
+"48
+[v _uc_CdeRelaisBistables `uc ~T0 @X0 -> 0 `x e ]
+"58 ../source/traitement.c
+[c E125 0 1 2 3 4 .. ]
+[n E125 enum_VARIATEUR uc_VARIATEUR0 uc_VARIATEUR1 uc_VARIATEUR2 uc_VARIATEUR3 VARIATEUR_NB  ]
+"43 ../source/struct.h
+[s S5 `c 1 `c 1 `c 1 ]
+[n S5 struct_Variateur c_Eclairage c_EclairageOld c_Consigne ]
+"44 ../source/global.h
+[v _st_Variateurs `S5 ~T0 @X0 -> 0 `x e ]
+[s S7 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S7 . Sauvegarde bloqueVolets AllumeTout ]
+"59 ../source/struct.h
+[u S6 `S7 1 `uc 1 ]
+[n S6 struct_Cde_BP ub1 o ]
+"63 ../source/global.h
+[v _st_Commandes `S6 ~T0 @X0 0 e ]
+"52
+[v _s_uc_PortA `uc ~T0 @X0 0 e ]
+"53
+[v _s_uc_PortB `uc ~T0 @X0 0 e ]
+"54
+[v _s_uc_PortC `uc ~T0 @X0 0 e ]
+"55
+[v _s_uc_PortD `uc ~T0 @X0 0 e ]
+"56
+[v _s_uc_PortE `uc ~T0 @X0 0 e ]
+"57
+[v _s_uc_PortF `uc ~T0 @X0 0 e ]
+"49
+[v _us_CdeVariateurs `us ~T0 @X0 -> 0 `x e ]
+"2 ../source/variateur.h
+[v _us_CodeVariateur `(us ~T0 @X0 0 ef1`uc ]
+"25 ../source/global.h
+[v _uc_RM_NB `uc ~T0 @X0 0 e ]
+"198 ../source/traitement.c
+[c E121 0 1 2 .. ]
+[n E121 enum_TEMPO_RELAIS INIT RAZ MAINTIEN  ]
+"30 ../source/global.h
+[v _uc_VOLET_NB `uc ~T0 @X0 0 e ]
+"10
+[v _b1_BT_1S `uc ~T0 @X0 0 e ]
+"35
+[v _us_EntreesTOR `us ~T0 @X0 0 e ]
+"41
+[v _us_SortiesRelais `us ~T0 @X0 0 e ]
+"345 ../source/traitement.c
+[c E32 0 1 2 3 4 .. ]
+[n E32 enum_ENTREES_CMDE_VOLET_STORE uc_VOLET_RIEN uc_VOLET_OFF uc_VOLET_APPUI_COURT uc_VOLET_APPUI_LONG uc_VOLET_ON  ]
+"543
+[c E38 0 1 2 3 4 5 .. ]
+[n E38 enum_ENTREES_CMDE_VARIATEUR uc_VARIATEUR_RIEN uc_VARIATEUR_OFF uc_VARIATEUR_ON uc_VARIATEUR_APPUI_COURT uc_VARIATEUR_APPUI_DOUBLE uc_VARIATEUR_APPUI_LONG  ]
+"27 ../source/global.h
+[v _uc_VARIATEUR_NB `uc ~T0 @X0 0 e ]
+[; ;constantes.h: 92: enum enum_ENTREES
+[; ;constantes.h: 93: {
+[; ;constantes.h: 94: uc_ENTREE0,
+[; ;constantes.h: 95: uc_ENTREE1,
+[; ;constantes.h: 96: uc_ENTREE2,
+[; ;constantes.h: 97: uc_ENTREE3,
+[; ;constantes.h: 98: uc_ENTREE4,
+[; ;constantes.h: 99: uc_ENTREE5,
+[; ;constantes.h: 100: uc_ENTREE6,
+[; ;constantes.h: 101: uc_ENTREE7,
+[; ;constantes.h: 102: uc_ENTREE8,
+[; ;constantes.h: 103: uc_ENTREE9,
+[; ;constantes.h: 104: uc_ENTREE10,
+[; ;constantes.h: 105: uc_ENTREE11,
+[; ;constantes.h: 106: uc_ENTREE12,
+[; ;constantes.h: 107: uc_ENTREE13,
+[; ;constantes.h: 108: uc_ENTREE14,
+[; ;constantes.h: 109: uc_ENTREE15,
+[; ;constantes.h: 110: uc_ENTREE16,
+[; ;constantes.h: 111: uc_ENTREE17,
+[; ;constantes.h: 112: uc_ENTREE18,
+[; ;constantes.h: 113: uc_ENTREE19,
+[; ;constantes.h: 114: uc_ENTREE20,
+[; ;constantes.h: 115: uc_ENTREE21,
+[; ;constantes.h: 116: NB_ES,
+[; ;constantes.h: 117: };
+[; ;constantes.h: 120: enum enum_ENTREE_VARIATEUR_MODE
+[; ;constantes.h: 121: {
+[; ;constantes.h: 122: uc_MODE_SOFT_START,
+[; ;constantes.h: 123: uc_MODE_VARIATEUR,
+[; ;constantes.h: 124: uc_MODE_TOR,
+[; ;constantes.h: 125: };
+[; ;constantes.h: 127: enum enum_ENTREES_CMDE_TOR
+[; ;constantes.h: 128: {
+[; ;constantes.h: 129: uc_TOR_OFF,
+[; ;constantes.h: 130: uc_TOR_ON,
+[; ;constantes.h: 131: };
+[; ;constantes.h: 133: enum enum_ENTREES_CMDE_VOLET_STORE
+[; ;constantes.h: 134: {
+[; ;constantes.h: 135: uc_VOLET_RIEN,
+[; ;constantes.h: 136: uc_VOLET_OFF,
+[; ;constantes.h: 137: uc_VOLET_APPUI_COURT,
+[; ;constantes.h: 138: uc_VOLET_APPUI_LONG,
+[; ;constantes.h: 139: uc_VOLET_ON,
+[; ;constantes.h: 140: };
+[; ;constantes.h: 142: enum enum_ENTREES_CMDE_VARIATEUR
+[; ;constantes.h: 143: {
+[; ;constantes.h: 144: uc_VARIATEUR_RIEN,
+[; ;constantes.h: 145: uc_VARIATEUR_OFF,
+[; ;constantes.h: 146: uc_VARIATEUR_ON,
+[; ;constantes.h: 147: uc_VARIATEUR_APPUI_COURT,
+[; ;constantes.h: 148: uc_VARIATEUR_APPUI_DOUBLE,
+[; ;constantes.h: 149: uc_VARIATEUR_APPUI_LONG,
+[; ;constantes.h: 150: };
+[; ;constantes.h: 152: enum enum_ENTREES_TOR
+[; ;constantes.h: 153: {
+[; ;constantes.h: 154: uc_ENTREE_TOR0,
+[; ;constantes.h: 155: uc_ENTREE_TOR1,
+[; ;constantes.h: 156: uc_ENTREE_TOR2,
+[; ;constantes.h: 157: uc_ENTREE_TOR3,
+[; ;constantes.h: 158: uc_ENTREE_TOR4,
+[; ;constantes.h: 159: uc_ENTREE_TOR5,
+[; ;constantes.h: 160: uc_ENTREE_TOR6,
+[; ;constantes.h: 161: uc_ENTREE_TOR7,
+[; ;constantes.h: 162: uc_ENTREE_TOR8,
+[; ;constantes.h: 163: uc_ENTREE_TOR9,
+[; ;constantes.h: 164: uc_ENTREE_TOR10,
+[; ;constantes.h: 165: uc_ENTREE_TOR11,
+[; ;constantes.h: 166: uc_ENTREE_TOR12,
+[; ;constantes.h: 167: ENTREE_TOR_NB,
+[; ;constantes.h: 168: };
+[; ;constantes.h: 170: enum enum_ENTREE_VARIATEUR
+[; ;constantes.h: 171: {
+[; ;constantes.h: 172: uc_ENTREE_VARIATEUR0,
+[; ;constantes.h: 173: uc_ENTREE_VARIATEUR1,
+[; ;constantes.h: 174: uc_ENTREE_VARIATEUR2,
+[; ;constantes.h: 175: uc_ENTREE_VARIATEUR3,
+[; ;constantes.h: 176: ENTREE_VARIATEUR_NB,
+[; ;constantes.h: 177: };
+[; ;constantes.h: 179: enum enum_ENTREE_VOLET
+[; ;constantes.h: 180: {
+[; ;constantes.h: 181: uc_ENTREE_VOLET0,
+[; ;constantes.h: 182: uc_ENTREE_VOLET1,
+[; ;constantes.h: 183: uc_ENTREE_VOLET2,
+[; ;constantes.h: 184: uc_ENTREE_VOLET3,
+[; ;constantes.h: 185: uc_ENTREE_VOLET4,
+[; ;constantes.h: 186: uc_ENTREE_VOLET5,
+[; ;constantes.h: 187: uc_ENTREE_VOLET6,
+[; ;constantes.h: 188: uc_ENTREE_VOLET7,
+[; ;constantes.h: 189: uc_ENTREE_VOLET8,
+[; ;constantes.h: 190: uc_ENTREE_VOLET9,
+[; ;constantes.h: 191: uc_ENTREE_VOLET10,
+[; ;constantes.h: 192: uc_ENTREE_VOLET11,
+[; ;constantes.h: 193: ENTREE_VOLET_NB,
+[; ;constantes.h: 194: };
+[; ;constantes.h: 196: enum enum_RELAIS
+[; ;constantes.h: 197: {
+[; ;constantes.h: 198: uc_RM0,
+[; ;constantes.h: 199: uc_RM1,
+[; ;constantes.h: 200: uc_RM2,
+[; ;constantes.h: 201: uc_RM3,
+[; ;constantes.h: 202: uc_RM4,
+[; ;constantes.h: 203: uc_RM5,
+[; ;constantes.h: 204: uc_RM6,
+[; ;constantes.h: 205: uc_RM7,
+[; ;constantes.h: 206: uc_RM8,
+[; ;constantes.h: 207: uc_RM9,
+[; ;constantes.h: 208: uc_RM10,
+[; ;constantes.h: 209: uc_RM11,
+[; ;constantes.h: 210: uc_RM12,
+[; ;constantes.h: 211: RM_NB,
+[; ;constantes.h: 212: };
+[; ;constantes.h: 214: enum enum_TYPES_SORTIES
+[; ;constantes.h: 215: {
+[; ;constantes.h: 216: uc_SORTIE_RELAIS,
+[; ;constantes.h: 217: uc_SORTIE_RELAIS_BISTABLE_SENS,
+[; ;constantes.h: 218: uc_SORTIE_RELAIS_BISTABLE,
+[; ;constantes.h: 219: uc_SORTIE_VARIATEUR,
+[; ;constantes.h: 220: uc_SORTIE_LED,
+[; ;constantes.h: 221: };
+[; ;constantes.h: 223: enum enum_RELAIS_BISTABLE_SENS
+[; ;constantes.h: 224: {
+[; ;constantes.h: 225: uc_RBSENS1,
+[; ;constantes.h: 226: uc_RBSENS2,
+[; ;constantes.h: 227: };
+[; ;constantes.h: 229: enum enum_RELAIS_BISTABLES
+[; ;constantes.h: 230: {
+[; ;constantes.h: 231: uc_RB0,
+[; ;constantes.h: 232: uc_RB1,
+[; ;constantes.h: 233: uc_RB2,
+[; ;constantes.h: 234: uc_RB3,
+[; ;constantes.h: 235: uc_RB4,
+[; ;constantes.h: 236: uc_RB5,
+[; ;constantes.h: 237: uc_RB6,
+[; ;constantes.h: 238: uc_RB7,
+[; ;constantes.h: 239: uc_RB8,
+[; ;constantes.h: 240: uc_RB9,
+[; ;constantes.h: 241: uc_RB10,
+[; ;constantes.h: 242: uc_RB11,
+[; ;constantes.h: 243: RB_NB,
+[; ;constantes.h: 244: };
+[; ;constantes.h: 247: enum enum_RELAIS_PILOTAGE
+[; ;constantes.h: 248: {
+[; ;constantes.h: 249: uc_OFF,
+[; ;constantes.h: 250: uc_ON,
+[; ;constantes.h: 251: };
+[; ;constantes.h: 253: enum enum_TEMPO_RELAIS
+[; ;constantes.h: 254: {
+[; ;constantes.h: 255: INIT,
+[; ;constantes.h: 256: RAZ,
+[; ;constantes.h: 257: MAINTIEN,
+[; ;constantes.h: 258: };
+[; ;constantes.h: 260: enum enum_VARIATEUR
+[; ;constantes.h: 261: {
+[; ;constantes.h: 262: uc_VARIATEUR0,
+[; ;constantes.h: 263: uc_VARIATEUR1,
+[; ;constantes.h: 264: uc_VARIATEUR2,
+[; ;constantes.h: 265: uc_VARIATEUR3,
+[; ;constantes.h: 266: VARIATEUR_NB,
+[; ;constantes.h: 267: };
+[; ;constantes.h: 269: enum enum_TYPES_BORNIER
+[; ;constantes.h: 270: {
+[; ;constantes.h: 271: BORNIER_PIECES_VIE,
+[; ;constantes.h: 272: BORNIER_CHAMBRES,
+[; ;constantes.h: 273: BORNIER_PIECES_EAU,
+[; ;constantes.h: 274: };
+[; ;struct.h: 5: struct struct_Entree
+[; ;struct.h: 6: {
+[; ;struct.h: 7: unsigned char ub1_EtatActuel:1;
+[; ;struct.h: 8: unsigned char ub4_AntiRebond_TempoChgtEtat:4;
+[; ;struct.h: 9: unsigned char ub1_EtatFiltrePourApp:1;
+[; ;struct.h: 10: unsigned char ub1_EtatFiltrePourAppPrecedent:1;
+[; ;struct.h: 11: };
+[; ;struct.h: 16: struct struct_EntreeVariateur
+[; ;struct.h: 17: {
+[; ;struct.h: 18: unsigned char uc_CompteurMaintenu;
+[; ;struct.h: 19: unsigned char uc_CompteurDoubleClic;
+[; ;struct.h: 20: unsigned char ub3_EntreeMode:3;
+[; ;struct.h: 21: unsigned char ub1_Etat1VueApresEtatStop:1;
+[; ;struct.h: 22: unsigned char ub1_SecondAppuiDetecte:1;
+[; ;struct.h: 24: unsigned char ub3_EtatCommande:3;
+[; ;struct.h: 25: unsigned char ub1_SensCommande:1;
+[; ;struct.h: 26: };
+[; ;struct.h: 28: struct struct_EntreeVoletOuStore
+[; ;struct.h: 29: {
+[; ;struct.h: 30: unsigned char ub4_CompteurMaintenu:4;
+[; ;struct.h: 31: unsigned char ub1_Etat1VueApresEtatStop:1;
+[; ;struct.h: 32: unsigned char ub3_EtatCommande:3;
+[; ;struct.h: 33: };
+[; ;struct.h: 36: struct struct_SortieRelaisBistable
+[; ;struct.h: 37: {
+[; ;struct.h: 38: unsigned char ub1_EtatRelaisBistable:1;
+[; ;struct.h: 39: unsigned char ub1_EtatRelaisBistableSouhaite:1;
+[; ;struct.h: 40: };
+[; ;struct.h: 43: struct struct_Variateur
+[; ;struct.h: 45: {
+[; ;struct.h: 46: signed char c_Eclairage;
+[; ;struct.h: 47: signed char c_EclairageOld;
+[; ;struct.h: 48: signed char c_Consigne;
+[; ;struct.h: 50: };
+[; ;struct.h: 59: union struct_Cde_BP
+[; ;struct.h: 60: {
+[; ;struct.h: 61: struct {
+[; ;struct.h: 62: unsigned char Sauvegarde :1;
+[; ;struct.h: 63: unsigned char bloqueVolets :1;
+[; ;struct.h: 64: unsigned char AllumeTout :1;
+[; ;struct.h: 65: } ub1;
+[; ;struct.h: 66: unsigned char o;
+[; ;struct.h: 68: };
+[; ;global.h: 4: extern unsigned char uc_CompteurCycle;
+[; ;global.h: 5: extern unsigned char uc_CompteurAcq;
+[; ;global.h: 7: extern unsigned char uc_CompteurBase1S;
+[; ;global.h: 10: extern unsigned char b1_BT_1S;
+[; ;global.h: 13: extern unsigned char uc_CompteurLED;
+[; ;global.h: 16: extern unsigned char uc_CompteurBiStable;
+[; ;global.h: 19: extern unsigned char uc_FlagITTimer;
+[; ;global.h: 23: extern unsigned char uc_NB_ES;
+[; ;global.h: 24: extern unsigned char uc_ENTREE_TOR_NB;
+[; ;global.h: 25: extern unsigned char uc_RM_NB;
+[; ;global.h: 26: extern unsigned char uc_ENTREE_VARIATEUR_NB;
+[; ;global.h: 27: extern unsigned char uc_VARIATEUR_NB;
+[; ;global.h: 28: extern unsigned char uc_ENTREE_VOLET_NB;
+[; ;global.h: 29: extern unsigned char uc_RB_NB;
+[; ;global.h: 30: extern unsigned char uc_VOLET_NB;
+[; ;global.h: 34: extern struct struct_Entree st_Entrees[NB_ES];
+[; ;global.h: 35: extern unsigned short us_EntreesTOR;
+[; ;global.h: 36: extern struct struct_EntreeVariateur st_EntreesVariateur[ENTREE_VARIATEUR_NB];
+[; ;global.h: 37: extern struct struct_EntreeVoletOuStore st_EntreesVoletRoulant[ENTREE_VOLET_NB];
+[; ;global.h: 41: extern unsigned short us_SortiesRelais;
+[; ;global.h: 42: extern struct struct_SortieRelaisBistable st_SortiesRelaisBistables[RB_NB];
+[; ;global.h: 44: extern struct struct_Variateur st_Variateurs[VARIATEUR_NB];
+[; ;global.h: 48: extern unsigned char uc_CdeRelaisBistables[RB_NB];
+[; ;global.h: 49: extern unsigned short us_CdeVariateurs[VARIATEUR_NB];
+[; ;global.h: 52: extern unsigned char s_uc_PortA;
+[; ;global.h: 53: extern unsigned char s_uc_PortB;
+[; ;global.h: 54: extern unsigned char s_uc_PortC;
+[; ;global.h: 55: extern unsigned char s_uc_PortD;
+[; ;global.h: 56: extern unsigned char s_uc_PortE;
+[; ;global.h: 57: extern unsigned char s_uc_PortF;
+"60 ../source/global.h
+[v _uc_TempsCdeVolet `uc ~T0 @X0 / -> . `E104 12 `i -> 2 `i e ]
+[; ;global.h: 60: unsigned char uc_TempsCdeVolet[RB_NB/2];
+"61
+[v _uc_TempsCdeLampe `uc ~T0 @X0 . `E80 13 e ]
+[; ;global.h: 61: unsigned char uc_TempsCdeLampe[RM_NB];
+[; ;global.h: 63: extern union struct_Cde_BP st_Commandes;
+[; ;global.h: 67: extern unsigned char uc_compteur_ecriture_eeprom;
+[; ;global.h: 68: extern unsigned char uc_compteur_lecture_eeprom;
+[; ;traitement.h: 2: void vd_InitVariables(void);
+[; ;traitement.h: 3: void vd_InitVariables2(void);
+[; ;traitement.h: 4: void vd_TraitementApplicatif(void);
+[; ;gestionentrees.h: 2: extern void vd_AcquisitionEntrees(void);
+[; ;gestionentrees.h: 3: extern void vd_AnalyserEntrees(void);
+[; ;gestionsorties.h: 2: extern void vd_PiloterSorties(void);
+[; ;gestionsorties.h: 3: extern void vd_ArretPilotageRelaisBist(void);
+[; ;gestionsorties.h: 4: extern void vd_PilotageRelaisBist(void);
+[; ;gestionsorties.h: 5: extern inline void vd_PilotageVariateurs(void);
+[; ;variateur.h: 2: extern unsigned short us_CodeVariateur (char);
+"16 ../source/traitement.c
+[v _vd_InitVariables `(v ~T0 @X0 1 ef ]
+"17
+{
+[; ;traitement.c: 16: void vd_InitVariables(void)
+[; ;traitement.c: 17: {
+[e :U _vd_InitVariables ]
+[f ]
+"18
+[v _l_uc_Compteur `uc ~T0 @X0 1 a ]
+[; ;traitement.c: 18: unsigned char l_uc_Compteur;
+[; ;traitement.c: 34: for(l_uc_Compteur=0;l_uc_Compteur<ENTREE_VARIATEUR_NB;l_uc_Compteur++)
+"34
+{
+[e = _l_uc_Compteur -> -> 0 `i `uc ]
+[e $ < -> _l_uc_Compteur `i -> . `E60 4 `i 9  ]
+[e $U 10  ]
+"35
+[e :U 9 ]
+[; ;traitement.c: 35: {
+{
+[; ;traitement.c: 36: st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode = uc_MODE_VARIATEUR;
+"36
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 2 -> . `E25 1 `uc ]
+[; ;traitement.c: 37: st_EntreesVariateur[l_uc_Compteur].uc_CompteurMaintenu = 0;
+"37
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 0 -> -> 0 `i `uc ]
+[; ;traitement.c: 38: st_EntreesVariateur[l_uc_Compteur].uc_CompteurDoubleClic = 0;
+"38
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 1 -> -> 0 `i `uc ]
+[; ;traitement.c: 39: st_EntreesVariateur[l_uc_Compteur].ub1_Etat1VueApresEtatStop = 0;
+"39
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 3 -> -> 0 `i `uc ]
+[; ;traitement.c: 40: st_EntreesVariateur[l_uc_Compteur].ub1_SecondAppuiDetecte = 0;
+"40
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 4 -> -> 0 `i `uc ]
+[; ;traitement.c: 41: st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande = 0;
+"41
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 5 -> -> 0 `i `uc ]
+[; ;traitement.c: 42: st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande = 0;
+"42
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 6 -> -> 0 `i `uc ]
+"43
+}
+"34
+[e ++ _l_uc_Compteur -> -> 1 `i `uc ]
+[e $ < -> _l_uc_Compteur `i -> . `E60 4 `i 9  ]
+[e :U 10 ]
+"43
+}
+[; ;traitement.c: 43: }
+[; ;traitement.c: 44: for(l_uc_Compteur=0;l_uc_Compteur<ENTREE_VOLET_NB;l_uc_Compteur++)
+"44
+{
+[e = _l_uc_Compteur -> -> 0 `i `uc ]
+[e $ < -> _l_uc_Compteur `i -> . `E66 12 `i 12  ]
+[e $U 13  ]
+"45
+[e :U 12 ]
+[; ;traitement.c: 45: {
+{
+[; ;traitement.c: 46: st_EntreesVoletRoulant[l_uc_Compteur].ub4_CompteurMaintenu = 0;
+"46
+[e = . *U + &U _st_EntreesVoletRoulant * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 0 -> -> 0 `i `uc ]
+[; ;traitement.c: 47: st_EntreesVoletRoulant[l_uc_Compteur].ub1_Etat1VueApresEtatStop = 0;
+"47
+[e = . *U + &U _st_EntreesVoletRoulant * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 1 -> -> 0 `i `uc ]
+[; ;traitement.c: 48: st_EntreesVoletRoulant[l_uc_Compteur].ub3_EtatCommande = 0;
+"48
+[e = . *U + &U _st_EntreesVoletRoulant * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 2 -> -> 0 `i `uc ]
+"49
+}
+"44
+[e ++ _l_uc_Compteur -> -> 1 `i `uc ]
+[e $ < -> _l_uc_Compteur `i -> . `E66 12 `i 12  ]
+[e :U 13 ]
+"49
+}
+[; ;traitement.c: 49: }
+[; ;traitement.c: 51: for(l_uc_Compteur=0;l_uc_Compteur<RB_NB;l_uc_Compteur++)
+"51
+{
+[e = _l_uc_Compteur -> -> 0 `i `uc ]
+[e $ < -> _l_uc_Compteur `i -> . `E104 12 `i 15  ]
+[e $U 16  ]
+"52
+[e :U 15 ]
+[; ;traitement.c: 52: {
+{
+[; ;traitement.c: 53: st_SortiesRelaisBistables[l_uc_Compteur].ub1_EtatRelaisBistable = 1;
+"53
+[e = . *U + &U _st_SortiesRelaisBistables * -> _l_uc_Compteur `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 0 -> -> 1 `i `uc ]
+[; ;traitement.c: 54: st_SortiesRelaisBistables[l_uc_Compteur].ub1_EtatRelaisBistableSouhaite = 0;
+"54
+[e = . *U + &U _st_SortiesRelaisBistables * -> _l_uc_Compteur `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 -> -> 0 `i `uc ]
+[; ;traitement.c: 56: uc_CdeRelaisBistables[l_uc_Compteur] = 0;
+"56
+[e = *U + &U _uc_CdeRelaisBistables * -> _l_uc_Compteur `ux -> -> # *U &U _uc_CdeRelaisBistables `ui `ux -> -> 0 `i `uc ]
+"57
+}
+"51
+[e ++ _l_uc_Compteur -> -> 1 `i `uc ]
+[e $ < -> _l_uc_Compteur `i -> . `E104 12 `i 15  ]
+[e :U 16 ]
+"57
+}
+[; ;traitement.c: 57: }
+[; ;traitement.c: 58: for(l_uc_Compteur=0;l_uc_Compteur<VARIATEUR_NB;l_uc_Compteur++)
+"58
+{
+[e = _l_uc_Compteur -> -> 0 `i `uc ]
+[e $ < -> _l_uc_Compteur `i -> . `E125 4 `i 18  ]
+[e $U 19  ]
+"59
+[e :U 18 ]
+[; ;traitement.c: 59: {
+{
+[; ;traitement.c: 60: st_Variateurs[l_uc_Compteur].c_Eclairage = 0;
+"60
+[e = . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 0 -> -> 0 `i `c ]
+[; ;traitement.c: 61: st_Variateurs[l_uc_Compteur].c_Consigne = 0;
+"61
+[e = . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 2 -> -> 0 `i `c ]
+"66
+}
+"58
+[e ++ _l_uc_Compteur -> -> 1 `i `uc ]
+[e $ < -> _l_uc_Compteur `i -> . `E125 4 `i 18  ]
+[e :U 19 ]
+"66
+}
+[; ;traitement.c: 66: }
+[; ;traitement.c: 68: st_Commandes.o = 0;
+"68
+[e = . _st_Commandes 1 -> -> 0 `i `uc ]
+[; ;traitement.c: 71: s_uc_PortA = 0;
+"71
+[e = _s_uc_PortA -> -> 0 `i `uc ]
+[; ;traitement.c: 72: s_uc_PortB = 0;
+"72
+[e = _s_uc_PortB -> -> 0 `i `uc ]
+[; ;traitement.c: 73: s_uc_PortC = 0;
+"73
+[e = _s_uc_PortC -> -> 0 `i `uc ]
+[; ;traitement.c: 74: s_uc_PortD = 0;
+"74
+[e = _s_uc_PortD -> -> 0 `i `uc ]
+[; ;traitement.c: 75: s_uc_PortE = 0;
+"75
+[e = _s_uc_PortE -> -> 0 `i `uc ]
+[; ;traitement.c: 76: s_uc_PortF = 0;
+"76
+[e = _s_uc_PortF -> -> 0 `i `uc ]
+[; ;traitement.c: 94: }
+"94
+[e :UE 8 ]
+}
+"96
+[v _vd_InitVariables2 `(v ~T0 @X0 1 ef ]
+"97
+{
+[; ;traitement.c: 96: void vd_InitVariables2(void)
+[; ;traitement.c: 97: {
+[e :U _vd_InitVariables2 ]
+[f ]
+"98
+[v _l_uc_Compteur `uc ~T0 @X0 1 a ]
+[; ;traitement.c: 98: unsigned char l_uc_Compteur;
+[; ;traitement.c: 101: for(l_uc_Compteur=0;l_uc_Compteur<VARIATEUR_NB;l_uc_Compteur++)
+"101
+{
+[e = _l_uc_Compteur -> -> 0 `i `uc ]
+[e $ < -> _l_uc_Compteur `i -> . `E125 4 `i 22  ]
+[e $U 23  ]
+"102
+[e :U 22 ]
+[; ;traitement.c: 102: {
+{
+[; ;traitement.c: 105: switch (st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode) {
+"105
+[e $U 26  ]
+{
+[; ;traitement.c: 106: case uc_MODE_TOR :
+"106
+[e :U 27 ]
+[; ;traitement.c: 107: us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (107);
+"107
+[e = *U + &U _us_CdeVariateurs * -> _l_uc_Compteur `ux -> -> # *U &U _us_CdeVariateurs `ui `ux ( _us_CodeVariateur (1 -> -> 107 `i `uc ]
+[; ;traitement.c: 108: break;
+"108
+[e $U 25  ]
+[; ;traitement.c: 110: case uc_MODE_SOFT_START :
+"110
+[e :U 28 ]
+"111
+[e :U 29 ]
+[; ;traitement.c: 111: case uc_MODE_VARIATEUR :
+[; ;traitement.c: 113: us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (110);
+"113
+[e = *U + &U _us_CdeVariateurs * -> _l_uc_Compteur `ux -> -> # *U &U _us_CdeVariateurs `ui `ux ( _us_CodeVariateur (1 -> -> 110 `i `uc ]
+[; ;traitement.c: 114: break;
+"114
+[e $U 25  ]
+"115
+}
+[; ;traitement.c: 115: }
+[e $U 25  ]
+"105
+[e :U 26 ]
+[e [\ . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 2 , $ -> . `E25 2 `uc 27
+ , $ -> . `E25 0 `uc 28
+ , $ -> . `E25 1 `uc 29
+ 25 ]
+"115
+[e :U 25 ]
+"116
+}
+"101
+[e ++ _l_uc_Compteur -> -> 1 `i `uc ]
+[e $ < -> _l_uc_Compteur `i -> . `E125 4 `i 22  ]
+[e :U 23 ]
+"116
+}
+[; ;traitement.c: 116: }
+[; ;traitement.c: 117: }
+"117
+[e :UE 21 ]
+}
+"134
+[v _uc_EteintLampe `(uc ~T0 @X0 1 ef2`uc`us ]
+"135
+{
+[; ;traitement.c: 134: unsigned char uc_EteintLampe(unsigned char uc_Num_Lampe, unsigned short us_Etat_Lampe)
+[; ;traitement.c: 135: {
+[e :U _uc_EteintLampe ]
+"134
+[v _uc_Num_Lampe `uc ~T0 @X0 1 r1 ]
+[v _us_Etat_Lampe `us ~T0 @X0 1 r2 ]
+"135
+[f ]
+"136
+[v F229 `us ~T0 @X0 . `E80 13 s s_us_CompteurLampe ]
+"137
+[v _l_ul_Valeur `ul ~T0 @X0 1 a ]
+"139
+[v _l_stop `uc ~T0 @X0 1 a ]
+[; ;traitement.c: 136: static unsigned short s_us_CompteurLampe[RM_NB];
+[; ;traitement.c: 137: unsigned long l_ul_Valeur;
+[; ;traitement.c: 139: unsigned char l_stop;
+[; ;traitement.c: 141: l_stop = 0;
+"141
+[e = _l_stop -> -> 0 `i `uc ]
+[; ;traitement.c: 143: if ((uc_Num_Lampe >= uc_RM_NB) || (uc_Num_Lampe >= RM_NB))
+"143
+[e $ ! || >= -> _uc_Num_Lampe `i -> _uc_RM_NB `i >= -> _uc_Num_Lampe `i -> . `E80 13 `i 31  ]
+[; ;traitement.c: 144: return (l_stop);
+"144
+[e ) _l_stop ]
+[e $UE 30  ]
+[e :U 31 ]
+[; ;traitement.c: 146: if (us_Etat_Lampe == 0)
+"146
+[e $ ! == -> _us_Etat_Lampe `ui -> -> 0 `i `ui 32  ]
+[; ;traitement.c: 147: {
+"147
+{
+[; ;traitement.c: 149: s_us_CompteurLampe[uc_Num_Lampe] = 0;
+"149
+[e = *U + &U F229 * -> _uc_Num_Lampe `ux -> -> # *U &U F229 `ui `ux -> -> 0 `i `us ]
+"150
+}
+[; ;traitement.c: 150: }
+[e $U 33  ]
+"151
+[e :U 32 ]
+[; ;traitement.c: 151: else
+[; ;traitement.c: 152: {
+"152
+{
+[; ;traitement.c: 154: if (s_us_CompteurLampe[uc_Num_Lampe] >0)
+"154
+[e $ ! > -> *U + &U F229 * -> _uc_Num_Lampe `ux -> -> # *U &U F229 `ui `ux `ui -> -> 0 `i `ui 34  ]
+[; ;traitement.c: 155: {
+"155
+{
+[; ;traitement.c: 156: s_us_CompteurLampe[uc_Num_Lampe] --;
+"156
+[e -- *U + &U F229 * -> _uc_Num_Lampe `ux -> -> # *U &U F229 `ui `ux -> -> 1 `i `us ]
+[; ;traitement.c: 157: if (s_us_CompteurLampe[uc_Num_Lampe] ==0)
+"157
+[e $ ! == -> *U + &U F229 * -> _uc_Num_Lampe `ux -> -> # *U &U F229 `ui `ux `ui -> -> 0 `i `ui 35  ]
+[; ;traitement.c: 158: {
+"158
+{
+[; ;traitement.c: 160: l_stop = 1;
+"160
+[e = _l_stop -> -> 1 `i `uc ]
+"161
+}
+[e :U 35 ]
+"162
+}
+[; ;traitement.c: 161: }
+[; ;traitement.c: 162: }
+[e $U 36  ]
+"163
+[e :U 34 ]
+[; ;traitement.c: 163: else
+[; ;traitement.c: 164: {
+"164
+{
+[; ;traitement.c: 166: l_ul_Valeur = (unsigned long)(uc_TempsCdeLampe[uc_Num_Lampe] * 60);
+"166
+[e = _l_ul_Valeur -> * -> *U + &U _uc_TempsCdeLampe * -> _uc_Num_Lampe `ux -> -> # *U &U _uc_TempsCdeLampe `ui `ux `i -> 60 `i `ul ]
+[; ;traitement.c: 173: l_ul_Valeur = l_ul_Valeur * 994;
+"173
+[e = _l_ul_Valeur * _l_ul_Valeur -> -> -> 994 `i `l `ul ]
+[; ;traitement.c: 174: l_ul_Valeur = l_ul_Valeur / 1000;
+"174
+[e = _l_ul_Valeur / _l_ul_Valeur -> -> -> 1000 `i `l `ul ]
+[; ;traitement.c: 176: s_us_CompteurLampe[uc_Num_Lampe] = (unsigned short)l_ul_Valeur;
+"176
+[e = *U + &U F229 * -> _uc_Num_Lampe `ux -> -> # *U &U F229 `ui `ux -> _l_ul_Valeur `us ]
+"177
+}
+[e :U 36 ]
+"178
+}
+[e :U 33 ]
+[; ;traitement.c: 177: }
+[; ;traitement.c: 178: }
+[; ;traitement.c: 179: return (l_stop);
+"179
+[e ) _l_stop ]
+[e $UE 30  ]
+[; ;traitement.c: 180: }
+"180
+[e :UE 30 ]
+}
+"197
+[v _uc_StopVolet `(uc ~T0 @X0 1 ef2`uc`E121 ]
+"198
+{
+[; ;traitement.c: 197: unsigned char uc_StopVolet(unsigned char uc_NumVolet, enum enum_TEMPO_RELAIS mode)
+[; ;traitement.c: 198: {
+[e :U _uc_StopVolet ]
+"197
+[v _uc_NumVolet `uc ~T0 @X0 1 r1 ]
+[v _mode `E121 ~T0 @X0 1 r2 ]
+"198
+[f ]
+"199
+[v F237 `uc ~T0 @X0 / -> . `E104 12 `i -> 2 `i s s_uc_CompteurVolet ]
+"201
+[v _l_stop `uc ~T0 @X0 1 a ]
+[; ;traitement.c: 199: static unsigned char s_uc_CompteurVolet[RB_NB/2];
+[; ;traitement.c: 201: unsigned char l_stop;
+[; ;traitement.c: 203: l_stop = 0;
+"203
+[e = _l_stop -> -> 0 `i `uc ]
+[; ;traitement.c: 205: if ((uc_NumVolet >= uc_VOLET_NB) || (uc_NumVolet >= RB_NB/2))
+"205
+[e $ ! || >= -> _uc_NumVolet `i -> _uc_VOLET_NB `i >= -> _uc_NumVolet `i / -> . `E104 12 `i -> 2 `i 38  ]
+[; ;traitement.c: 206: return (1);
+"206
+[e ) -> -> 1 `i `uc ]
+[e $UE 37  ]
+[e :U 38 ]
+[; ;traitement.c: 208: switch (mode)
+"208
+[e $U 40  ]
+[; ;traitement.c: 209: {
+"209
+{
+[; ;traitement.c: 210: case INIT :
+"210
+[e :U 41 ]
+[; ;traitement.c: 213: if (uc_TempsCdeVolet[uc_NumVolet]==0)
+"213
+[e $ ! == -> *U + &U _uc_TempsCdeVolet * -> _uc_NumVolet `ux -> -> # *U &U _uc_TempsCdeVolet `ui `ux `i -> 0 `i 42  ]
+[; ;traitement.c: 214: uc_TempsCdeVolet[uc_NumVolet]= 2*60;
+"214
+[e = *U + &U _uc_TempsCdeVolet * -> _uc_NumVolet `ux -> -> # *U &U _uc_TempsCdeVolet `ui `ux -> * -> 2 `i -> 60 `i `uc ]
+[e :U 42 ]
+[; ;traitement.c: 216: s_uc_CompteurVolet[uc_NumVolet] = uc_TempsCdeVolet[uc_NumVolet];
+"216
+[e = *U + &U F237 * -> _uc_NumVolet `ux -> -> # *U &U F237 `ui `ux *U + &U _uc_TempsCdeVolet * -> _uc_NumVolet `ux -> -> # *U &U _uc_TempsCdeVolet `ui `ux ]
+[; ;traitement.c: 217: break;
+"217
+[e $U 39  ]
+[; ;traitement.c: 218: case RAZ:
+"218
+[e :U 43 ]
+[; ;traitement.c: 220: s_uc_CompteurVolet[uc_NumVolet] = 0;
+"220
+[e = *U + &U F237 * -> _uc_NumVolet `ux -> -> # *U &U F237 `ui `ux -> -> 0 `i `uc ]
+[; ;traitement.c: 221: break;
+"221
+[e $U 39  ]
+[; ;traitement.c: 222: case MAINTIEN:
+"222
+[e :U 44 ]
+[; ;traitement.c: 223: if (s_uc_CompteurVolet[uc_NumVolet] >0)
+"223
+[e $ ! > -> *U + &U F237 * -> _uc_NumVolet `ux -> -> # *U &U F237 `ui `ux `i -> 0 `i 45  ]
+[; ;traitement.c: 224: {
+"224
+{
+[; ;traitement.c: 225: if (b1_BT_1S == 1)
+"225
+[e $ ! == -> _b1_BT_1S `i -> 1 `i 46  ]
+[; ;traitement.c: 226: {
+"226
+{
+[; ;traitement.c: 227: s_uc_CompteurVolet[uc_NumVolet] --;
+"227
+[e -- *U + &U F237 * -> _uc_NumVolet `ux -> -> # *U &U F237 `ui `ux -> -> 1 `i `uc ]
+"228
+}
+[e :U 46 ]
+"229
+}
+[; ;traitement.c: 228: }
+[; ;traitement.c: 229: }
+[e $U 47  ]
+"230
+[e :U 45 ]
+[; ;traitement.c: 230: else
+[; ;traitement.c: 231: {
+"231
+{
+[; ;traitement.c: 232: l_stop = 1;
+"232
+[e = _l_stop -> -> 1 `i `uc ]
+"233
+}
+[e :U 47 ]
+[; ;traitement.c: 233: }
+[; ;traitement.c: 234: break;
+"234
+[e $U 39  ]
+"235
+}
+[; ;traitement.c: 235: }
+[e $U 39  ]
+"208
+[e :U 40 ]
+[e [\ _mode , $ -> . `E121 0 `E121 41
+ , $ -> . `E121 1 `E121 43
+ , $ -> . `E121 2 `E121 44
+ 39 ]
+"235
+[e :U 39 ]
+[; ;traitement.c: 236: return (l_stop);
+"236
+[e ) _l_stop ]
+[e $UE 37  ]
+[; ;traitement.c: 237: }
+"237
+[e :UE 37 ]
+}
+"246
+[v _vd_TraitementApplicatif `(v ~T0 @X0 1 ef ]
+"247
+{
+[; ;traitement.c: 246: void vd_TraitementApplicatif(void)
+[; ;traitement.c: 247: {
+[e :U _vd_TraitementApplicatif ]
+[f ]
+"248
+[v _l_uc_Compteur `uc ~T0 @X0 1 a ]
+"249
+[v _l_us_Masque `us ~T0 @X0 1 a ]
+"250
+[v _l_uc_RelaisSens1 `uc ~T0 @X0 1 a ]
+"251
+[v _l_uc_RelaisSens2 `uc ~T0 @X0 1 a ]
+[; ;traitement.c: 248: unsigned char l_uc_Compteur;
+[; ;traitement.c: 249: unsigned short l_us_Masque;
+[; ;traitement.c: 250: unsigned char l_uc_RelaisSens1;
+[; ;traitement.c: 251: unsigned char l_uc_RelaisSens2;
+[; ;traitement.c: 254: for(l_uc_Compteur=0;l_uc_Compteur<uc_RM_NB;l_uc_Compteur++)
+"254
+{
+[e = _l_uc_Compteur -> -> 0 `i `uc ]
+[e $U 52  ]
+"255
+[e :U 49 ]
+[; ;traitement.c: 255: {
+{
+[; ;traitement.c: 256: l_us_Masque = 0x01 << l_uc_Compteur;
+"256
+[e = _l_us_Masque -> << -> 1 `i _l_uc_Compteur `us ]
+[; ;traitement.c: 269: if ((us_EntreesTOR & l_us_Masque) !=0)
+"269
+[e $ ! != & -> _us_EntreesTOR `ui -> _l_us_Masque `ui -> -> 0 `i `ui 53  ]
+[; ;traitement.c: 270: {
+"270
+{
+[; ;traitement.c: 272: us_SortiesRelais ^= l_us_Masque;
+"272
+[e =^ _us_SortiesRelais _l_us_Masque ]
+"273
+}
+[; ;traitement.c: 273: }
+[e $U 54  ]
+"274
+[e :U 53 ]
+[; ;traitement.c: 274: else
+[; ;traitement.c: 275: {
+"275
+{
+[; ;traitement.c: 277: ;
+"278
+}
+[e :U 54 ]
+[; ;traitement.c: 278: }
+[; ;traitement.c: 280: if (b1_BT_1S == 1)
+"280
+[e $ ! == -> _b1_BT_1S `i -> 1 `i 55  ]
+[; ;traitement.c: 281: {
+"281
+{
+[; ;traitement.c: 282: if (uc_EteintLampe(l_uc_Compteur, us_SortiesRelais & l_us_Masque) == 1)
+"282
+[e $ ! == -> ( _uc_EteintLampe (2 , _l_uc_Compteur -> & -> _us_SortiesRelais `ui -> _l_us_Masque `ui `us `i -> 1 `i 56  ]
+[; ;traitement.c: 283: {
+"283
+{
+[; ;traitement.c: 284: us_SortiesRelais &= ~l_us_Masque;
+"284
+[e =& _us_SortiesRelais -> ~ -> _l_us_Masque `ui `us ]
+"285
+}
+[e :U 56 ]
+"286
+}
+[e :U 55 ]
+"288
+}
+"254
+[e ++ _l_uc_Compteur -> -> 1 `i `uc ]
+[e :U 52 ]
+[e $ < -> _l_uc_Compteur `i -> _uc_RM_NB `i 49  ]
+[e :U 50 ]
+"288
+}
+[; ;traitement.c: 285: }
+[; ;traitement.c: 286: }
+[; ;traitement.c: 288: }
+[; ;traitement.c: 328: for(l_uc_Compteur=0;l_uc_Compteur<uc_VOLET_NB;l_uc_Compteur++)
+"328
+{
+[e = _l_uc_Compteur -> -> 0 `i `uc ]
+[e $U 60  ]
+"329
+[e :U 57 ]
+[; ;traitement.c: 329: {
+{
+[; ;traitement.c: 330: l_uc_RelaisSens1 = l_uc_Compteur *2;
+"330
+[e = _l_uc_RelaisSens1 -> * -> _l_uc_Compteur `i -> 2 `i `uc ]
+[; ;traitement.c: 331: l_uc_RelaisSens2 = l_uc_RelaisSens1 +1;
+"331
+[e = _l_uc_RelaisSens2 -> + -> _l_uc_RelaisSens1 `i -> 1 `i `uc ]
+[; ;traitement.c: 334: switch (st_EntreesVoletRoulant[l_uc_RelaisSens1].ub3_EtatCommande)
+"334
+[e $U 62  ]
+[; ;traitement.c: 335: {
+"335
+{
+[; ;traitement.c: 336: case uc_VOLET_APPUI_COURT:
+"336
+[e :U 63 ]
+"337
+[e :U 64 ]
+"338
+[e :U 65 ]
+[; ;traitement.c: 337: case uc_VOLET_APPUI_LONG:
+[; ;traitement.c: 338: case uc_VOLET_ON:
+[; ;traitement.c: 340: switch (st_EntreesVoletRoulant[l_uc_RelaisSens2].ub3_EtatCommande)
+"340
+[e $U 67  ]
+[; ;traitement.c: 341: {
+"341
+{
+[; ;traitement.c: 342: case uc_VOLET_APPUI_COURT:
+"342
+[e :U 68 ]
+"343
+[e :U 69 ]
+"344
+[e :U 70 ]
+[; ;traitement.c: 343: case uc_VOLET_APPUI_LONG:
+[; ;traitement.c: 344: case uc_VOLET_ON:
+[; ;traitement.c: 345: st_EntreesVoletRoulant[l_uc_RelaisSens1].ub3_EtatCommande = uc_VOLET_OFF;
+"345
+[e = . *U + &U _st_EntreesVoletRoulant * -> _l_uc_RelaisSens1 `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 2 -> . `E32 1 `uc ]
+[; ;traitement.c: 346: st_EntreesVoletRoulant[l_uc_RelaisSens2].ub3_EtatCommande = uc_VOLET_OFF;
+"346
+[e = . *U + &U _st_EntreesVoletRoulant * -> _l_uc_RelaisSens2 `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 2 -> . `E32 1 `uc ]
+[; ;traitement.c: 347: break;
+"347
+[e $U 66  ]
+"348
+}
+[; ;traitement.c: 348: }
+[e $U 66  ]
+"340
+[e :U 67 ]
+[e [\ . *U + &U _st_EntreesVoletRoulant * -> _l_uc_RelaisSens2 `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 2 , $ -> . `E32 2 `uc 68
+ , $ -> . `E32 3 `uc 69
+ , $ -> . `E32 4 `uc 70
+ 66 ]
+"348
+[e :U 66 ]
+[; ;traitement.c: 349: break;
+"349
+[e $U 61  ]
+[; ;traitement.c: 350: default :
+"350
+[e :U 71 ]
+[; ;traitement.c: 351: ;
+[; ;traitement.c: 352: break;
+"352
+[e $U 61  ]
+"353
+}
+[; ;traitement.c: 353: }
+[e $U 61  ]
+"334
+[e :U 62 ]
+[e [\ . *U + &U _st_EntreesVoletRoulant * -> _l_uc_RelaisSens1 `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 2 , $ -> . `E32 2 `uc 63
+ , $ -> . `E32 3 `uc 64
+ , $ -> . `E32 4 `uc 65
+ 71 ]
+"353
+[e :U 61 ]
+[; ;traitement.c: 356: switch (st_EntreesVoletRoulant[l_uc_RelaisSens1].ub3_EtatCommande)
+"356
+[e $U 73  ]
+[; ;traitement.c: 357: {
+"357
+{
+[; ;traitement.c: 358: case uc_VOLET_APPUI_COURT:
+"358
+[e :U 74 ]
+[; ;traitement.c: 360: if (st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite == 0)
+"360
+[e $ ! == -> . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens1 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 `i -> 0 `i 75  ]
+[; ;traitement.c: 361: {
+"361
+{
+[; ;traitement.c: 364: if (st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite != 0)
+"364
+[e $ ! != -> . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens2 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 `i -> 0 `i 76  ]
+[; ;traitement.c: 365: {
+"365
+{
+[; ;traitement.c: 366: st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 0;
+"366
+[e = . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens2 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 -> -> 0 `i `uc ]
+"367
+}
+[e :U 76 ]
+[; ;traitement.c: 367: }
+[; ;traitement.c: 369: if (uc_StopVolet(l_uc_Compteur,INIT)==1)
+"369
+[e $ ! == -> ( _uc_StopVolet (2 , _l_uc_Compteur -> . `E121 0 `E121 `i -> 1 `i 77  ]
+[; ;traitement.c: 370: ;
+"370
+[e :U 77 ]
+[; ;traitement.c: 371: st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 1;
+"371
+[e = . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens1 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 -> -> 1 `i `uc ]
+[; ;traitement.c: 374: st_EntreesVoletRoulant[l_uc_RelaisSens1].ub3_EtatCommande = uc_VOLET_RIEN;
+"374
+[e = . *U + &U _st_EntreesVoletRoulant * -> _l_uc_RelaisSens1 `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 2 -> . `E32 0 `uc ]
+"375
+}
+[; ;traitement.c: 375: }
+[e $U 78  ]
+"376
+[e :U 75 ]
+[; ;traitement.c: 376: else
+[; ;traitement.c: 377: {
+"377
+{
+[; ;traitement.c: 378: if (uc_StopVolet(l_uc_Compteur,RAZ)==1)
+"378
+[e $ ! == -> ( _uc_StopVolet (2 , _l_uc_Compteur -> . `E121 1 `E121 `i -> 1 `i 79  ]
+[; ;traitement.c: 379: ;
+"379
+[e :U 79 ]
+[; ;traitement.c: 380: st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 0;
+"380
+[e = . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens1 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 -> -> 0 `i `uc ]
+[; ;traitement.c: 383: st_EntreesVoletRoulant[l_uc_RelaisSens1].ub3_EtatCommande = uc_VOLET_RIEN;
+"383
+[e = . *U + &U _st_EntreesVoletRoulant * -> _l_uc_RelaisSens1 `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 2 -> . `E32 0 `uc ]
+"384
+}
+[e :U 78 ]
+[; ;traitement.c: 384: }
+[; ;traitement.c: 385: break;
+"385
+[e $U 72  ]
+[; ;traitement.c: 386: case uc_VOLET_APPUI_LONG:
+"386
+[e :U 80 ]
+[; ;traitement.c: 388: if (uc_StopVolet(l_uc_Compteur,RAZ)==1)
+"388
+[e $ ! == -> ( _uc_StopVolet (2 , _l_uc_Compteur -> . `E121 1 `E121 `i -> 1 `i 81  ]
+[; ;traitement.c: 389: ;
+"389
+[e :U 81 ]
+[; ;traitement.c: 390: st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 1;
+"390
+[e = . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens1 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 -> -> 1 `i `uc ]
+[; ;traitement.c: 392: st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 0;
+"392
+[e = . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens2 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 -> -> 0 `i `uc ]
+[; ;traitement.c: 393: break;
+"393
+[e $U 72  ]
+[; ;traitement.c: 394: case uc_VOLET_OFF:
+"394
+[e :U 82 ]
+[; ;traitement.c: 396: if (uc_StopVolet(l_uc_Compteur,RAZ)==1)
+"396
+[e $ ! == -> ( _uc_StopVolet (2 , _l_uc_Compteur -> . `E121 1 `E121 `i -> 1 `i 83  ]
+[; ;traitement.c: 397: ;
+"397
+[e :U 83 ]
+[; ;traitement.c: 398: st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 0;
+"398
+[e = . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens1 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 -> -> 0 `i `uc ]
+[; ;traitement.c: 400: st_EntreesVoletRoulant[l_uc_RelaisSens1].ub3_EtatCommande = uc_VOLET_RIEN;
+"400
+[e = . *U + &U _st_EntreesVoletRoulant * -> _l_uc_RelaisSens1 `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 2 -> . `E32 0 `uc ]
+[; ;traitement.c: 401: break;
+"401
+[e $U 72  ]
+[; ;traitement.c: 402: case uc_VOLET_ON:
+"402
+[e :U 84 ]
+[; ;traitement.c: 406: if (st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite != 0)
+"406
+[e $ ! != -> . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens2 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 `i -> 0 `i 85  ]
+[; ;traitement.c: 407: {
+"407
+{
+[; ;traitement.c: 408: st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 0;
+"408
+[e = . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens2 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 -> -> 0 `i `uc ]
+"411
+}
+[e :U 85 ]
+[; ;traitement.c: 411: }
+[; ;traitement.c: 413: if (uc_StopVolet(l_uc_Compteur,INIT)==1)
+"413
+[e $ ! == -> ( _uc_StopVolet (2 , _l_uc_Compteur -> . `E121 0 `E121 `i -> 1 `i 86  ]
+[; ;traitement.c: 414: ;
+"414
+[e :U 86 ]
+[; ;traitement.c: 415: st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 1;
+"415
+[e = . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens1 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 -> -> 1 `i `uc ]
+[; ;traitement.c: 418: st_EntreesVoletRoulant[l_uc_RelaisSens1].ub3_EtatCommande = uc_VOLET_RIEN;
+"418
+[e = . *U + &U _st_EntreesVoletRoulant * -> _l_uc_RelaisSens1 `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 2 -> . `E32 0 `uc ]
+[; ;traitement.c: 419: break;
+"419
+[e $U 72  ]
+[; ;traitement.c: 420: default :
+"420
+[e :U 87 ]
+[; ;traitement.c: 422: if(st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite != 0)
+"422
+[e $ ! != -> . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens1 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 `i -> 0 `i 88  ]
+[; ;traitement.c: 423: if (uc_StopVolet(l_uc_Compteur,MAINTIEN)==1)
+"423
+[e $ ! == -> ( _uc_StopVolet (2 , _l_uc_Compteur -> . `E121 2 `E121 `i -> 1 `i 89  ]
+[; ;traitement.c: 424: st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 0;
+"424
+[e = . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens1 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 -> -> 0 `i `uc ]
+[e :U 89 ]
+"425
+[e :U 88 ]
+[; ;traitement.c: 425: break;
+[e $U 72  ]
+"426
+}
+[; ;traitement.c: 426: }
+[e $U 72  ]
+"356
+[e :U 73 ]
+[e [\ . *U + &U _st_EntreesVoletRoulant * -> _l_uc_RelaisSens1 `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 2 , $ -> . `E32 2 `uc 74
+ , $ -> . `E32 3 `uc 80
+ , $ -> . `E32 1 `uc 82
+ , $ -> . `E32 4 `uc 84
+ 87 ]
+"426
+[e :U 72 ]
+[; ;traitement.c: 429: switch (st_EntreesVoletRoulant[l_uc_RelaisSens2].ub3_EtatCommande)
+"429
+[e $U 91  ]
+[; ;traitement.c: 430: {
+"430
+{
+[; ;traitement.c: 431: case uc_VOLET_APPUI_COURT:
+"431
+[e :U 92 ]
+[; ;traitement.c: 434: if (st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite == 0)
+"434
+[e $ ! == -> . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens2 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 `i -> 0 `i 93  ]
+[; ;traitement.c: 435: {
+"435
+{
+[; ;traitement.c: 438: if (st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite != 0)
+"438
+[e $ ! != -> . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens1 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 `i -> 0 `i 94  ]
+[; ;traitement.c: 439: {
+"439
+{
+[; ;traitement.c: 440: st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 0;
+"440
+[e = . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens1 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 -> -> 0 `i `uc ]
+"443
+}
+[e :U 94 ]
+[; ;traitement.c: 443: }
+[; ;traitement.c: 445: if (uc_StopVolet(l_uc_Compteur,INIT)==1)
+"445
+[e $ ! == -> ( _uc_StopVolet (2 , _l_uc_Compteur -> . `E121 0 `E121 `i -> 1 `i 95  ]
+[; ;traitement.c: 446: ;
+"446
+[e :U 95 ]
+[; ;traitement.c: 447: st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 1;
+"447
+[e = . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens2 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 -> -> 1 `i `uc ]
+[; ;traitement.c: 450: st_EntreesVoletRoulant[l_uc_RelaisSens2].ub3_EtatCommande = uc_VOLET_RIEN;
+"450
+[e = . *U + &U _st_EntreesVoletRoulant * -> _l_uc_RelaisSens2 `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 2 -> . `E32 0 `uc ]
+"451
+}
+[; ;traitement.c: 451: }
+[e $U 96  ]
+"452
+[e :U 93 ]
+[; ;traitement.c: 452: else
+[; ;traitement.c: 453: {
+"453
+{
+[; ;traitement.c: 454: if (uc_StopVolet(l_uc_Compteur,RAZ)==1)
+"454
+[e $ ! == -> ( _uc_StopVolet (2 , _l_uc_Compteur -> . `E121 1 `E121 `i -> 1 `i 97  ]
+[; ;traitement.c: 455: ;
+"455
+[e :U 97 ]
+[; ;traitement.c: 456: st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 0;
+"456
+[e = . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens2 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 -> -> 0 `i `uc ]
+[; ;traitement.c: 459: st_EntreesVoletRoulant[l_uc_RelaisSens2].ub3_EtatCommande = uc_VOLET_RIEN;
+"459
+[e = . *U + &U _st_EntreesVoletRoulant * -> _l_uc_RelaisSens2 `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 2 -> . `E32 0 `uc ]
+"460
+}
+[e :U 96 ]
+[; ;traitement.c: 460: }
+[; ;traitement.c: 461: break;
+"461
+[e $U 90  ]
+[; ;traitement.c: 462: case uc_VOLET_APPUI_LONG:
+"462
+[e :U 98 ]
+[; ;traitement.c: 464: if (uc_StopVolet(l_uc_Compteur,RAZ)==1)
+"464
+[e $ ! == -> ( _uc_StopVolet (2 , _l_uc_Compteur -> . `E121 1 `E121 `i -> 1 `i 99  ]
+[; ;traitement.c: 465: ;
+"465
+[e :U 99 ]
+[; ;traitement.c: 466: st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 1;
+"466
+[e = . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens2 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 -> -> 1 `i `uc ]
+[; ;traitement.c: 468: st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 0;
+"468
+[e = . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens1 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 -> -> 0 `i `uc ]
+[; ;traitement.c: 469: break;
+"469
+[e $U 90  ]
+[; ;traitement.c: 470: case uc_VOLET_OFF:
+"470
+[e :U 100 ]
+[; ;traitement.c: 472: if (uc_StopVolet(l_uc_Compteur,RAZ)==1)
+"472
+[e $ ! == -> ( _uc_StopVolet (2 , _l_uc_Compteur -> . `E121 1 `E121 `i -> 1 `i 101  ]
+[; ;traitement.c: 473: ;
+"473
+[e :U 101 ]
+[; ;traitement.c: 474: st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 0;
+"474
+[e = . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens2 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 -> -> 0 `i `uc ]
+[; ;traitement.c: 476: st_EntreesVoletRoulant[l_uc_RelaisSens2].ub3_EtatCommande = uc_VOLET_RIEN;
+"476
+[e = . *U + &U _st_EntreesVoletRoulant * -> _l_uc_RelaisSens2 `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 2 -> . `E32 0 `uc ]
+[; ;traitement.c: 477: break;
+"477
+[e $U 90  ]
+[; ;traitement.c: 478: case uc_VOLET_ON:
+"478
+[e :U 102 ]
+[; ;traitement.c: 482: if (st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite != 0)
+"482
+[e $ ! != -> . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens1 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 `i -> 0 `i 103  ]
+[; ;traitement.c: 483: {
+"483
+{
+[; ;traitement.c: 484: st_SortiesRelaisBistables[l_uc_RelaisSens1].ub1_EtatRelaisBistableSouhaite = 0;
+"484
+[e = . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens1 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 -> -> 0 `i `uc ]
+"487
+}
+[e :U 103 ]
+[; ;traitement.c: 487: }
+[; ;traitement.c: 489: if (uc_StopVolet(l_uc_Compteur,INIT)==1)
+"489
+[e $ ! == -> ( _uc_StopVolet (2 , _l_uc_Compteur -> . `E121 0 `E121 `i -> 1 `i 104  ]
+[; ;traitement.c: 490: ;
+"490
+[e :U 104 ]
+[; ;traitement.c: 491: st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 1;
+"491
+[e = . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens2 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 -> -> 1 `i `uc ]
+[; ;traitement.c: 494: st_EntreesVoletRoulant[l_uc_RelaisSens2].ub3_EtatCommande = uc_VOLET_RIEN;
+"494
+[e = . *U + &U _st_EntreesVoletRoulant * -> _l_uc_RelaisSens2 `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 2 -> . `E32 0 `uc ]
+[; ;traitement.c: 495: break;
+"495
+[e $U 90  ]
+[; ;traitement.c: 496: default :
+"496
+[e :U 105 ]
+[; ;traitement.c: 498: if(st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite != 0)
+"498
+[e $ ! != -> . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens2 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 `i -> 0 `i 106  ]
+[; ;traitement.c: 499: if (uc_StopVolet(l_uc_Compteur,MAINTIEN)==1)
+"499
+[e $ ! == -> ( _uc_StopVolet (2 , _l_uc_Compteur -> . `E121 2 `E121 `i -> 1 `i 107  ]
+[; ;traitement.c: 500: st_SortiesRelaisBistables[l_uc_RelaisSens2].ub1_EtatRelaisBistableSouhaite = 0;
+"500
+[e = . *U + &U _st_SortiesRelaisBistables * -> _l_uc_RelaisSens2 `ux -> -> # *U &U _st_SortiesRelaisBistables `ui `ux 1 -> -> 0 `i `uc ]
+[e :U 107 ]
+"501
+[e :U 106 ]
+[; ;traitement.c: 501: break;
+[e $U 90  ]
+"502
+}
+[; ;traitement.c: 502: }
+[e $U 90  ]
+"429
+[e :U 91 ]
+[e [\ . *U + &U _st_EntreesVoletRoulant * -> _l_uc_RelaisSens2 `ux -> -> # *U &U _st_EntreesVoletRoulant `ui `ux 2 , $ -> . `E32 2 `uc 92
+ , $ -> . `E32 3 `uc 98
+ , $ -> . `E32 1 `uc 100
+ , $ -> . `E32 4 `uc 102
+ 105 ]
+"502
+[e :U 90 ]
+"503
+}
+"328
+[e ++ _l_uc_Compteur -> -> 1 `i `uc ]
+[e :U 60 ]
+[e $ < -> _l_uc_Compteur `i -> _uc_VOLET_NB `i 57  ]
+[e :U 58 ]
+"503
+}
+[; ;traitement.c: 503: }
+[; ;traitement.c: 508: for(l_uc_Compteur=0;l_uc_Compteur<uc_VARIATEUR_NB;l_uc_Compteur++)
+"508
+{
+[e = _l_uc_Compteur -> -> 0 `i `uc ]
+[e $U 111  ]
+"509
+[e :U 108 ]
+[; ;traitement.c: 509: {
+{
+[; ;traitement.c: 531: switch (st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande)
+"531
+[e $U 113  ]
+[; ;traitement.c: 532: {
+"532
+{
+[; ;traitement.c: 533: case uc_VARIATEUR_RIEN:
+"533
+[e :U 114 ]
+[; ;traitement.c: 534: ;
+[; ;traitement.c: 535: break;
+"535
+[e $U 112  ]
+[; ;traitement.c: 537: case uc_VARIATEUR_OFF:
+"537
+[e :U 115 ]
+[; ;traitement.c: 539: st_Variateurs[l_uc_Compteur].c_Eclairage = 0;
+"539
+[e = . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 0 -> -> 0 `i `c ]
+[; ;traitement.c: 540: st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande = 0;
+"540
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 6 -> -> 0 `i `uc ]
+[; ;traitement.c: 543: st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande = uc_VARIATEUR_RIEN;
+"543
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 5 -> . `E38 0 `uc ]
+[; ;traitement.c: 544: break;
+"544
+[e $U 112  ]
+[; ;traitement.c: 546: case uc_VARIATEUR_ON:
+"546
+[e :U 116 ]
+[; ;traitement.c: 548: if ( (st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode == uc_MODE_TOR)
+[; ;traitement.c: 549: || (st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode == uc_MODE_SOFT_START))
+"549
+[e $ ! || == -> . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 2 `i -> . `E25 2 `i == -> . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 2 `i -> . `E25 0 `i 117  ]
+[; ;traitement.c: 550: {
+"550
+{
+[; ;traitement.c: 551: st_Variateurs[l_uc_Compteur].c_EclairageOld = 100;
+"551
+[e = . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 1 -> -> 100 `i `c ]
+"552
+}
+[e :U 117 ]
+[; ;traitement.c: 552: }
+[; ;traitement.c: 555: if (st_Variateurs[l_uc_Compteur].c_EclairageOld <=0)
+"555
+[e $ ! <= -> . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 1 `i -> 0 `i 118  ]
+[; ;traitement.c: 557: st_Variateurs[l_uc_Compteur].c_EclairageOld = 100;
+"557
+[e = . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 1 -> -> 100 `i `c ]
+[e :U 118 ]
+[; ;traitement.c: 559: st_Variateurs[l_uc_Compteur].c_Eclairage = st_Variateurs[l_uc_Compteur].c_EclairageOld;
+"559
+[e = . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 0 . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 1 ]
+[; ;traitement.c: 560: st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande = 0;
+"560
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 6 -> -> 0 `i `uc ]
+[; ;traitement.c: 563: st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande = uc_VARIATEUR_RIEN;
+"563
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 5 -> . `E38 0 `uc ]
+[; ;traitement.c: 564: break;
+"564
+[e $U 112  ]
+[; ;traitement.c: 566: case uc_VARIATEUR_APPUI_COURT:
+"566
+[e :U 119 ]
+[; ;traitement.c: 568: if ( (st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode == uc_MODE_TOR)
+[; ;traitement.c: 569: || (st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode == uc_MODE_SOFT_START))
+"569
+[e $ ! || == -> . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 2 `i -> . `E25 2 `i == -> . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 2 `i -> . `E25 0 `i 120  ]
+[; ;traitement.c: 570: {
+"570
+{
+[; ;traitement.c: 571: st_Variateurs[l_uc_Compteur].c_EclairageOld = 100;
+"571
+[e = . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 1 -> -> 100 `i `c ]
+"572
+}
+[e :U 120 ]
+[; ;traitement.c: 572: }
+[; ;traitement.c: 574: if (st_Variateurs[l_uc_Compteur].c_Eclairage > 0)
+"574
+[e $ ! > -> . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 0 `i -> 0 `i 121  ]
+[; ;traitement.c: 575: {
+"575
+{
+[; ;traitement.c: 576: st_Variateurs[l_uc_Compteur].c_Eclairage = 0;
+"576
+[e = . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 0 -> -> 0 `i `c ]
+[; ;traitement.c: 577: st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande = 0;
+"577
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 6 -> -> 0 `i `uc ]
+"578
+}
+[; ;traitement.c: 578: }
+[e $U 122  ]
+"579
+[e :U 121 ]
+[; ;traitement.c: 579: else
+[; ;traitement.c: 580: {
+"580
+{
+[; ;traitement.c: 581: if (st_Variateurs[l_uc_Compteur].c_EclairageOld <=0)
+"581
+[e $ ! <= -> . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 1 `i -> 0 `i 123  ]
+[; ;traitement.c: 583: st_Variateurs[l_uc_Compteur].c_EclairageOld = 100;
+"583
+[e = . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 1 -> -> 100 `i `c ]
+[e :U 123 ]
+[; ;traitement.c: 585: st_Variateurs[l_uc_Compteur].c_Eclairage = st_Variateurs[l_uc_Compteur].c_EclairageOld;
+"585
+[e = . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 0 . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 1 ]
+[; ;traitement.c: 586: st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande = 0;
+"586
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 6 -> -> 0 `i `uc ]
+"587
+}
+[e :U 122 ]
+[; ;traitement.c: 587: }
+[; ;traitement.c: 590: st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande = uc_VARIATEUR_RIEN;
+"590
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 5 -> . `E38 0 `uc ]
+[; ;traitement.c: 591: break;
+"591
+[e $U 112  ]
+[; ;traitement.c: 593: case uc_VARIATEUR_APPUI_DOUBLE:
+"593
+[e :U 124 ]
+[; ;traitement.c: 595: st_Variateurs[l_uc_Compteur].c_Eclairage = 100;
+"595
+[e = . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 0 -> -> 100 `i `c ]
+[; ;traitement.c: 596: st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande = 1;
+"596
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 6 -> -> 1 `i `uc ]
+[; ;traitement.c: 599: st_EntreesVariateur[l_uc_Compteur].ub3_EtatCommande = uc_VARIATEUR_RIEN;
+"599
+[e = . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 5 -> . `E38 0 `uc ]
+[; ;traitement.c: 600: break;
+"600
+[e $U 112  ]
+[; ;traitement.c: 602: case uc_VARIATEUR_APPUI_LONG:
+"602
+[e :U 125 ]
+[; ;traitement.c: 605: {
+"605
+{
+[; ;traitement.c: 608: if (st_EntreesVariateur[l_uc_Compteur].ub1_SensCommande ==0)
+"608
+[e $ ! == -> . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 6 `i -> 0 `i 126  ]
+[; ;traitement.c: 609: {
+"609
+{
+[; ;traitement.c: 610: if (st_Variateurs[l_uc_Compteur].c_Eclairage < (100-1))
+"610
+[e $ ! < -> . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 0 `i - -> 100 `i -> 1 `i 127  ]
+[; ;traitement.c: 611: st_Variateurs[l_uc_Compteur].c_Eclairage += 1;
+"611
+[e =+ . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 0 -> -> 1 `i `c ]
+[e $U 128  ]
+"612
+[e :U 127 ]
+[; ;traitement.c: 612: else
+[; ;traitement.c: 613: st_Variateurs[l_uc_Compteur].c_Eclairage = 100;
+"613
+[e = . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 0 -> -> 100 `i `c ]
+[e :U 128 ]
+"618
+}
+[; ;traitement.c: 618: }
+[e $U 129  ]
+"619
+[e :U 126 ]
+[; ;traitement.c: 619: else
+[; ;traitement.c: 620: {
+"620
+{
+[; ;traitement.c: 621: if (st_Variateurs[l_uc_Compteur].c_Eclairage > 1)
+"621
+[e $ ! > -> . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 0 `i -> 1 `i 130  ]
+[; ;traitement.c: 622: st_Variateurs[l_uc_Compteur].c_Eclairage -= 1;
+"622
+[e =- . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 0 -> -> 1 `i `c ]
+[e $U 131  ]
+"623
+[e :U 130 ]
+[; ;traitement.c: 623: else
+[; ;traitement.c: 624: st_Variateurs[l_uc_Compteur].c_Eclairage = 0;
+"624
+[e = . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 0 -> -> 0 `i `c ]
+[e :U 131 ]
+"628
+}
+[e :U 129 ]
+[; ;traitement.c: 628: }
+[; ;traitement.c: 631: st_Variateurs[l_uc_Compteur].c_EclairageOld = st_Variateurs[l_uc_Compteur].c_Eclairage;
+"631
+[e = . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 1 . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 0 ]
+"633
+}
+[; ;traitement.c: 633: }
+[; ;traitement.c: 634: break;
+"634
+[e $U 112  ]
+"635
+}
+[; ;traitement.c: 635: }
+[e $U 112  ]
+"531
+[e :U 113 ]
+[e [\ . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 5 , $ -> . `E38 0 `uc 114
+ , $ -> . `E38 1 `uc 115
+ , $ -> . `E38 2 `uc 116
+ , $ -> . `E38 3 `uc 119
+ , $ -> . `E38 4 `uc 124
+ , $ -> . `E38 5 `uc 125
+ 112 ]
+"635
+[e :U 112 ]
+[; ;traitement.c: 640: if(st_Variateurs[l_uc_Compteur].c_Eclairage < 0) st_Variateurs[l_uc_Compteur].c_Eclairage = 0;
+"640
+[e $ ! < -> . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 0 `i -> 0 `i 132  ]
+[e = . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 0 -> -> 0 `i `c ]
+[e :U 132 ]
+[; ;traitement.c: 641: if(st_Variateurs[l_uc_Compteur].c_Eclairage > 100) st_Variateurs[l_uc_Compteur].c_Eclairage = 100;
+"641
+[e $ ! > -> . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 0 `i -> 100 `i 133  ]
+[e = . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 0 -> -> 100 `i `c ]
+[e :U 133 ]
+[; ;traitement.c: 644: if (st_Commandes.ub1.AllumeTout == 0)
+"644
+[e $ ! == -> . . _st_Commandes 0 2 `i -> 0 `i 134  ]
+[; ;traitement.c: 645: {
+"645
+{
+[; ;traitement.c: 658: if(st_Variateurs[l_uc_Compteur].c_Eclairage != st_Variateurs[l_uc_Compteur].c_Consigne)
+"658
+[e $ ! != -> . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 0 `i -> . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 2 `i 135  ]
+[; ;traitement.c: 659: {
+"659
+{
+[; ;traitement.c: 660: st_Variateurs[l_uc_Compteur].c_Consigne = st_Variateurs[l_uc_Compteur].c_Eclairage;
+"660
+[e = . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 2 . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 0 ]
+[; ;traitement.c: 661: switch (st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode) {
+"661
+[e $U 137  ]
+{
+[; ;traitement.c: 662: case uc_MODE_TOR :
+"662
+[e :U 138 ]
+[; ;traitement.c: 664: if (st_Variateurs[l_uc_Compteur].c_Eclairage < 20)
+"664
+[e $ ! < -> . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 0 `i -> 20 `i 139  ]
+[; ;traitement.c: 665: {
+"665
+{
+[; ;traitement.c: 666: us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (107);
+"666
+[e = *U + &U _us_CdeVariateurs * -> _l_uc_Compteur `ux -> -> # *U &U _us_CdeVariateurs `ui `ux ( _us_CodeVariateur (1 -> -> 107 `i `uc ]
+"667
+}
+[; ;traitement.c: 667: }
+[e $U 140  ]
+"668
+[e :U 139 ]
+[; ;traitement.c: 668: else
+[; ;traitement.c: 669: {
+"669
+{
+[; ;traitement.c: 670: us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (106);
+"670
+[e = *U + &U _us_CdeVariateurs * -> _l_uc_Compteur `ux -> -> # *U &U _us_CdeVariateurs `ui `ux ( _us_CodeVariateur (1 -> -> 106 `i `uc ]
+"671
+}
+[e :U 140 ]
+[; ;traitement.c: 671: }
+[; ;traitement.c: 672: break;
+"672
+[e $U 136  ]
+[; ;traitement.c: 674: case uc_MODE_SOFT_START :
+"674
+[e :U 141 ]
+"675
+[e :U 142 ]
+[; ;traitement.c: 675: case uc_MODE_VARIATEUR :
+[; ;traitement.c: 677: us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (st_Variateurs[l_uc_Compteur].c_Eclairage + 110);
+"677
+[e = *U + &U _us_CdeVariateurs * -> _l_uc_Compteur `ux -> -> # *U &U _us_CdeVariateurs `ui `ux ( _us_CodeVariateur (1 -> + -> . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 0 `i -> 110 `i `uc ]
+[; ;traitement.c: 678: break;
+"678
+[e $U 136  ]
+"679
+}
+[; ;traitement.c: 679: }
+[e $U 136  ]
+"661
+[e :U 137 ]
+[e [\ . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 2 , $ -> . `E25 2 `uc 138
+ , $ -> . `E25 0 `uc 141
+ , $ -> . `E25 1 `uc 142
+ 136 ]
+"679
+[e :U 136 ]
+"680
+}
+[e :U 135 ]
+"681
+}
+[; ;traitement.c: 680: }
+[; ;traitement.c: 681: }
+[e $U 143  ]
+"682
+[e :U 134 ]
+[; ;traitement.c: 682: else
+[; ;traitement.c: 683: {
+"683
+{
+[; ;traitement.c: 685: if(st_Variateurs[l_uc_Compteur].c_Consigne != -1)
+"685
+[e $ ! != -> . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 2 `i -U -> 1 `i 144  ]
+[; ;traitement.c: 686: {
+"686
+{
+[; ;traitement.c: 687: st_Variateurs[l_uc_Compteur].c_Consigne = -1;
+"687
+[e = . *U + &U _st_Variateurs * -> _l_uc_Compteur `ux -> -> # *U &U _st_Variateurs `ui `ux 2 -> -U -> 1 `i `c ]
+[; ;traitement.c: 688: switch (st_EntreesVariateur[l_uc_Compteur].ub3_EntreeMode) {
+"688
+[e $U 146  ]
+{
+[; ;traitement.c: 689: case uc_MODE_TOR :
+"689
+[e :U 147 ]
+[; ;traitement.c: 691: us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (106);
+"691
+[e = *U + &U _us_CdeVariateurs * -> _l_uc_Compteur `ux -> -> # *U &U _us_CdeVariateurs `ui `ux ( _us_CodeVariateur (1 -> -> 106 `i `uc ]
+[; ;traitement.c: 692: break;
+"692
+[e $U 145  ]
+[; ;traitement.c: 694: case uc_MODE_SOFT_START :
+"694
+[e :U 148 ]
+"695
+[e :U 149 ]
+[; ;traitement.c: 695: case uc_MODE_VARIATEUR :
+[; ;traitement.c: 697: us_CdeVariateurs[l_uc_Compteur] = us_CodeVariateur (210);
+"697
+[e = *U + &U _us_CdeVariateurs * -> _l_uc_Compteur `ux -> -> # *U &U _us_CdeVariateurs `ui `ux ( _us_CodeVariateur (1 -> -> 210 `i `uc ]
+[; ;traitement.c: 698: break;
+"698
+[e $U 145  ]
+"699
+}
+[; ;traitement.c: 699: }
+[e $U 145  ]
+"688
+[e :U 146 ]
+[e [\ . *U + &U _st_EntreesVariateur * -> _l_uc_Compteur `ux -> -> # *U &U _st_EntreesVariateur `ui `ux 2 , $ -> . `E25 2 `uc 147
+ , $ -> . `E25 0 `uc 148
+ , $ -> . `E25 1 `uc 149
+ 145 ]
+"699
+[e :U 145 ]
+"700
+}
+[e :U 144 ]
+"701
+}
+[e :U 143 ]
+"702
+}
+"508
+[e ++ _l_uc_Compteur -> -> 1 `i `uc ]
+[e :U 111 ]
+[e $ < -> _l_uc_Compteur `i -> _uc_VARIATEUR_NB `i 108  ]
+[e :U 109 ]
+"702
+}
+[; ;traitement.c: 700: }
+[; ;traitement.c: 701: }
+[; ;traitement.c: 702: }
+[; ;traitement.c: 706: }
+"706
+[e :UE 48 ]
+}

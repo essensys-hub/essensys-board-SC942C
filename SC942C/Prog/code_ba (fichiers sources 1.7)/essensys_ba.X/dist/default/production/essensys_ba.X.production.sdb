@@ -1,0 +1,1379 @@
+[p PRO_MODE GLOBOPT AUTOSTATIC PIC14 PICREGULAR PICMID SPACEOPT ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F946 ]
+[d frameptr 6 ]
+"60 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/global.h
+[e E104 enum_RELAIS_BISTABLES `uc
+uc_RB0 0
+uc_RB1 1
+uc_RB2 2
+uc_RB3 3
+uc_RB4 4
+uc_RB5 5
+uc_RB6 6
+uc_RB7 7
+uc_RB8 8
+uc_RB9 9
+uc_RB10 10
+uc_RB11 11
+RB_NB 12
+]
+"61
+[e E80 enum_RELAIS `uc
+uc_RM0 0
+uc_RM1 1
+uc_RM2 2
+uc_RM3 3
+uc_RM4 4
+uc_RM5 5
+uc_RM6 6
+uc_RM7 7
+uc_RM8 8
+uc_RM9 9
+uc_RM10 10
+uc_RM11 11
+uc_RM12 12
+RM_NB 13
+]
+"23 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/gestionentrees.c
+[e E1 enum_ENTREES `uc
+uc_ENTREE0 0
+uc_ENTREE1 1
+uc_ENTREE2 2
+uc_ENTREE3 3
+uc_ENTREE4 4
+uc_ENTREE5 5
+uc_ENTREE6 6
+uc_ENTREE7 7
+uc_ENTREE8 8
+uc_ENTREE9 9
+uc_ENTREE10 10
+uc_ENTREE11 11
+uc_ENTREE12 12
+uc_ENTREE13 13
+uc_ENTREE14 14
+uc_ENTREE15 15
+uc_ENTREE16 16
+uc_ENTREE17 17
+uc_ENTREE18 18
+uc_ENTREE19 19
+uc_ENTREE20 20
+uc_ENTREE21 21
+NB_ES 22
+]
+"50
+[e E45 enum_ENTREES_TOR `uc
+uc_ENTREE_TOR0 0
+uc_ENTREE_TOR1 1
+uc_ENTREE_TOR2 2
+uc_ENTREE_TOR3 3
+uc_ENTREE_TOR4 4
+uc_ENTREE_TOR5 5
+uc_ENTREE_TOR6 6
+uc_ENTREE_TOR7 7
+uc_ENTREE_TOR8 8
+uc_ENTREE_TOR9 9
+uc_ENTREE_TOR10 10
+uc_ENTREE_TOR11 11
+uc_ENTREE_TOR12 12
+ENTREE_TOR_NB 13
+]
+"155
+[e E66 enum_ENTREE_VOLET `uc
+uc_ENTREE_VOLET0 0
+uc_ENTREE_VOLET1 1
+uc_ENTREE_VOLET2 2
+uc_ENTREE_VOLET3 3
+uc_ENTREE_VOLET4 4
+uc_ENTREE_VOLET5 5
+uc_ENTREE_VOLET6 6
+uc_ENTREE_VOLET7 7
+uc_ENTREE_VOLET8 8
+uc_ENTREE_VOLET9 9
+uc_ENTREE_VOLET10 10
+uc_ENTREE_VOLET11 11
+ENTREE_VOLET_NB 12
+]
+"275
+[e E60 enum_ENTREE_VARIATEUR `uc
+uc_ENTREE_VARIATEUR0 0
+uc_ENTREE_VARIATEUR1 1
+uc_ENTREE_VARIATEUR2 2
+uc_ENTREE_VARIATEUR3 3
+ENTREE_VARIATEUR_NB 4
+]
+"421
+[e E38 enum_ENTREES_CMDE_VARIATEUR `uc
+uc_VARIATEUR_RIEN 0
+uc_VARIATEUR_OFF 1
+uc_VARIATEUR_ON 2
+uc_VARIATEUR_APPUI_COURT 3
+uc_VARIATEUR_APPUI_DOUBLE 4
+uc_VARIATEUR_APPUI_LONG 5
+]
+"407
+[e E25 enum_ENTREE_VARIATEUR_MODE `uc
+uc_MODE_SOFT_START 0
+uc_MODE_VARIATEUR 1
+uc_MODE_TOR 2
+]
+"532
+[e E32 enum_ENTREES_CMDE_VOLET_STORE `uc
+uc_VOLET_RIEN 0
+uc_VOLET_OFF 1
+uc_VOLET_APPUI_COURT 2
+uc_VOLET_APPUI_LONG 3
+uc_VOLET_ON 4
+]
+"60 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/global.h
+[e E3620 enum_RELAIS_BISTABLES `uc
+uc_RB0 0
+uc_RB1 1
+uc_RB2 2
+uc_RB3 3
+uc_RB4 4
+uc_RB5 5
+uc_RB6 6
+uc_RB7 7
+uc_RB8 8
+uc_RB9 9
+uc_RB10 10
+uc_RB11 11
+RB_NB 12
+]
+"61
+[e E3596 enum_RELAIS `uc
+uc_RM0 0
+uc_RM1 1
+uc_RM2 2
+uc_RM3 3
+uc_RM4 4
+uc_RM5 5
+uc_RM6 6
+uc_RM7 7
+uc_RM8 8
+uc_RM9 9
+uc_RM10 10
+uc_RM11 11
+uc_RM12 12
+RM_NB 13
+]
+"19 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/gestionsorties.c
+[e E3611 enum_TYPES_SORTIES `uc
+uc_SORTIE_RELAIS 0
+uc_SORTIE_RELAIS_BISTABLE_SENS 1
+uc_SORTIE_RELAIS_BISTABLE 2
+uc_SORTIE_VARIATEUR 3
+uc_SORTIE_LED 4
+]
+[e E3634 enum_RELAIS_PILOTAGE `uc
+uc_OFF 0
+uc_ON 1
+]
+"76
+[e E3617 enum_RELAIS_BISTABLE_SENS `uc
+uc_RBSENS1 0
+uc_RBSENS2 1
+]
+"197
+[e E3641 enum_VARIATEUR `uc
+uc_VARIATEUR0 0
+uc_VARIATEUR1 1
+uc_VARIATEUR2 2
+uc_VARIATEUR3 3
+VARIATEUR_NB 4
+]
+"34 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/global.h
+[e E3517 enum_ENTREES `uc
+uc_ENTREE0 0
+uc_ENTREE1 1
+uc_ENTREE2 2
+uc_ENTREE3 3
+uc_ENTREE4 4
+uc_ENTREE5 5
+uc_ENTREE6 6
+uc_ENTREE7 7
+uc_ENTREE8 8
+uc_ENTREE9 9
+uc_ENTREE10 10
+uc_ENTREE11 11
+uc_ENTREE12 12
+uc_ENTREE13 13
+uc_ENTREE14 14
+uc_ENTREE15 15
+uc_ENTREE16 16
+uc_ENTREE17 17
+uc_ENTREE18 18
+uc_ENTREE19 19
+uc_ENTREE20 20
+uc_ENTREE21 21
+NB_ES 22
+]
+"36
+[e E3576 enum_ENTREE_VARIATEUR `uc
+uc_ENTREE_VARIATEUR0 0
+uc_ENTREE_VARIATEUR1 1
+uc_ENTREE_VARIATEUR2 2
+uc_ENTREE_VARIATEUR3 3
+ENTREE_VARIATEUR_NB 4
+]
+"37
+[e E3582 enum_ENTREE_VOLET `uc
+uc_ENTREE_VOLET0 0
+uc_ENTREE_VOLET1 1
+uc_ENTREE_VOLET2 2
+uc_ENTREE_VOLET3 3
+uc_ENTREE_VOLET4 4
+uc_ENTREE_VOLET5 5
+uc_ENTREE_VOLET6 6
+uc_ENTREE_VOLET7 7
+uc_ENTREE_VOLET8 8
+uc_ENTREE_VOLET9 9
+uc_ENTREE_VOLET10 10
+uc_ENTREE_VOLET11 11
+ENTREE_VOLET_NB 12
+]
+"42
+[e E3620 enum_RELAIS_BISTABLES `uc
+uc_RB0 0
+uc_RB1 1
+uc_RB2 2
+uc_RB3 3
+uc_RB4 4
+uc_RB5 5
+uc_RB6 6
+uc_RB7 7
+uc_RB8 8
+uc_RB9 9
+uc_RB10 10
+uc_RB11 11
+RB_NB 12
+]
+"44
+[e E3641 enum_VARIATEUR `uc
+uc_VARIATEUR0 0
+uc_VARIATEUR1 1
+uc_VARIATEUR2 2
+uc_VARIATEUR3 3
+VARIATEUR_NB 4
+]
+"61
+[e E3596 enum_RELAIS `uc
+uc_RM0 0
+uc_RM1 1
+uc_RM2 2
+uc_RM3 3
+uc_RM4 4
+uc_RM5 5
+uc_RM6 6
+uc_RM7 7
+uc_RM8 8
+uc_RM9 9
+uc_RM10 10
+uc_RM11 11
+uc_RM12 12
+RM_NB 13
+]
+"150 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/hard.c
+[e E3561 enum_ENTREES_TOR `uc
+uc_ENTREE_TOR0 0
+uc_ENTREE_TOR1 1
+uc_ENTREE_TOR2 2
+uc_ENTREE_TOR3 3
+uc_ENTREE_TOR4 4
+uc_ENTREE_TOR5 5
+uc_ENTREE_TOR6 6
+uc_ENTREE_TOR7 7
+uc_ENTREE_TOR8 8
+uc_ENTREE_TOR9 9
+uc_ENTREE_TOR10 10
+uc_ENTREE_TOR11 11
+uc_ENTREE_TOR12 12
+ENTREE_TOR_NB 13
+]
+"318
+[e E3617 enum_RELAIS_BISTABLE_SENS `uc
+uc_RBSENS1 0
+uc_RBSENS2 1
+]
+"258
+[e E3611 enum_TYPES_SORTIES `uc
+uc_SORTIE_RELAIS 0
+uc_SORTIE_RELAIS_BISTABLE_SENS 1
+uc_SORTIE_RELAIS_BISTABLE 2
+uc_SORTIE_VARIATEUR 3
+uc_SORTIE_LED 4
+]
+"60 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/global.h
+[e E3643 enum_RELAIS_BISTABLES `uc
+uc_RB0 0
+uc_RB1 1
+uc_RB2 2
+uc_RB3 3
+uc_RB4 4
+uc_RB5 5
+uc_RB6 6
+uc_RB7 7
+uc_RB8 8
+uc_RB9 9
+uc_RB10 10
+uc_RB11 11
+RB_NB 12
+]
+"61
+[e E3619 enum_RELAIS `uc
+uc_RM0 0
+uc_RM1 1
+uc_RM2 2
+uc_RM3 3
+uc_RM4 4
+uc_RM5 5
+uc_RM6 6
+uc_RM7 7
+uc_RM8 8
+uc_RM9 9
+uc_RM10 10
+uc_RM11 11
+uc_RM12 12
+RM_NB 13
+]
+"91 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/main.c
+[e E3664 enum_VARIATEUR `uc
+uc_VARIATEUR0 0
+uc_VARIATEUR1 1
+uc_VARIATEUR2 2
+uc_VARIATEUR3 3
+VARIATEUR_NB 4
+]
+"93
+[e E3599 enum_ENTREE_VARIATEUR `uc
+uc_ENTREE_VARIATEUR0 0
+uc_ENTREE_VARIATEUR1 1
+uc_ENTREE_VARIATEUR2 2
+uc_ENTREE_VARIATEUR3 3
+ENTREE_VARIATEUR_NB 4
+]
+"134
+[e E3564 enum_ENTREE_VARIATEUR_MODE `uc
+uc_MODE_SOFT_START 0
+uc_MODE_VARIATEUR 1
+uc_MODE_TOR 2
+]
+"60 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/global.h
+[e E104 enum_RELAIS_BISTABLES `uc
+uc_RB0 0
+uc_RB1 1
+uc_RB2 2
+uc_RB3 3
+uc_RB4 4
+uc_RB5 5
+uc_RB6 6
+uc_RB7 7
+uc_RB8 8
+uc_RB9 9
+uc_RB10 10
+uc_RB11 11
+RB_NB 12
+]
+"61
+[e E80 enum_RELAIS `uc
+uc_RM0 0
+uc_RM1 1
+uc_RM2 2
+uc_RM3 3
+uc_RM4 4
+uc_RM5 5
+uc_RM6 6
+uc_RM7 7
+uc_RM8 8
+uc_RM9 9
+uc_RM10 10
+uc_RM11 11
+uc_RM12 12
+RM_NB 13
+]
+"34 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/traitement.c
+[e E60 enum_ENTREE_VARIATEUR `uc
+uc_ENTREE_VARIATEUR0 0
+uc_ENTREE_VARIATEUR1 1
+uc_ENTREE_VARIATEUR2 2
+uc_ENTREE_VARIATEUR3 3
+ENTREE_VARIATEUR_NB 4
+]
+"36
+[e E25 enum_ENTREE_VARIATEUR_MODE `uc
+uc_MODE_SOFT_START 0
+uc_MODE_VARIATEUR 1
+uc_MODE_TOR 2
+]
+"44
+[e E66 enum_ENTREE_VOLET `uc
+uc_ENTREE_VOLET0 0
+uc_ENTREE_VOLET1 1
+uc_ENTREE_VOLET2 2
+uc_ENTREE_VOLET3 3
+uc_ENTREE_VOLET4 4
+uc_ENTREE_VOLET5 5
+uc_ENTREE_VOLET6 6
+uc_ENTREE_VOLET7 7
+uc_ENTREE_VOLET8 8
+uc_ENTREE_VOLET9 9
+uc_ENTREE_VOLET10 10
+uc_ENTREE_VOLET11 11
+ENTREE_VOLET_NB 12
+]
+"58
+[e E125 enum_VARIATEUR `uc
+uc_VARIATEUR0 0
+uc_VARIATEUR1 1
+uc_VARIATEUR2 2
+uc_VARIATEUR3 3
+VARIATEUR_NB 4
+]
+"198
+[e E121 enum_TEMPO_RELAIS `uc
+INIT 0
+RAZ 1
+MAINTIEN 2
+]
+"345
+[e E32 enum_ENTREES_CMDE_VOLET_STORE `uc
+uc_VOLET_RIEN 0
+uc_VOLET_OFF 1
+uc_VOLET_APPUI_COURT 2
+uc_VOLET_APPUI_LONG 3
+uc_VOLET_ON 4
+]
+"543
+[e E38 enum_ENTREES_CMDE_VARIATEUR `uc
+uc_VARIATEUR_RIEN 0
+uc_VARIATEUR_OFF 1
+uc_VARIATEUR_ON 2
+uc_VARIATEUR_APPUI_COURT 3
+uc_VARIATEUR_APPUI_DOUBLE 4
+uc_VARIATEUR_APPUI_LONG 5
+]
+"60 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/global.h
+[e E104 enum_RELAIS_BISTABLES `uc
+uc_RB0 0
+uc_RB1 1
+uc_RB2 2
+uc_RB3 3
+uc_RB4 4
+uc_RB5 5
+uc_RB6 6
+uc_RB7 7
+uc_RB8 8
+uc_RB9 9
+uc_RB10 10
+uc_RB11 11
+RB_NB 12
+]
+"61
+[e E80 enum_RELAIS `uc
+uc_RM0 0
+uc_RM1 1
+uc_RM2 2
+uc_RM3 3
+uc_RM4 4
+uc_RM5 5
+uc_RM6 6
+uc_RM7 7
+uc_RM8 8
+uc_RM9 9
+uc_RM10 10
+uc_RM11 11
+uc_RM12 12
+RM_NB 13
+]
+"60
+[e E3620 enum_RELAIS_BISTABLES `uc
+uc_RB0 0
+uc_RB1 1
+uc_RB2 2
+uc_RB3 3
+uc_RB4 4
+uc_RB5 5
+uc_RB6 6
+uc_RB7 7
+uc_RB8 8
+uc_RB9 9
+uc_RB10 10
+uc_RB11 11
+RB_NB 12
+]
+"61
+[e E3596 enum_RELAIS `uc
+uc_RM0 0
+uc_RM1 1
+uc_RM2 2
+uc_RM3 3
+uc_RM4 4
+uc_RM5 5
+uc_RM6 6
+uc_RM7 7
+uc_RM8 8
+uc_RM9 9
+uc_RM10 10
+uc_RM11 11
+uc_RM12 12
+RM_NB 13
+]
+"201 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/slavenode.c
+[e E3798 enum_CODE_TRAMES `uc
+C_FORCAGE_SORTIES 1
+C_CONF_SORTIES 2
+C_TPS_EXTINCTION 3
+C_TPS_ACTION 4
+C_ACTIONS 5
+]
+"451
+[e E3641 enum_VARIATEUR `uc
+uc_VARIATEUR0 0
+uc_VARIATEUR1 1
+uc_VARIATEUR2 2
+uc_VARIATEUR3 3
+VARIATEUR_NB 4
+]
+"456
+[e E3576 enum_ENTREE_VARIATEUR `uc
+uc_ENTREE_VARIATEUR0 0
+uc_ENTREE_VARIATEUR1 1
+uc_ENTREE_VARIATEUR2 2
+uc_ENTREE_VARIATEUR3 3
+ENTREE_VARIATEUR_NB 4
+]
+[e E3554 enum_ENTREES_CMDE_VARIATEUR `uc
+uc_VARIATEUR_RIEN 0
+uc_VARIATEUR_OFF 1
+uc_VARIATEUR_ON 2
+uc_VARIATEUR_APPUI_COURT 3
+uc_VARIATEUR_APPUI_DOUBLE 4
+uc_VARIATEUR_APPUI_LONG 5
+]
+"474
+[e E3582 enum_ENTREE_VOLET `uc
+uc_ENTREE_VOLET0 0
+uc_ENTREE_VOLET1 1
+uc_ENTREE_VOLET2 2
+uc_ENTREE_VOLET3 3
+uc_ENTREE_VOLET4 4
+uc_ENTREE_VOLET5 5
+uc_ENTREE_VOLET6 6
+uc_ENTREE_VOLET7 7
+uc_ENTREE_VOLET8 8
+uc_ENTREE_VOLET9 9
+uc_ENTREE_VOLET10 10
+uc_ENTREE_VOLET11 11
+ENTREE_VOLET_NB 12
+]
+[e E3548 enum_ENTREES_CMDE_VOLET_STORE `uc
+uc_VOLET_RIEN 0
+uc_VOLET_OFF 1
+uc_VOLET_APPUI_COURT 2
+uc_VOLET_APPUI_LONG 3
+uc_VOLET_ON 4
+]
+"7 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/crc.c
+[v _us_CalculerCRCSurTrame us_CalculerCRCSurTrame `(us  1 e 2 0 ]
+"20
+[v _us_CalculerCRCSurUnOctet us_CalculerCRCSurUnOctet `(us  1 e 2 0 ]
+"14 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/gestionentrees.c
+[v _vd_AcquisitionEntrees vd_AcquisitionEntrees `(v  1 e 0 0 ]
+"42
+[v _uc_EntreeTOREntreeCarte uc_EntreeTOREntreeCarte `(uc  1 e 1 0 ]
+"147
+[v _uc_EntreeVoletEntreeCarte uc_EntreeVoletEntreeCarte `(uc  1 e 1 0 ]
+"267
+[v _uc_EntreeVariateurEntreeCarte uc_EntreeVariateurEntreeCarte `(uc  1 e 1 0 ]
+"326
+[v _vd_AnalyserEntreesTOR vd_AnalyserEntreesTOR `(v  1 e 0 0 ]
+"399
+[v _vd_AnalyserEntreesVariateurs vd_AnalyserEntreesVariateurs `(v  1 e 0 0 ]
+"505
+[v _vd_AnalyserEntreesVolets vd_AnalyserEntreesVolets `(v  1 e 0 0 ]
+"562
+[v _vd_AnalyserEntrees vd_AnalyserEntrees `(v  1 e 0 0 ]
+"15 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/gestionsorties.c
+[v _vd_PiloterLed vd_PiloterLed `(v  1 e 0 0 ]
+"48
+[v _vd_PiloterRelais vd_PiloterRelais `(v  1 e 0 0 ]
+"69
+[v _vd_PiloterRelaisBistable vd_PiloterRelaisBistable `(v  1 e 0 0 ]
+"95
+[v _vd_PiloterRelaisBistables vd_PiloterRelaisBistables `(v  1 e 0 0 ]
+"175
+[v _vd_ArretPilotageRelaisBist vd_ArretPilotageRelaisBist `(v  1 e 0 0 ]
+"190
+[v _vd_PilotageVariateurs vd_PilotageVariateurs `T(v  1 e 0 0 ]
+"220
+[v _vd_PiloterSorties vd_PiloterSorties `(v  1 e 0 0 ]
+"14 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/hard.c
+[v _vd_InitMicro vd_InitMicro `(v  1 e 0 0 ]
+"97
+[v _vd_ConfigBornier vd_ConfigBornier `(v  1 e 0 0 ]
+"166
+[v _uc_EtatEntree uc_EtatEntree `(uc  1 e 1 0 ]
+"249
+[v _vd_PiloterSortie vd_PiloterSortie `(v  1 e 0 0 ]
+"544
+[v _vd_PiloteSortieVariateur vd_PiloteSortieVariateur `(v  1 e 0 0 ]
+"52 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/main.c
+[v _vd_Verif_Version vd_Verif_Version `(v  1 e 0 0 ]
+"67
+[v _vd_Lit_Config vd_Lit_Config `(v  1 e 0 0 ]
+"180
+[v _vd_Sauve_Etat vd_Sauve_Etat `(v  1 e 0 0 ]
+"218
+[v _IT IT `II(v  1 e 0 0 ]
+"291
+[v _main main `(v  1 e 0 0 ]
+"133 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/slavenode.c
+[v _SSP_Handler SSP_Handler `(v  1 e 0 0 ]
+"368
+[v _WriteI2C WriteI2C `(v  1 e 0 0 ]
+"383
+[v _ReadI2C ReadI2C `(uc  1 e 1 0 ]
+"414
+[v _vd_I2C_Setup vd_I2C_Setup `(v  1 e 0 0 ]
+"429
+[v _vd_Traitement_I2C vd_Traitement_I2C `(v  1 e 0 0 ]
+"16 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/traitement.c
+[v _vd_InitVariables vd_InitVariables `(v  1 e 0 0 ]
+"96
+[v _vd_InitVariables2 vd_InitVariables2 `(v  1 e 0 0 ]
+"134
+[v _uc_EteintLampe uc_EteintLampe `(uc  1 e 1 0 ]
+"197
+[v _uc_StopVolet uc_StopVolet `(uc  1 e 1 0 ]
+"246
+[v _vd_TraitementApplicatif vd_TraitementApplicatif `(v  1 e 0 0 ]
+"13 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/variateur.c
+[v _us_CodeVariateur us_CodeVariateur `(us  1 e 2 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\abdiv.c
+[v ___abdiv __abdiv `(c  1 e 1 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\abmod.c
+[v ___abmod __abmod `(c  1 e 1 0 ]
+"33 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\abtoft.c
+[v ___abtoft __abtoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+"42 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\altoft.c
+[v ___altoft __altoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\atdiv.c
+[v ___atdiv __atdiv `(m  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\atmod.c
+[v ___atmod __atmod `(m  1 e 3 0 ]
+"37 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\attoft.c
+[v ___attoft __attoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"32 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+"2 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\bmul.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\ftge.c
+[v ___ftge __ftge `(b  1 e 0 0 ]
+"51 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\ftneg.c
+[v ___ftneg __ftneg `(f  1 e 3 0 ]
+"18 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"44 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lbdiv.c
+[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+"27 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lbtoft.c
+[v ___lbtoft __lbtoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"35 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lltoft.c
+[v ___lltoft __lltoft `(f  1 e 3 0 ]
+"2 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lmul.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\ltdiv.c
+[v ___ltdiv __ltdiv `(um  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\ltmod.c
+[v ___ltmod __ltmod `(um  1 e 3 0 ]
+"30 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lttoft.c
+[v ___lttoft __lttoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"28 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+"2 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\tmul.c
+[v ___tmul __tmul `(um  1 e 3 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\wmul.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 0 0 ]
+"24
+[v _memcpyee memcpyee `(v  1 e 0 0 ]
+"48
+[v ___eetoc __eetoc `(uc  1 e 1 0 ]
+"56
+[v ___eetoi __eetoi `(ui  1 e 2 0 ]
+"64
+[v ___eetom __eetom `(um  1 e 3 0 ]
+"72
+[v ___eetol __eetol `(ul  1 e 4 0 ]
+"80
+[v ___ctoee __ctoee `(uc  1 e 1 0 ]
+"87
+[v ___itoee __itoee `(ui  1 e 2 0 ]
+"94
+[v ___mtoee __mtoee `(um  1 e 3 0 ]
+"101
+[v ___ltoee __ltoee `(ul  1 e 4 0 ]
+"108
+[v ___eetoft __eetoft `(f  1 e 3 0 ]
+"116
+[v ___eetofl __eetofl `(d  1 e 3 0 ]
+"124
+[v ___fttoee __fttoee `(f  1 e 3 0 ]
+"131
+[v ___fltoee __fltoee `(d  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic\eeread.c
+[v _eeprom_read eeprom_read `(uc  1 e 1 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic\eewrite.c
+[v _eeprom_write eeprom_write `(v  1 e 0 0 ]
+"49 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"4 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/crc.c
+[v _l_us_CRC l_us_CRC `us  1 e 2 0 ]
+"5
+[v _l_uc_Compteur l_uc_Compteur `uc  1 e 1 0 ]
+"18
+[v _l_uc_Compteur2 l_uc_Compteur2 `uc  1 e 1 0 ]
+"4 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/global.h
+[v _uc_CompteurCycle uc_CompteurCycle `uc  1 e 1 0 ]
+"5
+[v _uc_CompteurAcq uc_CompteurAcq `uc  1 e 1 0 ]
+"7
+[v _uc_CompteurBase1S uc_CompteurBase1S `uc  1 e 1 0 ]
+"10
+[v _b1_BT_1S b1_BT_1S `uc  1 e 1 0 ]
+"13
+[v _uc_CompteurLED uc_CompteurLED `uc  1 e 1 0 ]
+"16
+[v _uc_CompteurBiStable uc_CompteurBiStable `uc  1 e 1 0 ]
+"23
+[v _uc_NB_ES uc_NB_ES `uc  1 e 1 0 ]
+"24
+[v _uc_ENTREE_TOR_NB uc_ENTREE_TOR_NB `uc  1 e 1 0 ]
+"25
+[v _uc_RM_NB uc_RM_NB `uc  1 e 1 0 ]
+"26
+[v _uc_ENTREE_VARIATEUR_NB uc_ENTREE_VARIATEUR_NB `uc  1 e 1 0 ]
+"27
+[v _uc_VARIATEUR_NB uc_VARIATEUR_NB `uc  1 e 1 0 ]
+"28
+[v _uc_ENTREE_VOLET_NB uc_ENTREE_VOLET_NB `uc  1 e 1 0 ]
+"29
+[v _uc_RB_NB uc_RB_NB `uc  1 e 1 0 ]
+"30
+[v _uc_VOLET_NB uc_VOLET_NB `uc  1 e 1 0 ]
+[s S77 struct_Entree 1 `uc 1 ub1_EtatActuel 1 0 :1:0 
+`uc 1 ub4_AntiRebond_TempoChgtEtat 1 0 :4:1 
+`uc 1 ub1_EtatFiltrePourApp 1 0 :1:5 
+`uc 1 ub1_EtatFiltrePourAppPrecedent 1 0 :1:6 
+]
+"34
+[v _st_Entrees st_Entrees `[22]S77  1 e 22 0 ]
+"35
+[v _us_EntreesTOR us_EntreesTOR `us  1 e 2 0 ]
+[s S121 struct_EntreeVariateur 4 `uc 1 uc_CompteurMaintenu 1 0 `uc 1 uc_CompteurDoubleClic 1 1 `uc 1 ub3_EntreeMode 1 2 :3:0 
+`uc 1 ub1_Etat1VueApresEtatStop 1 2 :1:3 
+`uc 1 ub1_SecondAppuiDetecte 1 2 :1:4 
+`uc 1 ub3_EtatCommande 1 2 :3:5 
+`uc 1 ub1_SensCommande 1 3 :1:0 
+]
+"36
+[v _st_EntreesVariateur st_EntreesVariateur `[4]S121  1 e 16 0 ]
+[s S142 struct_EntreeVoletOuStore 1 `uc 1 ub4_CompteurMaintenu 1 0 :4:0 
+`uc 1 ub1_Etat1VueApresEtatStop 1 0 :1:4 
+`uc 1 ub3_EtatCommande 1 0 :3:5 
+]
+"37
+[v _st_EntreesVoletRoulant st_EntreesVoletRoulant `[12]S142  1 e 12 0 ]
+"41
+[v _us_SortiesRelais us_SortiesRelais `us  1 e 2 0 ]
+[s S254 struct_SortieRelaisBistable 1 `uc 1 ub1_EtatRelaisBistable 1 0 :1:0 
+`uc 1 ub1_EtatRelaisBistableSouhaite 1 0 :1:1 
+]
+"42
+[v _st_SortiesRelaisBistables st_SortiesRelaisBistables `[12]S254  1 e 12 0 ]
+[s S385 struct_Variateur 3 `c 1 c_Eclairage 1 0 `c 1 c_EclairageOld 1 1 `c 1 c_Consigne 1 2 ]
+"44
+[v _st_Variateurs st_Variateurs `[4]S385  1 e 12 0 ]
+"48
+[v _uc_CdeRelaisBistables uc_CdeRelaisBistables `[12]uc  1 e 12 0 ]
+"49
+[v _us_CdeVariateurs us_CdeVariateurs `[4]us  1 e 8 0 ]
+"52
+[v _s_uc_PortA s_uc_PortA `uc  1 e 1 0 ]
+"53
+[v _s_uc_PortB s_uc_PortB `uc  1 e 1 0 ]
+"54
+[v _s_uc_PortC s_uc_PortC `uc  1 e 1 0 ]
+"55
+[v _s_uc_PortD s_uc_PortD `uc  1 e 1 0 ]
+"56
+[v _s_uc_PortE s_uc_PortE `uc  1 e 1 0 ]
+"57
+[v _s_uc_PortF s_uc_PortF `uc  1 e 1 0 ]
+"60
+[v _uc_TempsCdeVolet uc_TempsCdeVolet `[6]uc  1 e 6 0 ]
+"61
+[v _uc_TempsCdeLampe uc_TempsCdeLampe `[13]uc  1 e 13 0 ]
+[s S240 . 1 `uc 1 Sauvegarde 1 0 :1:0 
+`uc 1 bloqueVolets 1 0 :1:1 
+`uc 1 AllumeTout 1 0 :1:2 
+]
+"63
+[u S244 struct_Cde_BP 1 `S240 1 ub1 1 0 `uc 1 o 1 0 ]
+[v _st_Commandes st_Commandes `S244  1 e 1 0 ]
+"67
+[v _uc_compteur_ecriture_eeprom uc_compteur_ecriture_eeprom `uc  1 e 1 0 ]
+"68
+[v _uc_compteur_lecture_eeprom uc_compteur_lecture_eeprom `uc  1 e 1 0 ]
+"57 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/slavenode.c
+[v _RXBuffer RXBuffer `[25]uc  1 e 25 0 ]
+"59
+[v _CmdBuf CmdBuf `[25]uc  1 e 25 0 ]
+"61
+[v _us_CRC us_CRC `us  1 e 2 0 ]
+"63
+[v _RXBufferIndex RXBufferIndex `uc  1 e 1 0 ]
+"64
+[v _RXByteCount RXByteCount `uc  1 e 1 0 ]
+"65
+[v _SensBufIndex SensBufIndex `uc  1 e 1 0 ]
+[s S867 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+"87
+[u S876 I2CSTAT 1 `S867 1 b_stat 1 0 `uc 1 b 1 0 ]
+[v _I2CStat I2CStat `S876  1 e 1 0 ]
+[s S879 . 2 `uc 1 code 1 0 :8:0 
+`uc 1 chkfail 1 1 :1:0 
+`uc 1 rxerror 1 1 :1:1 
+`uc 1 ovflw 1 1 :1:2 
+`uc 1 sspov 1 1 :1:3 
+`uc 1 noactivity 1 1 :1:4 
+`uc 1 bit5 1 1 :1:5 
+`uc 1 bit6 1 1 :1:6 
+`uc 1 r_w 1 1 :1:7 
+]
+"104
+[u S889 TXBUF 4 `S879 1 comm_stat 2 0 `[4]uc 1 b 4 0 ]
+[v _TxBuf TxBuf `S889  1 e 4 0 ]
+"106
+[v _uc_I2C_activity uc_I2C_activity `uc  1 e 1 0 ]
+"50 C:\Program Files (x86)\Microchip\xc8\v1.30\include\pic16f946.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+"155
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"216
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"277
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"338
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"399
+[v _PORTE PORTE `VEuc  1 e 1 @9 ]
+"771
+[v _T2CON T2CON `VEuc  1 e 1 @18 ]
+"841
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
+"847
+[v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
+"1103
+[v _CCPR2L CCPR2L `VEuc  1 e 1 @27 ]
+"1115
+[v _CCP2CON CCP2CON `VEuc  1 e 1 @29 ]
+"1278
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
+"1347
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1408
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1469
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1530
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"1591
+[v _TRISE TRISE `VEuc  1 e 1 @137 ]
+"1804
+[v _OSCCON OSCCON `VEuc  1 e 1 @143 ]
+"1919
+[v _ANSEL ANSEL `VEuc  1 e 1 @145 ]
+"2038
+[v _PR2 PR2 `VEuc  1 e 1 @146 ]
+"2044
+[v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
+"2050
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
+"2945
+[v _LCDCON LCDCON `VEuc  1 e 1 @263 ]
+"3089
+[v _LVDCON LVDCON `VEuc  1 e 1 @265 ]
+"3146
+[v _EEDATA EEDATA `VEuc  1 e 1 @268 ]
+"3283
+[v _EEADR EEADR `VEuc  1 e 1 @269 ]
+"5922
+[v _TRISF TRISF `VEuc  1 e 1 @389 ]
+"5983
+[v _TRISG TRISG `VEuc  1 e 1 @391 ]
+"6032
+[v _PORTF PORTF `VEuc  1 e 1 @392 ]
+"6093
+[v _PORTG PORTG `VEuc  1 e 1 @393 ]
+"6142
+[v _EECON1 EECON1 `VEuc  1 e 1 @396 ]
+"6200
+[v _EECON2 EECON2 `VEuc  1 e 1 @397 ]
+"8159
+[v _CARRY CARRY `VEb  1 e 0 @24 ]
+"8203
+[v _CKP CKP `VEb  1 e 0 @164 ]
+"8293
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"8385
+[v _PEIE PEIE `VEb  1 e 0 @94 ]
+"8457
+[v _RD RD `VEb  1 e 0 @3168 ]
+"9387
+[v _SSPIE SSPIE `VEb  1 e 0 @1123 ]
+"9389
+[v _SSPIF SSPIF `VEb  1 e 0 @99 ]
+"9399
+[v _SSPOV SSPOV `VEb  1 e 0 @166 ]
+"9409
+[v _T0IE T0IE `VEb  1 e 0 @93 ]
+"9411
+[v _T0IF T0IF `VEb  1 e 0 @90 ]
+"9449
+[v _TMR2IE TMR2IE `VEb  1 e 0 @1121 ]
+"9451
+[v _TMR2IF TMR2IF `VEb  1 e 0 @97 ]
+"9619
+[v _WCOL WCOL `VEb  1 e 0 @167 ]
+"9665
+[v _WR WR `VEb  1 e 0 @3169 ]
+"9667
+[v _WREN WREN `VEb  1 e 0 @3170 ]
+"291 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/main.c
+[v _main main `(v  1 e 0 0 ]
+{
+"429
+} 0
+"52
+[v _vd_Verif_Version vd_Verif_Version `(v  1 e 0 0 ]
+{
+"55
+[v vd_Verif_Version@address address `ui  1 a 2 7 ]
+"54
+[v vd_Verif_Version@l_uc_Data l_uc_Data `uc  1 a 1 6 ]
+"64
+} 0
+"429 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/slavenode.c
+[v _vd_Traitement_I2C vd_Traitement_I2C `(v  1 e 0 0 ]
+{
+"432
+[v vd_Traitement_I2C@l_uc_Compteur l_uc_Compteur `uc  1 a 1 15 ]
+[v vd_Traitement_I2C@l_uc_masque l_uc_masque `uc  1 a 1 14 ]
+"433
+[v vd_Traitement_I2C@l_uc_RelaisSens1 l_uc_RelaisSens1 `uc  1 a 1 13 ]
+[v vd_Traitement_I2C@l_uc_RelaisSens2 l_uc_RelaisSens2 `uc  1 a 1 12 ]
+"640
+} 0
+"180 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/main.c
+[v _vd_Sauve_Etat vd_Sauve_Etat `(v  1 e 0 0 ]
+{
+"184
+[v vd_Sauve_Etat@address address `ui  1 a 2 8 ]
+"182
+[v vd_Sauve_Etat@l_uc_Compteur l_uc_Compteur `uc  1 a 1 7 ]
+"183
+[v vd_Sauve_Etat@data data `uc  1 a 1 6 ]
+"213
+} 0
+"246 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/traitement.c
+[v _vd_TraitementApplicatif vd_TraitementApplicatif `(v  1 e 0 0 ]
+{
+"249
+[v vd_TraitementApplicatif@l_us_Masque l_us_Masque `us  1 a 2 0 ]
+"248
+[v vd_TraitementApplicatif@l_uc_Compteur l_uc_Compteur `uc  1 a 1 4 ]
+"250
+[v vd_TraitementApplicatif@l_uc_RelaisSens1 l_uc_RelaisSens1 `uc  1 a 1 3 ]
+"251
+[v vd_TraitementApplicatif@l_uc_RelaisSens2 l_uc_RelaisSens2 `uc  1 a 1 2 ]
+"706
+} 0
+"197
+[v _uc_StopVolet uc_StopVolet `(uc  1 e 1 0 ]
+{
+[v uc_StopVolet@uc_NumVolet uc_NumVolet `uc  1 a 1 wreg ]
+"201
+[v uc_StopVolet@l_stop l_stop `uc  1 a 1 6 ]
+"197
+[v uc_StopVolet@uc_NumVolet uc_NumVolet `uc  1 a 1 wreg ]
+[v uc_StopVolet@mode mode `E121  1 p 1 4 ]
+"199
+[v uc_StopVolet@s_uc_CompteurVolet s_uc_CompteurVolet `[6]uc  1 s 6 s_uc_CompteurVolet ]
+"203
+[v uc_StopVolet@uc_NumVolet uc_NumVolet `uc  1 a 1 7 ]
+"237
+} 0
+"134
+[v _uc_EteintLampe uc_EteintLampe `(uc  1 e 1 0 ]
+{
+[v uc_EteintLampe@uc_Num_Lampe uc_Num_Lampe `uc  1 a 1 wreg ]
+"137
+[v uc_EteintLampe@l_ul_Valeur l_ul_Valeur `ul  1 a 4 20 ]
+"139
+[v uc_EteintLampe@l_stop l_stop `uc  1 a 1 19 ]
+"134
+[v uc_EteintLampe@uc_Num_Lampe uc_Num_Lampe `uc  1 a 1 wreg ]
+[v uc_EteintLampe@us_Etat_Lampe us_Etat_Lampe `us  1 p 2 17 ]
+"136
+[v uc_EteintLampe@s_us_CompteurLampe s_us_CompteurLampe `[13]us  1 s 26 s_us_CompteurLampe ]
+"141
+[v uc_EteintLampe@uc_Num_Lampe uc_Num_Lampe `uc  1 a 1 24 ]
+"180
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\wmul.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"6
+[v ___wmul@product product `ui  1 a 2 8 ]
+"4
+[v ___wmul@multiplier multiplier `ui  1 p 2 4 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 6 ]
+"31
+} 0
+"2 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lmul.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+{
+"4
+[v ___lmul@product product `ul  1 a 4 12 ]
+"2
+[v ___lmul@multiplier multiplier `ul  1 p 4 4 ]
+[v ___lmul@multiplicand multiplicand `ul  1 p 4 8 ]
+"13
+} 0
+"6 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"11
+[v ___lldiv@quotient quotient `ul  1 a 4 12 ]
+"12
+[v ___lldiv@counter counter `uc  1 a 1 16 ]
+"6
+[v ___lldiv@divisor divisor `ul  1 p 4 4 ]
+[v ___lldiv@dividend dividend `ul  1 p 4 8 ]
+"31
+} 0
+"220 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/gestionsorties.c
+[v _vd_PiloterSorties vd_PiloterSorties `(v  1 e 0 0 ]
+{
+"228
+} 0
+"95
+[v _vd_PiloterRelaisBistables vd_PiloterRelaisBistables `(v  1 e 0 0 ]
+{
+"97
+[v vd_PiloterRelaisBistables@l_uc_Compteur l_uc_Compteur `uc  1 a 1 9 ]
+"98
+[v vd_PiloterRelaisBistables@s_uc_CompteurCommandeMaintenu s_uc_CompteurCommandeMaintenu `uc  1 s 1 s_uc_CompteurCommandeMaintenu ]
+"172
+} 0
+"69
+[v _vd_PiloterRelaisBistable vd_PiloterRelaisBistable `(v  1 e 0 0 ]
+{
+[v vd_PiloterRelaisBistable@uc_NumeroRelaisBistable uc_NumeroRelaisBistable `uc  1 a 1 wreg ]
+[v vd_PiloterRelaisBistable@uc_NumeroRelaisBistable uc_NumeroRelaisBistable `uc  1 a 1 wreg ]
+"73
+[v vd_PiloterRelaisBistable@uc_NumeroRelaisBistable uc_NumeroRelaisBistable `uc  1 a 1 7 ]
+"92
+} 0
+"48
+[v _vd_PiloterRelais vd_PiloterRelais `(v  1 e 0 0 ]
+{
+"51
+[v vd_PiloterRelais@l_us_Masque l_us_Masque `us  1 a 2 9 ]
+"50
+[v vd_PiloterRelais@l_uc_Compteur l_uc_Compteur `uc  1 a 1 11 ]
+"66
+} 0
+"15
+[v _vd_PiloterLed vd_PiloterLed `(v  1 e 0 0 ]
+{
+"45
+} 0
+"67 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/main.c
+[v _vd_Lit_Config vd_Lit_Config `(v  1 e 0 0 ]
+{
+"72
+[v vd_Lit_Config@address address `ui  1 a 2 11 ]
+"73
+[v vd_Lit_Config@l_us_Test l_us_Test `us  1 a 2 8 ]
+"69
+[v vd_Lit_Config@l_uc_Compteur l_uc_Compteur `uc  1 a 1 10 ]
+"175
+} 0
+"6 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic\eewrite.c
+[v _eeprom_write eeprom_write `(v  1 e 0 0 ]
+{
+[v eeprom_write@addr addr `uc  1 a 1 wreg ]
+[v eeprom_write@addr addr `uc  1 a 1 wreg ]
+[v eeprom_write@value value `uc  1 p 1 4 ]
+[v eeprom_write@addr addr `uc  1 a 1 5 ]
+"9
+} 0
+"6 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic\eeread.c
+[v _eeprom_read eeprom_read `(uc  1 e 1 0 ]
+{
+[v eeprom_read@addr addr `uc  1 a 1 wreg ]
+[v eeprom_read@addr addr `uc  1 a 1 wreg ]
+"9
+[v eeprom_read@addr addr `uc  1 a 1 4 ]
+"12
+} 0
+"96 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/traitement.c
+[v _vd_InitVariables2 vd_InitVariables2 `(v  1 e 0 0 ]
+{
+"98
+[v vd_InitVariables2@l_uc_Compteur l_uc_Compteur `uc  1 a 1 11 ]
+"117
+} 0
+"13 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/variateur.c
+[v _us_CodeVariateur us_CodeVariateur `(us  1 e 2 0 ]
+{
+[v us_CodeVariateur@c_valeur c_valeur `uc  1 a 1 wreg ]
+"15
+[v us_CodeVariateur@l_us_valeur l_us_valeur `us  1 a 2 8 ]
+"13
+[v us_CodeVariateur@c_valeur c_valeur `uc  1 a 1 wreg ]
+"18
+[v us_CodeVariateur@c_valeur c_valeur `uc  1 a 1 7 ]
+"26
+} 0
+"16 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/traitement.c
+[v _vd_InitVariables vd_InitVariables `(v  1 e 0 0 ]
+{
+"18
+[v vd_InitVariables@l_uc_Compteur l_uc_Compteur `uc  1 a 1 5 ]
+"94
+} 0
+"14 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/hard.c
+[v _vd_InitMicro vd_InitMicro `(v  1 e 0 0 ]
+{
+"94
+} 0
+"414 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/slavenode.c
+[v _vd_I2C_Setup vd_I2C_Setup `(v  1 e 0 0 ]
+{
+"422
+} 0
+"97 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/hard.c
+[v _vd_ConfigBornier vd_ConfigBornier `(v  1 e 0 0 ]
+{
+"164
+} 0
+"175 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/gestionsorties.c
+[v _vd_ArretPilotageRelaisBist vd_ArretPilotageRelaisBist `(v  1 e 0 0 ]
+{
+"177
+[v vd_ArretPilotageRelaisBist@l_uc_Compteur l_uc_Compteur `uc  1 a 1 7 ]
+"186
+} 0
+"249 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/hard.c
+[v _vd_PiloterSortie vd_PiloterSortie `(v  1 e 0 0 ]
+{
+[v vd_PiloterSortie@uc_TypeSortie uc_TypeSortie `uc  1 a 1 wreg ]
+[v vd_PiloterSortie@uc_TypeSortie uc_TypeSortie `uc  1 a 1 wreg ]
+[v vd_PiloterSortie@uc_NumeroSortie uc_NumeroSortie `uc  1 p 1 4 ]
+[v vd_PiloterSortie@uc_Etat uc_Etat `uc  1 p 1 5 ]
+[v vd_PiloterSortie@uc_TypeSortie uc_TypeSortie `uc  1 a 1 6 ]
+"429
+} 0
+"562 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/gestionentrees.c
+[v _vd_AnalyserEntrees vd_AnalyserEntrees `(v  1 e 0 0 ]
+{
+"567
+} 0
+"505
+[v _vd_AnalyserEntreesVolets vd_AnalyserEntreesVolets `(v  1 e 0 0 ]
+{
+"507
+[v vd_AnalyserEntreesVolets@l_uc_Compteur l_uc_Compteur `uc  1 a 1 10 ]
+"508
+[v vd_AnalyserEntreesVolets@l_uc_EntreeVoletRoulant l_uc_EntreeVoletRoulant `uc  1 a 1 9 ]
+"556
+} 0
+"147
+[v _uc_EntreeVoletEntreeCarte uc_EntreeVoletEntreeCarte `(uc  1 e 1 0 ]
+{
+[v uc_EntreeVoletEntreeCarte@uc_NumeroEntreeVolet uc_NumeroEntreeVolet `uc  1 a 1 wreg ]
+"149
+[v uc_EntreeVoletEntreeCarte@l_uc_Compteur l_uc_Compteur `uc  1 a 1 5 ]
+"147
+[v uc_EntreeVoletEntreeCarte@uc_NumeroEntreeVolet uc_NumeroEntreeVolet `uc  1 a 1 wreg ]
+"151
+[v uc_EntreeVoletEntreeCarte@uc_NumeroEntreeVolet uc_NumeroEntreeVolet `uc  1 a 1 4 ]
+"265
+} 0
+"399
+[v _vd_AnalyserEntreesVariateurs vd_AnalyserEntreesVariateurs `(v  1 e 0 0 ]
+{
+"401
+[v vd_AnalyserEntreesVariateurs@l_uc_Compteur l_uc_Compteur `uc  1 a 1 10 ]
+"402
+[v vd_AnalyserEntreesVariateurs@l_uc_EntreeVariateur l_uc_EntreeVariateur `uc  1 a 1 9 ]
+"503
+} 0
+"267
+[v _uc_EntreeVariateurEntreeCarte uc_EntreeVariateurEntreeCarte `(uc  1 e 1 0 ]
+{
+[v uc_EntreeVariateurEntreeCarte@uc_NumeroEntreeVariateur uc_NumeroEntreeVariateur `uc  1 a 1 wreg ]
+"269
+[v uc_EntreeVariateurEntreeCarte@l_uc_Compteur l_uc_Compteur `uc  1 a 1 5 ]
+"267
+[v uc_EntreeVariateurEntreeCarte@uc_NumeroEntreeVariateur uc_NumeroEntreeVariateur `uc  1 a 1 wreg ]
+"271
+[v uc_EntreeVariateurEntreeCarte@uc_NumeroEntreeVariateur uc_NumeroEntreeVariateur `uc  1 a 1 4 ]
+"319
+} 0
+"326
+[v _vd_AnalyserEntreesTOR vd_AnalyserEntreesTOR `(v  1 e 0 0 ]
+{
+"329
+[v vd_AnalyserEntreesTOR@l_us_Masque l_us_Masque `us  1 a 2 9 ]
+"330
+[v vd_AnalyserEntreesTOR@l_uc_EntreeTOR l_uc_EntreeTOR `uc  1 a 1 12 ]
+"328
+[v vd_AnalyserEntreesTOR@l_uc_Compteur l_uc_Compteur `uc  1 a 1 11 ]
+"361
+} 0
+"42
+[v _uc_EntreeTOREntreeCarte uc_EntreeTOREntreeCarte `(uc  1 e 1 0 ]
+{
+[v uc_EntreeTOREntreeCarte@uc_NumeroEntreeTOR uc_NumeroEntreeTOR `uc  1 a 1 wreg ]
+"44
+[v uc_EntreeTOREntreeCarte@l_uc_Compteur l_uc_Compteur `uc  1 a 1 5 ]
+"42
+[v uc_EntreeTOREntreeCarte@uc_NumeroEntreeTOR uc_NumeroEntreeTOR `uc  1 a 1 wreg ]
+"46
+[v uc_EntreeTOREntreeCarte@uc_NumeroEntreeTOR uc_NumeroEntreeTOR `uc  1 a 1 4 ]
+"145
+} 0
+"14
+[v _vd_AcquisitionEntrees vd_AcquisitionEntrees `(v  1 e 0 0 ]
+{
+"16
+[v vd_AcquisitionEntrees@l_uc_Compteur l_uc_Compteur `uc  1 a 1 8 ]
+"17
+[v vd_AcquisitionEntrees@l_uc_EtatEntree l_uc_EtatEntree `uc  1 a 1 7 ]
+"40
+} 0
+"166 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/hard.c
+[v _uc_EtatEntree uc_EtatEntree `(uc  1 e 1 0 ]
+{
+[v uc_EtatEntree@uc_NumeroEntree uc_NumeroEntree `uc  1 a 1 wreg ]
+"168
+[v uc_EtatEntree@l_uc_EtatEntree l_uc_EtatEntree `uc  1 a 1 5 ]
+"166
+[v uc_EtatEntree@uc_NumeroEntree uc_NumeroEntree `uc  1 a 1 wreg ]
+"170
+[v uc_EtatEntree@uc_NumeroEntree uc_NumeroEntree `uc  1 a 1 4 ]
+"246
+} 0
+"218 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/main.c
+[v _IT IT `II(v  1 e 0 0 ]
+{
+"220
+[v IT@s_uc_TempoStart s_uc_TempoStart `uc  1 s 1 s_uc_TempoStart ]
+"287
+} 0
+"190 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/gestionsorties.c
+[v _vd_PilotageVariateurs vd_PilotageVariateurs `T(v  1 e 0 0 ]
+{
+"192
+[v vd_PilotageVariateurs@s_uc_NumVar s_uc_NumVar `uc  1 s 1 s_uc_NumVar ]
+"216
+} 0
+"544 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/hard.c
+[v _vd_PiloteSortieVariateur vd_PiloteSortieVariateur `(v  1 e 0 0 ]
+{
+[v vd_PiloteSortieVariateur@uc_NumeroSortie uc_NumeroSortie `uc  1 a 1 wreg ]
+[v vd_PiloteSortieVariateur@uc_NumeroSortie uc_NumeroSortie `uc  1 a 1 wreg ]
+[v vd_PiloteSortieVariateur@uc_Etat uc_Etat `uc  1 p 1 0 ]
+[v vd_PiloteSortieVariateur@uc_NumeroSortie uc_NumeroSortie `uc  1 a 1 1 ]
+"581
+} 0
+"133 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/slavenode.c
+[v _SSP_Handler SSP_Handler `(v  1 e 0 0 ]
+{
+"136
+[v SSP_Handler@l_us_CRCRecu l_us_CRCRecu `us  1 a 2 0 ]
+"135
+[v SSP_Handler@j j `uc  1 a 1 3 ]
+[v SSP_Handler@i i `uc  1 a 1 2 ]
+"362
+} 0
+"7 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/crc.c
+[v _us_CalculerCRCSurTrame us_CalculerCRCSurTrame `(us  1 e 2 0 ]
+{
+[v us_CalculerCRCSurTrame@uc_Buffer uc_Buffer `*.39uc  1 p 2 3 ]
+[v us_CalculerCRCSurTrame@uc_NbOctets uc_NbOctets `uc  1 p 1 5 ]
+"16
+} 0
+"20
+[v _us_CalculerCRCSurUnOctet us_CalculerCRCSurUnOctet `(us  1 e 2 0 ]
+{
+"21
+[v us_CalculerCRCSurUnOctet@l_us_CRC l_us_CRC `us  1 p 2 0 ]
+"20
+[v us_CalculerCRCSurUnOctet@l_uc_Octet l_uc_Octet `uc  1 p 1 2 ]
+"36
+} 0
+"368 H:\clients\seccom\_en cours\valentinea\soft\ba\code_ba/source/slavenode.c
+[v _WriteI2C WriteI2C `(v  1 e 0 0 ]
+{
+[v WriteI2C@data data `uc  1 a 1 wreg ]
+[v WriteI2C@data data `uc  1 a 1 wreg ]
+"372
+[v WriteI2C@data data `uc  1 a 1 0 ]
+"377
+} 0
+"383
+[v _ReadI2C ReadI2C `(uc  1 e 1 0 ]
+{
+"386
+} 0

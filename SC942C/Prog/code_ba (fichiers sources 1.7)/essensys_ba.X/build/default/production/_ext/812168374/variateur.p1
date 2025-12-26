@@ -1,0 +1,290 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"60 ../source/global.h
+[c E104 0 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
+[n E104 enum_RELAIS_BISTABLES uc_RB0 uc_RB1 uc_RB2 uc_RB3 uc_RB4 uc_RB5 uc_RB6 uc_RB7 uc_RB8 uc_RB9 uc_RB10 uc_RB11 RB_NB  ]
+"61
+[c E80 0 1 2 3 4 5 6 7 8 9 10 11 12 13 .. ]
+[n E80 enum_RELAIS uc_RM0 uc_RM1 uc_RM2 uc_RM3 uc_RM4 uc_RM5 uc_RM6 uc_RM7 uc_RM8 uc_RM9 uc_RM10 uc_RM11 uc_RM12 RM_NB  ]
+[; ;constantes.h: 92: enum enum_ENTREES
+[; ;constantes.h: 93: {
+[; ;constantes.h: 94: uc_ENTREE0,
+[; ;constantes.h: 95: uc_ENTREE1,
+[; ;constantes.h: 96: uc_ENTREE2,
+[; ;constantes.h: 97: uc_ENTREE3,
+[; ;constantes.h: 98: uc_ENTREE4,
+[; ;constantes.h: 99: uc_ENTREE5,
+[; ;constantes.h: 100: uc_ENTREE6,
+[; ;constantes.h: 101: uc_ENTREE7,
+[; ;constantes.h: 102: uc_ENTREE8,
+[; ;constantes.h: 103: uc_ENTREE9,
+[; ;constantes.h: 104: uc_ENTREE10,
+[; ;constantes.h: 105: uc_ENTREE11,
+[; ;constantes.h: 106: uc_ENTREE12,
+[; ;constantes.h: 107: uc_ENTREE13,
+[; ;constantes.h: 108: uc_ENTREE14,
+[; ;constantes.h: 109: uc_ENTREE15,
+[; ;constantes.h: 110: uc_ENTREE16,
+[; ;constantes.h: 111: uc_ENTREE17,
+[; ;constantes.h: 112: uc_ENTREE18,
+[; ;constantes.h: 113: uc_ENTREE19,
+[; ;constantes.h: 114: uc_ENTREE20,
+[; ;constantes.h: 115: uc_ENTREE21,
+[; ;constantes.h: 116: NB_ES,
+[; ;constantes.h: 117: };
+[; ;constantes.h: 120: enum enum_ENTREE_VARIATEUR_MODE
+[; ;constantes.h: 121: {
+[; ;constantes.h: 122: uc_MODE_SOFT_START,
+[; ;constantes.h: 123: uc_MODE_VARIATEUR,
+[; ;constantes.h: 124: uc_MODE_TOR,
+[; ;constantes.h: 125: };
+[; ;constantes.h: 127: enum enum_ENTREES_CMDE_TOR
+[; ;constantes.h: 128: {
+[; ;constantes.h: 129: uc_TOR_OFF,
+[; ;constantes.h: 130: uc_TOR_ON,
+[; ;constantes.h: 131: };
+[; ;constantes.h: 133: enum enum_ENTREES_CMDE_VOLET_STORE
+[; ;constantes.h: 134: {
+[; ;constantes.h: 135: uc_VOLET_RIEN,
+[; ;constantes.h: 136: uc_VOLET_OFF,
+[; ;constantes.h: 137: uc_VOLET_APPUI_COURT,
+[; ;constantes.h: 138: uc_VOLET_APPUI_LONG,
+[; ;constantes.h: 139: uc_VOLET_ON,
+[; ;constantes.h: 140: };
+[; ;constantes.h: 142: enum enum_ENTREES_CMDE_VARIATEUR
+[; ;constantes.h: 143: {
+[; ;constantes.h: 144: uc_VARIATEUR_RIEN,
+[; ;constantes.h: 145: uc_VARIATEUR_OFF,
+[; ;constantes.h: 146: uc_VARIATEUR_ON,
+[; ;constantes.h: 147: uc_VARIATEUR_APPUI_COURT,
+[; ;constantes.h: 148: uc_VARIATEUR_APPUI_DOUBLE,
+[; ;constantes.h: 149: uc_VARIATEUR_APPUI_LONG,
+[; ;constantes.h: 150: };
+[; ;constantes.h: 152: enum enum_ENTREES_TOR
+[; ;constantes.h: 153: {
+[; ;constantes.h: 154: uc_ENTREE_TOR0,
+[; ;constantes.h: 155: uc_ENTREE_TOR1,
+[; ;constantes.h: 156: uc_ENTREE_TOR2,
+[; ;constantes.h: 157: uc_ENTREE_TOR3,
+[; ;constantes.h: 158: uc_ENTREE_TOR4,
+[; ;constantes.h: 159: uc_ENTREE_TOR5,
+[; ;constantes.h: 160: uc_ENTREE_TOR6,
+[; ;constantes.h: 161: uc_ENTREE_TOR7,
+[; ;constantes.h: 162: uc_ENTREE_TOR8,
+[; ;constantes.h: 163: uc_ENTREE_TOR9,
+[; ;constantes.h: 164: uc_ENTREE_TOR10,
+[; ;constantes.h: 165: uc_ENTREE_TOR11,
+[; ;constantes.h: 166: uc_ENTREE_TOR12,
+[; ;constantes.h: 167: ENTREE_TOR_NB,
+[; ;constantes.h: 168: };
+[; ;constantes.h: 170: enum enum_ENTREE_VARIATEUR
+[; ;constantes.h: 171: {
+[; ;constantes.h: 172: uc_ENTREE_VARIATEUR0,
+[; ;constantes.h: 173: uc_ENTREE_VARIATEUR1,
+[; ;constantes.h: 174: uc_ENTREE_VARIATEUR2,
+[; ;constantes.h: 175: uc_ENTREE_VARIATEUR3,
+[; ;constantes.h: 176: ENTREE_VARIATEUR_NB,
+[; ;constantes.h: 177: };
+[; ;constantes.h: 179: enum enum_ENTREE_VOLET
+[; ;constantes.h: 180: {
+[; ;constantes.h: 181: uc_ENTREE_VOLET0,
+[; ;constantes.h: 182: uc_ENTREE_VOLET1,
+[; ;constantes.h: 183: uc_ENTREE_VOLET2,
+[; ;constantes.h: 184: uc_ENTREE_VOLET3,
+[; ;constantes.h: 185: uc_ENTREE_VOLET4,
+[; ;constantes.h: 186: uc_ENTREE_VOLET5,
+[; ;constantes.h: 187: uc_ENTREE_VOLET6,
+[; ;constantes.h: 188: uc_ENTREE_VOLET7,
+[; ;constantes.h: 189: uc_ENTREE_VOLET8,
+[; ;constantes.h: 190: uc_ENTREE_VOLET9,
+[; ;constantes.h: 191: uc_ENTREE_VOLET10,
+[; ;constantes.h: 192: uc_ENTREE_VOLET11,
+[; ;constantes.h: 193: ENTREE_VOLET_NB,
+[; ;constantes.h: 194: };
+[; ;constantes.h: 196: enum enum_RELAIS
+[; ;constantes.h: 197: {
+[; ;constantes.h: 198: uc_RM0,
+[; ;constantes.h: 199: uc_RM1,
+[; ;constantes.h: 200: uc_RM2,
+[; ;constantes.h: 201: uc_RM3,
+[; ;constantes.h: 202: uc_RM4,
+[; ;constantes.h: 203: uc_RM5,
+[; ;constantes.h: 204: uc_RM6,
+[; ;constantes.h: 205: uc_RM7,
+[; ;constantes.h: 206: uc_RM8,
+[; ;constantes.h: 207: uc_RM9,
+[; ;constantes.h: 208: uc_RM10,
+[; ;constantes.h: 209: uc_RM11,
+[; ;constantes.h: 210: uc_RM12,
+[; ;constantes.h: 211: RM_NB,
+[; ;constantes.h: 212: };
+[; ;constantes.h: 214: enum enum_TYPES_SORTIES
+[; ;constantes.h: 215: {
+[; ;constantes.h: 216: uc_SORTIE_RELAIS,
+[; ;constantes.h: 217: uc_SORTIE_RELAIS_BISTABLE_SENS,
+[; ;constantes.h: 218: uc_SORTIE_RELAIS_BISTABLE,
+[; ;constantes.h: 219: uc_SORTIE_VARIATEUR,
+[; ;constantes.h: 220: uc_SORTIE_LED,
+[; ;constantes.h: 221: };
+[; ;constantes.h: 223: enum enum_RELAIS_BISTABLE_SENS
+[; ;constantes.h: 224: {
+[; ;constantes.h: 225: uc_RBSENS1,
+[; ;constantes.h: 226: uc_RBSENS2,
+[; ;constantes.h: 227: };
+[; ;constantes.h: 229: enum enum_RELAIS_BISTABLES
+[; ;constantes.h: 230: {
+[; ;constantes.h: 231: uc_RB0,
+[; ;constantes.h: 232: uc_RB1,
+[; ;constantes.h: 233: uc_RB2,
+[; ;constantes.h: 234: uc_RB3,
+[; ;constantes.h: 235: uc_RB4,
+[; ;constantes.h: 236: uc_RB5,
+[; ;constantes.h: 237: uc_RB6,
+[; ;constantes.h: 238: uc_RB7,
+[; ;constantes.h: 239: uc_RB8,
+[; ;constantes.h: 240: uc_RB9,
+[; ;constantes.h: 241: uc_RB10,
+[; ;constantes.h: 242: uc_RB11,
+[; ;constantes.h: 243: RB_NB,
+[; ;constantes.h: 244: };
+[; ;constantes.h: 247: enum enum_RELAIS_PILOTAGE
+[; ;constantes.h: 248: {
+[; ;constantes.h: 249: uc_OFF,
+[; ;constantes.h: 250: uc_ON,
+[; ;constantes.h: 251: };
+[; ;constantes.h: 253: enum enum_TEMPO_RELAIS
+[; ;constantes.h: 254: {
+[; ;constantes.h: 255: INIT,
+[; ;constantes.h: 256: RAZ,
+[; ;constantes.h: 257: MAINTIEN,
+[; ;constantes.h: 258: };
+[; ;constantes.h: 260: enum enum_VARIATEUR
+[; ;constantes.h: 261: {
+[; ;constantes.h: 262: uc_VARIATEUR0,
+[; ;constantes.h: 263: uc_VARIATEUR1,
+[; ;constantes.h: 264: uc_VARIATEUR2,
+[; ;constantes.h: 265: uc_VARIATEUR3,
+[; ;constantes.h: 266: VARIATEUR_NB,
+[; ;constantes.h: 267: };
+[; ;constantes.h: 269: enum enum_TYPES_BORNIER
+[; ;constantes.h: 270: {
+[; ;constantes.h: 271: BORNIER_PIECES_VIE,
+[; ;constantes.h: 272: BORNIER_CHAMBRES,
+[; ;constantes.h: 273: BORNIER_PIECES_EAU,
+[; ;constantes.h: 274: };
+[; ;struct.h: 5: struct struct_Entree
+[; ;struct.h: 6: {
+[; ;struct.h: 7: unsigned char ub1_EtatActuel:1;
+[; ;struct.h: 8: unsigned char ub4_AntiRebond_TempoChgtEtat:4;
+[; ;struct.h: 9: unsigned char ub1_EtatFiltrePourApp:1;
+[; ;struct.h: 10: unsigned char ub1_EtatFiltrePourAppPrecedent:1;
+[; ;struct.h: 11: };
+[; ;struct.h: 16: struct struct_EntreeVariateur
+[; ;struct.h: 17: {
+[; ;struct.h: 18: unsigned char uc_CompteurMaintenu;
+[; ;struct.h: 19: unsigned char uc_CompteurDoubleClic;
+[; ;struct.h: 20: unsigned char ub3_EntreeMode:3;
+[; ;struct.h: 21: unsigned char ub1_Etat1VueApresEtatStop:1;
+[; ;struct.h: 22: unsigned char ub1_SecondAppuiDetecte:1;
+[; ;struct.h: 24: unsigned char ub3_EtatCommande:3;
+[; ;struct.h: 25: unsigned char ub1_SensCommande:1;
+[; ;struct.h: 26: };
+[; ;struct.h: 28: struct struct_EntreeVoletOuStore
+[; ;struct.h: 29: {
+[; ;struct.h: 30: unsigned char ub4_CompteurMaintenu:4;
+[; ;struct.h: 31: unsigned char ub1_Etat1VueApresEtatStop:1;
+[; ;struct.h: 32: unsigned char ub3_EtatCommande:3;
+[; ;struct.h: 33: };
+[; ;struct.h: 36: struct struct_SortieRelaisBistable
+[; ;struct.h: 37: {
+[; ;struct.h: 38: unsigned char ub1_EtatRelaisBistable:1;
+[; ;struct.h: 39: unsigned char ub1_EtatRelaisBistableSouhaite:1;
+[; ;struct.h: 40: };
+[; ;struct.h: 43: struct struct_Variateur
+[; ;struct.h: 45: {
+[; ;struct.h: 46: signed char c_Eclairage;
+[; ;struct.h: 47: signed char c_EclairageOld;
+[; ;struct.h: 48: signed char c_Consigne;
+[; ;struct.h: 50: };
+[; ;struct.h: 59: union struct_Cde_BP
+[; ;struct.h: 60: {
+[; ;struct.h: 61: struct {
+[; ;struct.h: 62: unsigned char Sauvegarde :1;
+[; ;struct.h: 63: unsigned char bloqueVolets :1;
+[; ;struct.h: 64: unsigned char AllumeTout :1;
+[; ;struct.h: 65: } ub1;
+[; ;struct.h: 66: unsigned char o;
+[; ;struct.h: 68: };
+[; ;global.h: 4: extern unsigned char uc_CompteurCycle;
+[; ;global.h: 5: extern unsigned char uc_CompteurAcq;
+[; ;global.h: 7: extern unsigned char uc_CompteurBase1S;
+[; ;global.h: 10: extern unsigned char b1_BT_1S;
+[; ;global.h: 13: extern unsigned char uc_CompteurLED;
+[; ;global.h: 16: extern unsigned char uc_CompteurBiStable;
+[; ;global.h: 19: extern unsigned char uc_FlagITTimer;
+[; ;global.h: 23: extern unsigned char uc_NB_ES;
+[; ;global.h: 24: extern unsigned char uc_ENTREE_TOR_NB;
+[; ;global.h: 25: extern unsigned char uc_RM_NB;
+[; ;global.h: 26: extern unsigned char uc_ENTREE_VARIATEUR_NB;
+[; ;global.h: 27: extern unsigned char uc_VARIATEUR_NB;
+[; ;global.h: 28: extern unsigned char uc_ENTREE_VOLET_NB;
+[; ;global.h: 29: extern unsigned char uc_RB_NB;
+[; ;global.h: 30: extern unsigned char uc_VOLET_NB;
+[; ;global.h: 34: extern struct struct_Entree st_Entrees[NB_ES];
+[; ;global.h: 35: extern unsigned short us_EntreesTOR;
+[; ;global.h: 36: extern struct struct_EntreeVariateur st_EntreesVariateur[ENTREE_VARIATEUR_NB];
+[; ;global.h: 37: extern struct struct_EntreeVoletOuStore st_EntreesVoletRoulant[ENTREE_VOLET_NB];
+[; ;global.h: 41: extern unsigned short us_SortiesRelais;
+[; ;global.h: 42: extern struct struct_SortieRelaisBistable st_SortiesRelaisBistables[RB_NB];
+[; ;global.h: 44: extern struct struct_Variateur st_Variateurs[VARIATEUR_NB];
+[; ;global.h: 48: extern unsigned char uc_CdeRelaisBistables[RB_NB];
+[; ;global.h: 49: extern unsigned short us_CdeVariateurs[VARIATEUR_NB];
+[; ;global.h: 52: extern unsigned char s_uc_PortA;
+[; ;global.h: 53: extern unsigned char s_uc_PortB;
+[; ;global.h: 54: extern unsigned char s_uc_PortC;
+[; ;global.h: 55: extern unsigned char s_uc_PortD;
+[; ;global.h: 56: extern unsigned char s_uc_PortE;
+[; ;global.h: 57: extern unsigned char s_uc_PortF;
+"60 ../source/global.h
+[v _uc_TempsCdeVolet `uc ~T0 @X0 / -> . `E104 12 `i -> 2 `i e ]
+[; ;global.h: 60: unsigned char uc_TempsCdeVolet[RB_NB/2];
+"61
+[v _uc_TempsCdeLampe `uc ~T0 @X0 . `E80 13 e ]
+[; ;global.h: 61: unsigned char uc_TempsCdeLampe[RM_NB];
+[; ;global.h: 63: extern union struct_Cde_BP st_Commandes;
+[; ;global.h: 67: extern unsigned char uc_compteur_ecriture_eeprom;
+[; ;global.h: 68: extern unsigned char uc_compteur_lecture_eeprom;
+[; ;gestionsorties.h: 2: extern void vd_PiloterSorties(void);
+[; ;gestionsorties.h: 3: extern void vd_ArretPilotageRelaisBist(void);
+[; ;gestionsorties.h: 4: extern void vd_PilotageRelaisBist(void);
+[; ;gestionsorties.h: 5: extern inline void vd_PilotageVariateurs(void);
+"13 ../source/variateur.c
+[v _us_CodeVariateur `(us ~T0 @X0 1 ef1`uc ]
+"14
+{
+[; ;variateur.c: 13: unsigned short us_CodeVariateur (char c_valeur)
+[; ;variateur.c: 14: {
+[e :U _us_CodeVariateur ]
+"13
+[v _c_valeur `uc ~T0 @X0 1 r1 ]
+"14
+[f ]
+"15
+[v _l_us_valeur `us ~T0 @X0 1 a ]
+[; ;variateur.c: 15: unsigned short l_us_valeur;
+[; ;variateur.c: 18: l_us_valeur = (c_valeur + 10) <<1;
+"18
+[e = _l_us_valeur -> << + -> _c_valeur `i -> 10 `i -> 1 `i `us ]
+[; ;variateur.c: 19: l_us_valeur &= 0x01FE;
+"19
+[e =& _l_us_valeur -> -> 510 `i `us ]
+[; ;variateur.c: 23: l_us_valeur |= 0x0600;
+"23
+[e =| _l_us_valeur -> -> 1536 `i `us ]
+[; ;variateur.c: 25: return(l_us_valeur);
+"25
+[e ) _l_us_valeur ]
+[e $UE 8  ]
+[; ;variateur.c: 26: }
+"26
+[e :UE 8 ]
+}
