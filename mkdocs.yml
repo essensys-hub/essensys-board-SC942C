@@ -35,5 +35,6 @@ nav:
   - Accueil: index.md
   - Architecture: architecture.md
   - Hardware: hardware.md
+  - Retouche foudre: retouche-foudre.md
   - Firmware: firmware.md
   - Téléchargements: downloads.md
