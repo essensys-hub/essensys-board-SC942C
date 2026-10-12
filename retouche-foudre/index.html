@@ -1,0 +1,874 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../hardware/">
+      
+      
+        <link rel="next" href="../firmware/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Retouche foudre - SC942C Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#retouche-foudre-du-sc942c-note-de-schema" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href=".." title="SC942C Documentation" class="md-header__button md-logo" aria-label="SC942C Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SC942C Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Retouche foudre
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SC942C Documentation" class="md-nav__button md-logo" aria-label="SC942C Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SC942C Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retouche foudre
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retouche foudre
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-contexte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Contexte
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-synthese-des-modifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Synthèse des modifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Synthèse des modifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remarque-sur-la-bom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remarque sur la BOM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-justification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Justification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-exception-de-marge-assumee-u1-lmr12010" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Exception de marge assumée : U1 (LMR12010)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Procédure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-hors-perimetre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Hors périmètre
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../firmware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firmware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Téléchargements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-contexte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Contexte
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-synthese-des-modifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Synthèse des modifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Synthèse des modifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remarque-sur-la-bom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remarque sur la BOM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-justification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Justification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-exception-de-marge-assumee-u1-lmr12010" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Exception de marge assumée : U1 (LMR12010)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Procédure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-hors-perimetre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Hors périmètre
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="retouche-foudre-du-sc942c-note-de-schema">Retouche foudre du SC942C : note de schéma</h1>
+<p>Cette note décrit la variante « retouche foudre » du boîtier auxiliaire (BA) SC942C. La retouche se fait sur un BA déposé, à l'établi, sans refaire de circuit imprimé. Elle s'applique aux cartes en service ; la révision E corrigera le schéma.</p>
+<table>
+<thead>
+<tr>
+<th>Référence</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Change OpenSpec</td>
+<td><code>i2c-surge-protection-2026-10-007</code>, dans le dépôt <a href="https://github.com/essensys-hub/essensys-board-SC944D">essensys-board-SC944D</a> (<code>openspec/changes/i2c-surge-protection-2026-10-007/</code>, décisions D1 à D3 du <code>design.md</code>)</td>
+</tr>
+<tr>
+<td>Ticket</td>
+<td><a href="https://github.com/essensys-hub/essensys-board-SC944D/issues/1">essensys-hub/essensys-board-SC944D#1</a></td>
+</tr>
+<tr>
+<td>Tâches</td>
+<td>2.2 à 2.5 et 2.7 (retouche), 2.9 (publication)</td>
+</tr>
+<tr>
+<td>BOM de la variante</td>
+<td><code>BOM_retouche-foudre.csv</code>, à la racine du dépôt</td>
+</tr>
+<tr>
+<td>BOM d'origine</td>
+<td><code>BOM_[No Variations].csv</code>, inchangée</td>
+</tr>
+<tr>
+<td>Sources des repères</td>
+<td>schéma <code>SC942C/SC942C_Coeur.SchDoc</code>, fichier de placement <code>SC942C/Assembly/SC942C_Pick'nPlace.csv</code>, BOM « DM »</td>
+</tr>
+<tr>
+<td>Note du boîtier principal</td>
+<td><code>docs/retouche-foudre.md</code> du dépôt essensys-board-SC944D</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-contexte">1. Contexte</h2>
+<p>Une surtension d'origine atmosphérique a mis hors service un BA et coupé le bus entre le boîtier principal (BP, SC944D) et les BA. L'analyse du change montre des défauts communs à tous les BA (SC940D, SC941C, SC942C, topologie identique) :</p>
+<ul>
+<li>SDA et SCL arrivent de J1/J2 sur les broches RC7/RC6 du PIC16F946 par des résistances de 0 Ω (R1/R2) : le courant injecté dans les diodes de protection du PIC n'est pas limité ;</li>
+<li>l'alimentation du bus (+VBUS) entre par R84 (0 Ω), sans limiteur ni écrêteur propre au BA ;</li>
+<li>C2 (10 µF / 16 V) et D6 (PMEG2020AEA, 20 V) n'ont pas de marge face au rail « +12V » d'environ 14,3 V.</li>
+</ul>
+<p>Chaîne d'alimentation d'origine :</p>
+<div class="highlight"><pre><span></span><code>+VBUS (J1/J2, chaînage) ─ R84 0 Ω (0805) ─ +Vin ─ FI1 (25 V) ─ D3 ─ « +12V » ≈ 14,3 V ─ C2 10 µF / 16 V
+                                     └─ C42 220 pF (0603)                       └─ U1 LMR12010 (VIN 20 V) ─ D6 20 V ─ +5 V
+</code></pre></div>
+<h2 id="2-synthese-des-modifications">2. Synthèse des modifications</h2>
+<table>
+<thead>
+<tr>
+<th>Repère</th>
+<th>Fonction</th>
+<th>Avant</th>
+<th>Après</th>
+<th>Tâche</th>
+<th>Statut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R1/R2</td>
+<td>Résistances série de SDA/SCL</td>
+<td>0 Ω, 0805</td>
+<td>47 Ω, 0805 anti-impulsion, Panasonic ERJ-P06J470V (ou Vishay CRCW080547R0FKEAHP)</td>
+<td>2.2</td>
+<td>Base</td>
+</tr>
+<tr>
+<td>R1/R2</td>
+<td>Idem</td>
+<td>—</td>
+<td>100 Ω, seulement aux conditions de la tâche 3.8</td>
+<td>3.8</td>
+<td>Option</td>
+</tr>
+<tr>
+<td>R84</td>
+<td>Entrée +VBUS → +Vin</td>
+<td>0 Ω, 0805</td>
+<td>PTC ≥ 30 V en montage volant, courant de maintien à dimensionner selon la mesure 2.1</td>
+<td>2.3</td>
+<td>Base</td>
+</tr>
+<tr>
+<td>DRF1 (ajout)</td>
+<td>Écrêteur de +Vin</td>
+<td>—</td>
+<td>TVS 16 V (SMAJ16A ou SMF16A) sur les pastilles de C42, en aval de la PTC</td>
+<td>2.4</td>
+<td>Base</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>Découplage d'entrée de U1</td>
+<td>10 µF / 16 V X5R</td>
+<td>10 µF / 35 V X5R 0805</td>
+<td>2.5</td>
+<td>Base</td>
+</tr>
+<tr>
+<td>D6</td>
+<td>Diode Schottky du régulateur</td>
+<td>PMEG2020AEA, 20 V</td>
+<td>Schottky 40 V SOD-323F (PMEG4010CEJ)</td>
+<td>2.5</td>
+<td>Base</td>
+</tr>
+<tr>
+<td>C27/C29 (empreintes non montées)</td>
+<td>Écrêteur secondaire côté PIC</td>
+<td>—</td>
+<td>BAT54S</td>
+<td>2.7</td>
+<td><strong>OPTION</strong>, si 2.6 l'autorise</td>
+</tr>
+</tbody>
+</table>
+<p>DRF1 est un repère propre à la retouche : le circuit imprimé n'a pas d'empreinte pour cet écrêteur. Dans la BOM de la variante, les lignes de la retouche ont une description qui commence par « RETOUCHE FOUDRE », et la ligne de l'option une description qui commence par « OPTION RENFORCÉE ».</p>
+<h3 id="remarque-sur-la-bom">Remarque sur la BOM</h3>
+<p>La variante recopie <code>BOM_[No Variations].csv</code> ligne pour ligne (même en-tête, UTF-8 avec BOM), en retirant les repères modifiés de leur ligne d'origine ; les lignes de la retouche sont ajoutées à la fin. R84 (0 Ω, 0805) figure au schéma et dans la BOM « DM » (<code>SC942C/Assembly/SC942C_BOM_Format‚ (DM).xlsx</code>), mais ni dans la BOM CSV ni dans le fichier de placement : la ligne PTC de la variante l'ajoute. Ici, C40 est un 100 nF 0805 sans rapport avec l'entrée : la TVS va sur C42 (220 pF, 0603).</p>
+<h2 id="3-justification">3. Justification</h2>
+<ul>
+<li><strong>R1/R2 à 47 Ω (décision D1).</strong> C'est le meilleur compromis entre le courant injecté dans le PIC et la marge de niveau bas vue par le microcontrôleur du BP. 33 Ω dépasse les plafonds de courant de la spec ; 100 Ω n'est admis qu'avec les pull-ups de 2,2 kΩ côté BP (tâche 3.8). Le format anti-impulsion tient l'énergie d'une impulsion que le 0805 standard ne tient pas.</li>
+<li><strong>PTC à la place de R84 (décision D3).</strong> Une TVS d'alimentation finit en court-circuit. Elle doit donc être en aval d'un limiteur réarmable propre au BA. Sinon, une TVS morte éteint tous les BA chaînés sur +VBUS. Aucune PTC de 30 V n'existe en 0805 : la PTC (CMS 1206 ou 1812) est montée en volant, sur fils courts, collée. Son courant de maintien à 50 °C vaut au moins 1,5 fois le courant d'entrée du BA mesuré à la tâche 2.1. Il doit rester nettement inférieur à celui de la PTC de L31 du BP, et la PTC du BA doit déclencher plus vite au courant de court-circuit (sélectivité).</li>
+<li><strong>TVS sur C42, jamais sur +VBUS.</strong> +VBUS est le nœud de chaînage partagé. La TVS est posée sur +Vin, en aval de la PTC, sur les pastilles 0603 de C42 (conservé).</li>
+<li><strong>C2 en 35 V, D6 en 40 V.</strong> Ils voient le rail « +12V », qui monte avec l'écrêtage de la TVS. La règle du change demande une tension assignée d'au moins 1,5 fois la tension nominale.</li>
+<li><strong>BAT54S (option, décision D2).</strong> Montée « en l'air » côté PIC, après R1/R2, sur les empreintes non montées C27/C29 : anode au 0 V, point commun sur la ligne, cathode au +5 V par un fil court. R1/R2 restent à 47 Ω.</li>
+</ul>
+<h2 id="4-exception-de-marge-assumee-u1-lmr12010">4. Exception de marge assumée : U1 (LMR12010)</h2>
+<p>U1 est un LMR12010 : VIN de 20 V en fonctionnement, 24 V en absolu, sous un rail d'environ 14,3 V (1,4 fois au lieu de 1,5 fois). Au courant crête, la SMAJ16A laisse monter +Vin vers 26 V, soit environ 25 V après D3 : c'est au-delà des 24 V de U1 et au niveau des 25 V de FI1. <strong>U1 lâchera avant la TVS.</strong> Sur une carte retouchée, la spec n'exige que le confinement de la défaillance : la PTC et la TVS empêchent qu'un BA défaillant n'éteigne les autres.</p>
+<table>
+<thead>
+<tr>
+<th>Composant</th>
+<th>Contrainte</th>
+<th>Statut</th>
+<th>Levée</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>U1 (LMR12010)</td>
+<td>20 V en fonctionnement ; environ 25 V après D3 au courant crête de la TVS</td>
+<td>Exception assumée jusqu'à la révision E</td>
+<td>Révision E : LMR16006 (4 à 60 V, même brochage), C2 en 50 V, FI1 en tenue supérieure</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-procedure">5. Procédure</h2>
+<ol>
+<li>Déposer le BA, hors tension. Retoucher une carte à la fois. Ne jamais faire d'essai d'injection sur une carte de l'installation.</li>
+<li><strong>R1/R2</strong> : dessouder les 0 Ω, poser les 47 Ω ERJ-P06J470V. Contrôle hors tension : 44 à 50 Ω entre J1-1 et RC7, puis entre J1-2 et RC6.</li>
+<li><strong>R84</strong> : dessouder le 0 Ω, poser la PTC choisie selon la mesure 2.1 en montage volant sur fils courts entre ses pastilles, la coller.</li>
+<li><strong>DRF1</strong> : souder la TVS en montage volant, sur fils courts, sur les pastilles de C42 (cathode sur +Vin, anode au 0 V). Test en mode diode.</li>
+<li><strong>C2 et D6</strong> : remplacer par le 10 µF / 35 V et la Schottky 40 V SOD-323F.</li>
+<li><strong>Option C27/C29</strong> : seulement si la tâche 2.6 l'autorise.</li>
+<li>Vérifications (tâches 2.2 à 2.5) :<ul>
+<li>carte seule sous 15,0 V par J1-4/J1-3, SDA et SCL non raccordées : écart entre le +5 V et chaque ligne d'au plus 0,5 V ;</li>
+<li>le BA démarre, +5 V entre 4,83 et 5,03 V, et la PTC ne déclenche pas pendant 1 h à consommation maximale ;</li>
+<li>sous 15,0 V, « +12V » entre 14,2 V (moins la chute dans la PTC) et 14,4 V ;</li>
+<li>sur le bus : niveau bas au microcontrôleur du BP inférieur à 0,85 V et au PIC inférieur à 1,2 V (procédure <code>NR-board-sc944d-1</code>) ;</li>
+<li>sur un échantillon de banc, TVS remplacée par un court-circuit : la PTC déclenche et les autres BA restent alimentés (procédure <code>NR-board-sc944d-9</code>).</li>
+</ul>
+</li>
+</ol>
+<h2 id="6-hors-perimetre">6. Hors périmètre</h2>
+<p>Liaison équipotentielle du coffret (tâches 4.x), firmware (tâches 5.x), retouche du BP (<code>docs/retouche-foudre.md</code> du SC944D) et révision E. Les critères et les mesures de référence sont dans <code>tasks.md</code> et <code>design.md</code> du change.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.expand", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
